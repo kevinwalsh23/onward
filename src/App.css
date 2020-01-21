@@ -2,9 +2,10 @@
 
 .App {
   text-align: center;
+  background-color: #5a2fc2;
 }
 .textmargin {
-  margin-top: 25% !important;      
+  margin-top: 10% !important;      
 }
 .whyrecomp {
   background-color: #5a2fc2;
@@ -80,24 +81,31 @@
   size: 100;  
   font-weight: 900;
   line-height: 1.1;
+  color: white;
 }
-
+.container-style {
+  background-color: #5a2fc2;
+}
+.colorover {
+  background-color: white !important;
+}
 .titlefont {
   font-family: 'Bungee';
   color: #5a2fc2;
   text-align: center;
   float: center !important;
   align-self: center !important;
-  justify-content: center !important;
-  font-size: 72 !important;
+  justify-content: left !important;
+  font-size: 72 !important;  
   
 }
 .navbar .navbar-nav {
-  display: inline-block;
+  display: flex;
   float: none;
   vertical-align: top;
   align-content: center;
   justify-content: center;
+  flex-direction: row !important;
   
 }
 
@@ -110,6 +118,7 @@
   line-height: 1.5;
   font-weight: 400;
   margin: 2%;
+  color: white;
 }
 .requeststyle {
   background-color: #5a2fc2;
@@ -143,7 +152,7 @@
     justify-content: flex-end !important;
   }
   .textmargin {
-    margin-top: 5% !important;    
+    margin-top: 10% !important;    
   }
   .whyrecomp {
     background-color: #5a2fc2;
@@ -181,7 +190,7 @@ h1 {font-size: 41px!important;}
   .h1 {font-size: 36px!important;}
 
   .textmargin {
-    margin-top: 5% !important;    
+    margin-top: 10% !important;    
   }
   .imagestyle {
     margin-top: 5% !important;    
@@ -193,7 +202,7 @@ h1 {font-size: 41px!important;}
 }
 @media (max-width: 1199px) {
   .textmargin {
-    margin-top: 15% !important;    
+    margin-top: 10% !important;    
   }
   .h1 {font-size: 36px!important;}
 
