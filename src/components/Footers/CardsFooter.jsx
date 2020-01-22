@@ -21,8 +21,10 @@ import { Link } from "react-router-dom";
 // reactstrap components
 import {
   Button,
+  Badge,
   Card,
   CardImg,
+  CardBody,
   NavItem,
   NavLink,
   Nav,
@@ -38,28 +40,114 @@ class CardsFooter extends React.Component {
       <>
         <footer className="footer has-cards">
           <Container>
-            <Row>
-              <Col className="mb-5 mb-md-0" md="6">
-                <Card className="card-lift--hover shadow border-0">
-                  <Link to="/landing-page">
-                    <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/landing.jpg")}
-                    />
-                  </Link>
-                </Card>
-              </Col>
-              <Col className="mb-5 mb-lg-0" md="6">
-                <Card className="card-lift--hover shadow border-0">
-                  <Link to="/profile-page">
-                    <CardImg
-                      alt="..."
-                      src={require("assets/img/theme/profile.jpg")}
-                    />
-                  </Link>
-                </Card>
-              </Col>
-            </Row>
+          <Row className="justify-content-center">
+                <Col lg="12">
+                  <Row className="row-grid">
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                            <i className="ni ni-check-bold" />
+                          </div>
+                          <h6 className="text-primary text-uppercase">
+                            1. Enter Pickup Information
+                          </h6>
+                          <p className="description mt-3">
+                            Provide us with information about where we will be picking the item up, when you would like us to come, what the item is, and where it is being delivered.
+                          </p>
+                          {/* <div>
+                            <Badge color="primary" pill className="mr-1">
+                              design
+                            </Badge>
+                            <Badge color="primary" pill className="mr-1">
+                              system
+                            </Badge>
+                            <Badge color="primary" pill className="mr-1">
+                              creative
+                            </Badge>
+                          </div> */}
+                          {/* <Button
+                            className="mt-4"
+                            color="primary"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            Learn more
+                          </Button> */}
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
+                            <i className="ni ni-istanbul" />
+                          </div>
+                          <h6 className="text-success text-uppercase">
+                            2. Submit Payment Information
+                          </h6>
+                          <p className="description mt-3">
+                            We partner with Stripe to ensure secure payments. Simply enter your payment information on our site, and Stripe takes care of the rest.
+                          </p>
+                          {/* <div>
+                            <Badge color="success" pill className="mr-1">
+                              business
+                            </Badge>
+                            <Badge color="success" pill className="mr-1">
+                              vision
+                            </Badge>
+                            <Badge color="success" pill className="mr-1">
+                              success
+                            </Badge>
+                          </div>
+                          <Button
+                            className="mt-4"
+                            color="success"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            Learn more
+                          </Button> */}
+                        </CardBody>
+                      </Card>
+                    </Col>
+                    <Col lg="4">
+                      <Card className="card-lift--hover shadow border-0">
+                        <CardBody className="py-5">
+                          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
+                            <i className="ni ni-planet" />
+                          </div>
+                          <h6 className="text-warning text-uppercase">
+                            3. Item Picked Up and Delivered
+                          </h6>
+                          <p className="description mt-3">
+                            Onward will send a team to come pickup your item, and drop it off at the provided destination. We will provide confirmation through the entire process.
+                          </p>
+                          {/* <div>
+                            <Badge color="warning" pill className="mr-1">
+                              marketing
+                            </Badge>
+                            <Badge color="warning" pill className="mr-1">
+                              product
+                            </Badge>
+                            <Badge color="warning" pill className="mr-1">
+                              launch
+                            </Badge>
+                          </div>
+                          <Button
+                            className="mt-4"
+                            color="warning"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            Learn more
+                          </Button> */}
+                        </CardBody>
+                      </Card>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
           </Container>
           <Container>
             <Row className="row-grid align-items-center my-md">
@@ -111,7 +199,7 @@ class CardsFooter extends React.Component {
                 <UncontrolledTooltip delay={0} target="tooltip829810202">
                   Follow us
                 </UncontrolledTooltip>
-                <Button
+                {/* <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="github"
                   href="https://github.com/creativetimofficial"
@@ -120,10 +208,10 @@ class CardsFooter extends React.Component {
                   target="_blank"
                 >
                   <i className="fa fa-github" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip495507257">
+                </Button> */}
+                {/* <UncontrolledTooltip delay={0} target="tooltip495507257">
                   Star on Github
-                </UncontrolledTooltip>
+                </UncontrolledTooltip> */}
               </Col>
             </Row>
             <hr />
@@ -132,10 +220,10 @@ class CardsFooter extends React.Component {
                 <div className="copyright">
                   © {new Date().getFullYear()}{" "}
                   <a
-                    href="https://www.creative-tim.com?ref=adsr-footer"
+                    // href="https://www.creative-tim.com?ref=adsr-footer"
                     target="_blank"
                   >
-                    Creative Tim
+                    Onward Delivery
                   </a>
                   .
                 </div>
@@ -144,10 +232,10 @@ class CardsFooter extends React.Component {
                 <Nav className="nav-footer justify-content-end">
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com?ref=adsr-footer"
+                      // href="https://www.creative-tim.com?ref=adsr-footer"
                       target="_blank"
                     >
-                      Creative Tim
+                      Onward Delivery
                     </NavLink>
                   </NavItem>
                   <NavItem>

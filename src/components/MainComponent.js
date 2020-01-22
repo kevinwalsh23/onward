@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Order from './OrderComponent';
+import Payment from './PaymentComponent';
+import Confirmation from './ConfirmationComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
@@ -69,12 +71,14 @@ class Main extends Component {
 
     return (
       <div>
-        <DemoNavbar />
+        {/* <DemoNavbar /> */}
         <TransitionGroup>
             <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
             <Switch>
-                <Route path="/order" component={() => <Order/>} />
-                <Route path="/" component={HomePage} />
+                <Route path='/order' component={() => <Order/>} />
+                <Route path='/payment' component={() => <Payment/>} />
+                <Route path='/confirmation' component={() => <Confirmation/>} />
+                <Route component={HomePage} />
                 {/* <Route path="/order" component={() => <Order/>} /> */}
                 <Redirect to="/" component={HomePage} />
               </Switch>

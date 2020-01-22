@@ -30,10 +30,11 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  Jumbotron
 } from "reactstrap";
 
-class CardsFooterNew extends React.Component {
+class CardsFooterSuccess extends React.Component {
   render() {
     return (
       <>
@@ -42,12 +43,24 @@ class CardsFooterNew extends React.Component {
             <Row>
 
               <Col className="mb-5 mb-lg-0" md="12">
+                <div>
+                    <Jumbotron>
+                        <h1 className="display-3">Your order was successfully placed!</h1>
+                        <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <hr className="my-2" />
+                        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                        <p className="lead">
+                        <Button color="primary">Learn More</Button>
+                        </p>
+                    </Jumbotron>
+                </div>
                 <Card className="card-lift shadow border-0">
-                <Form styles="margin: 50px">
+                    
+                {/* <Form styles="margin: 50px"> */}
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  {/* <Form.Group as={Row} controlId="formHorizontalEmail">
                       <Form.Label column sm={2}>
-                        Name
+                        Credit Card #
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control type="text" placeholder="Steve Jobs" />
@@ -56,7 +69,7 @@ class CardsFooterNew extends React.Component {
 
                   <Form.Group as={Row} controlId="formHorizontalEmail">
                     <Form.Label column sm={2}>
-                      Email
+                      Expiration Date
                     </Form.Label>
                     <Col sm={10}>
                       <Form.Control type="email" placeholder="Email" />
@@ -65,7 +78,7 @@ class CardsFooterNew extends React.Component {
 
                   <Form.Group as={Row} controlId="formHorizontalPassword">
                     <Form.Label column sm={2}>
-                      Phone
+                      Security Code
                     </Form.Label>
                     <Col sm={10}>
                       <Form.Control type="number" placeholder="Phone Number" />
@@ -74,7 +87,7 @@ class CardsFooterNew extends React.Component {
 
                   <Form.Group as={Row} controlId="formHorizontalEmail">
                       <Form.Label column sm={2}>
-                        Item
+                        Billing Address
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control type="text" placeholder="What are we picking up?" />
@@ -83,7 +96,7 @@ class CardsFooterNew extends React.Component {
 
                     <Form.Group as={Row} controlId="formHorizontalPassword">
                     <Form.Label column sm={2}>
-                      Weight
+                      Billing City
                     </Form.Label>
                     <Col sm={10}>
                       <Form.Control type="number" placeholder="100 lbs" />
@@ -92,7 +105,7 @@ class CardsFooterNew extends React.Component {
 
                   <Form.Group as={Row} controlId="formHorizontalEmail">
                       <Form.Label column sm={2}>
-                        Description
+                        Billing State
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control type="text" placeholder="Big Couch" />
@@ -101,7 +114,7 @@ class CardsFooterNew extends React.Component {
 
                     <Form.Group as={Row} controlId="formHorizontalEmail">
                       <Form.Label column sm={2}>
-                        Pickup Address
+                        Billing Zip Code
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control type="text" placeholder="Big Couch" />
@@ -110,14 +123,14 @@ class CardsFooterNew extends React.Component {
 
                     <Form.Group as={Row} controlId="formHorizontalEmail">
                       <Form.Label column sm={2}>
-                        Pickup Notes
+                        Billing Country
                       </Form.Label>
                       <Col sm={10}>
                         <Form.Control type="text" placeholder="Big Couch" />
                       </Col>
-                    </Form.Group>
+                    </Form.Group> */}
 
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                    {/* <Form.Group as={Row} controlId="formHorizontalEmail">
                       <Form.Label column sm={2}>
                         Delivery Address
                       </Form.Label>
@@ -133,7 +146,7 @@ class CardsFooterNew extends React.Component {
                       <Col sm={10}>
                         <Form.Control type="text" placeholder="Big Couch" />
                       </Col>
-                    </Form.Group>
+                    </Form.Group> */}
                   {/* <fieldset>
                     <Form.Group as={Row}>
                       <Form.Label as="legend" column sm={2}>
@@ -167,17 +180,17 @@ class CardsFooterNew extends React.Component {
                     </Col>
                   </Form.Group> */}
 
-                  <Form.Group as={Row}>
+                  {/* <Form.Group as={Row}>
                     <Col sm={{ span: 10, offset: 2 }}>
                       <Link to="/payment" >
                         <Button variant="primary" >
-                          Continue to Payment
+                          Confirm Your Order
                         </Button>
                       </Link>
-                      {/* <Button type="submit">Continue to Payment</Button> */}
+                      <Button type="submit">Continue to Payment</Button>
                     </Col>
-                  </Form.Group>
-                </Form>
+                  </Form.Group> */}
+                {/* </Form> */}
                 </Card>
               </Col>
             </Row>
@@ -265,7 +278,7 @@ class CardsFooterNew extends React.Component {
                 <Nav className="nav-footer justify-content-end">
                   <NavItem>
                     <NavLink
-                      // href="https://www.creative-tim.com?ref=adsr-footer"
+                    //   href="https://www.creative-tim.com?ref=adsr-footer"
                       target="_blank"
                     >
                       Onward Delivery
@@ -305,4 +318,4 @@ class CardsFooterNew extends React.Component {
   }
 }
 
-export default CardsFooterNew;
+export default CardsFooterSuccess;

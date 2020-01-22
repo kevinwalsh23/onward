@@ -9564,7 +9564,7 @@ textarea[resize="horizontal"] {
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: transparent;
+  background-color: #5a2fc2 !important;
   border: 0;
   box-shadow: none; }
   .navbar-transparent .navbar-brand {
@@ -10603,7 +10603,7 @@ article h5 + figure {
 .headroom--not-top {
   padding-top: .5rem;
   padding-bottom: .5rem;
-  background-color: #172b4d !important;
+  background-color: #5a2fc2 !important;
   box-shadow: 0 1px 10px rgba(130, 130, 134, 0.1); }
 
 .noUi-target,

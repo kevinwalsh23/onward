@@ -2,7 +2,7 @@
   "name": "onward",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://onwarddelivery.com",
+  "homepage": "http://kevinwalsh23.github.io/onward",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-social": "^5.1.1",

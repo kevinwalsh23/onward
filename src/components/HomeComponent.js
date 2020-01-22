@@ -98,23 +98,23 @@ class Home extends Component {
                   <Form.Row>
                     <Col style={{ width: '100%', height: '100%' }}>
                     <Form.Label>Pickup City</Form.Label>
-                      <Form.Control as="select">
+                      <Form.Control size="lg" as="select">
                         <option>Boulder</option>
                         <option>Colorado Springs</option>
                         <option>Denver</option>
                         <option>Fort Collins</option>                        
                       </Form.Control>
                     </Col>
-                    <Col>
+                    <Col style={{ width: '100%', height: '100%' }}>
                     <Form.Label>Destination City</Form.Label>
-                    <Form.Control as="select">
+                    <Form.Control size="lg" as="select">
                         <option>Boulder</option>
                         <option>Colorado Springs</option>
                         <option selected>Denver</option>
                         <option>Fort Collins</option>
                     </Form.Control>
                     </Col>
-                    <Col>
+                    <Col style={{ width: '100%', height: '100%', justifyContent: 'center', alignSelf: 'center' }}>
                     <Link to="/order" >
                     <Button variant="primary" >
                       Submit
@@ -132,6 +132,7 @@ class Home extends Component {
             </div>
           
           </div>
+          
           <CardsFooter />
         </div>
         
