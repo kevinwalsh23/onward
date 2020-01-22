@@ -41,19 +41,19 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pickupcity: '',
-            deliverycity: ''
+            pickupcity: 'Boulder',
+            deliverycity: 'Denver'
         };
         //specifying toggleNav is available to use and bound to 'this'
         // this.toggleNav = this.toggleNav.bind(this);
         // this.toggleModal = this.toggleModal.bind(this);
         // this.handleLogin = this.handleLogin.bind(this);
     }
-    handleSubmit() {
+    handleChange(e) {
         //navigate to order page        
-        console.log(this.state);
-        console.log(this.props);
-        this.props.history.push("/order");
+        console.log(e);
+        //console.log(this.props);
+        // this.props.history.push("/order");
         // return <Redirect to="/order"/>;
         
         
@@ -92,35 +92,46 @@ class Home extends Component {
 
 
 
-                <Card style={{ width: '100%', height: '100%' }}>
+                <Card >
                 <Form>
                   <Form.Group>
                   <Form.Row>
+                  {/* <Form.Group as={Col} controlId="formGridEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+                  </Form.Group> */}
+
                     <Col style={{ width: '100%', height: '100%' }}>
                     <Form.Label>Pickup City</Form.Label>
-                      <Form.Control size="lg" as="select">
-                        <option>Boulder</option>
-                        <option>Colorado Springs</option>
-                        <option>Denver</option>
-                        <option>Fort Collins</option>                        
+                      <Form.Control size="lg" as="select" onChange={(e) => this.setState({pickupcity: e.target.value})}>
+                        <option key='1' value='Boulder'>Boulder</option>
+                        <option key='2' value='Colorado Springs'>Colorado Springs</option>
+                        <option key='3' value='Denver'>Denver</option>
+                        <option key='4' value='Fort Collins'>Fort Collins</option>                        
                       </Form.Control>
                     </Col>
-                    <Col style={{ width: '100%', height: '100%' }}>
+
+                    <Col style={{ width: '100%', height: '100%'}}>
                     <Form.Label>Destination City</Form.Label>
-                    <Form.Control size="lg" as="select">
-                        <option>Boulder</option>
-                        <option>Colorado Springs</option>
-                        <option selected>Denver</option>
-                        <option>Fort Collins</option>
+                    <Form.Control size="lg" as="select" name="dest" defaultValue="Denver" id='asdf' onChange={(e) => this.setState({deliverycity: e.target.value})}>
+                        <option key='5' value='Boulder'>Boulder</option>
+                        <option key='6' value='Colorado Springs'>Colorado Springs</option>
+                        <option key='7' value='Denver'>Denver</option>
+                        <option key='8' value='Fort Collins'>Fort Collins</option>
                     </Form.Control>
                     </Col>
-                    <Col style={{ width: '100%', height: '100%', justifyContent: 'center', alignSelf: 'center' }}>
-                    <Link to="/order" >
+
+                    <Col style={{ width: '100%', height: '200%', alignSelf: 'center'}}>
+                    <Link to={{ 
+                        pathname: '/order',search: "?sort=name", 
+                        state: { message: 'hello, im a passed message!' }, customObject: 'hello world' 
+                      }}>
                     <Button variant="primary" >
                       Submit
                     </Button>
                     </Link>                    
                     </Col>
+
                   </Form.Row>                  
                   
                   </Form.Group>                  

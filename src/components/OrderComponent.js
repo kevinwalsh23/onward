@@ -9,6 +9,22 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import { TransitionGroup, CSSTransition} from 'react-transition-group';
 class Order extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        pickupcity: 'Boulder',
+        deliverycity: 'Denver'
+    };
+    //specifying toggleNav is available to use and bound to 'this'
+    // this.toggleNav = this.toggleNav.bind(this);
+    // this.toggleModal = this.toggleModal.bind(this);
+    // this.handleLogin = this.handleLogin.bind(this);
+    
+}
+    componentDidMount() {
+      console.log(this.props);
+      console.log(this.state);
+    }
   render() {
     return (
       <div>

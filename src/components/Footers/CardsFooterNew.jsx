@@ -45,7 +45,7 @@ class CardsFooterNew extends React.Component {
                 <Card className="card-lift shadow border-0">
                 <Form styles="margin: 50px">
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Form.Group as={Row} controlId="formHorizontalName">
                       <Form.Label column sm={2}>
                         Name
                       </Form.Label>
@@ -63,7 +63,7 @@ class CardsFooterNew extends React.Component {
                     </Col>
                   </Form.Group>
 
-                  <Form.Group as={Row} controlId="formHorizontalPassword">
+                  <Form.Group as={Row} controlId="formHorizontalPhone">
                     <Form.Label column sm={2}>
                       Phone
                     </Form.Label>
@@ -72,7 +72,7 @@ class CardsFooterNew extends React.Component {
                     </Col>
                   </Form.Group>
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Form.Group as={Row} controlId="formHorizontalItem">
                       <Form.Label column sm={2}>
                         Item
                       </Form.Label>
@@ -81,7 +81,7 @@ class CardsFooterNew extends React.Component {
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalPassword">
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
                     <Form.Label column sm={2}>
                       Weight
                     </Form.Label>
@@ -90,48 +90,48 @@ class CardsFooterNew extends React.Component {
                     </Col>
                   </Form.Group>
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Form.Group as={Row} controlId="formHorizontalDesc">
                       <Form.Label column sm={2}>
                         Description
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="Big Ass Couch" />
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                    <Form.Group as={Row} controlId="formHorizontalPickup">
                       <Form.Label column sm={2}>
                         Pickup Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="42069 High St." />
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                    <Form.Group as={Row} controlId="formHorizontalPUNotes">
                       <Form.Label column sm={2}>
                         Pickup Notes
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="Couch is nice!" />
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                    <Form.Group as={Row} controlId="formHorizontalDest">
                       <Form.Label column sm={2}>
                         Delivery Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="123 Main St" />
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                    <Form.Group as={Row} controlId="formHorizontalDNotes">
                       <Form.Label column sm={2}>
                         Delivery Notes
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="Couch is big!" />
                       </Col>
                     </Form.Group>
                   {/* <fieldset>
