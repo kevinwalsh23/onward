@@ -298,7 +298,7 @@ class CardsFooterNew extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com/presentation?ref=adsr-footer"
+                      href=""
                       target="_blank"
                     >
                       About Us
@@ -306,7 +306,7 @@ class CardsFooterNew extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="http://blog.creative-tim.com?ref=adsr-footer"
+                      href=""
                       target="_blank"
                     >
                       Blog

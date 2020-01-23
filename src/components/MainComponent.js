@@ -3,6 +3,12 @@ import Home from './HomeComponent';
 import Order from './OrderComponent';
 import Payment from './PaymentComponent';
 import Confirmation from './ConfirmationComponent';
+
+import Location from './LocationsComponent';
+import How from './HowComponent';
+import Track from './TrackComponent';
+import About from './AboutComponent';
+
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
@@ -78,6 +84,10 @@ class Main extends Component {
                 <Route path='/order' component={() => <Order passprops={this.props.location.state}/>} />
                 <Route path='/payment' component={() => <Payment pass_params={this.props.location.state}/>}/>} />
                 <Route path='/confirmation' component={() => <Confirmation/>} />
+                <Route path='/locations' component={() => <Location/>} />
+                <Route path='/howitworks' component={() => <How/>} />
+                <Route path='/track' component={() => <Track/>} />
+                <Route path='/aboutus' component={() => <About/>} />
                 <Route path='/' component={HomePage} />
                 {/* <Route path="/order" component={() => <Order/>} /> */}
                 <Redirect to="/" component={HomePage} />

@@ -163,7 +163,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-neutral btn-icon-only btn-round"
                   color="twitter"
-                  href="https://twitter.com/creativetim"
+                  // href="https://twitter.com/creativetim"
                   id="tooltip475038074"
                   size="lg"
                   target="_blank"
@@ -176,7 +176,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="facebook"
-                  href="https://www.facebook.com/creativetim"
+                  // href="https://www.facebook.com/creativetim"
                   id="tooltip837440414"
                   size="lg"
                   target="_blank"
@@ -189,12 +189,12 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="dribbble"
-                  href="https://dribbble.com/creativetim"
+                  // href="https://dribbble.com/creativetim"
                   id="tooltip829810202"
                   size="lg"
                   target="_blank"
                 >
-                  <i className="fa fa-dribbble" />
+                  <i className="fa fa-instagram" />
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip829810202">
                   Follow us
@@ -240,7 +240,7 @@ class CardsFooter extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com/presentation?ref=adsr-footer"
+                      href=""
                       target="_blank"
                     >
                       About Us
@@ -248,7 +248,7 @@ class CardsFooter extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="http://blog.creative-tim.com?ref=adsr-footer"
+                      href=""
                       target="_blank"
                     >
                       Blog

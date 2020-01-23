@@ -85,16 +85,16 @@ class DemoNavbar extends React.Component {
                 </div>
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
+                    <Link to="/locations" >
                       <i className="ni ni-ui-04 d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Locations</span>
-                    </DropdownToggle>
-                    <DropdownMenu className="dropdown-menu-xl">
+                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >Locations</span>
+                    </Link>
+                    {/* <DropdownMenu className="dropdown-menu-xl">
                       <div className="dropdown-menu-inner">
                         <Media
                           className="d-flex align-items-center"
                           href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/overview?ref=adsr-navbar"
-                          target="/order"
+                          target="_blank"
                         >
                           <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
                             <i className="ni ni-spaceship" />
@@ -146,14 +146,14 @@ class DemoNavbar extends React.Component {
                           </Media>
                         </Media>
                       </div>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
+                    <Link nav to="/howitworks" >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">How is Works</span>
-                    </DropdownToggle>
-                    <DropdownMenu>
+                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >How is Works</span>
+                    </Link>
+                    {/* <DropdownMenu>
                       <DropdownItem to="/landing-page" tag={Link}>
                         Landing
                       </DropdownItem>
@@ -166,14 +166,14 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/register-page" tag={Link}>
                         Register
                       </DropdownItem>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
+                    <Link nav to="/track">
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">Track your Order</span>
-                    </DropdownToggle>
-                    <DropdownMenu>
+                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >Track your Order</span>
+                    </Link>
+                    {/* <DropdownMenu>
                       <DropdownItem to="/landing-page" tag={Link}>
                         Landing
                       </DropdownItem>
@@ -186,14 +186,14 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/register-page" tag={Link}>
                         Register
                       </DropdownItem>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
-                    <DropdownToggle nav>
+                    <Link nav to="/about">
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text">About</span>
-                    </DropdownToggle>
-                    <DropdownMenu>
+                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >About</span>
+                    </Link>
+                    {/* <DropdownMenu>
                       <DropdownItem to="/landing-page" tag={Link}>
                         Landing
                       </DropdownItem>
@@ -206,7 +206,7 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/register-page" tag={Link}>
                         Register
                       </DropdownItem>
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                   </UncontrolledDropdown>
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
