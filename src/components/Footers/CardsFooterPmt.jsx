@@ -34,6 +34,28 @@ import {
 } from "reactstrap";
 
 class CardsFooterPmt extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            iteminfo: this.props.iteminfo,
+            cc_num: '',
+            exp_date: '',
+            sec_code: '',
+            bill_addy: '',
+            bill_city: '',
+            bill_state: '',
+            bill_zip: '',
+            bill_cunt: ''     
+            // del_city: this.props.destinations.deliverycity,
+            // pu_city: this.props.destinations.pickupcity
+        };
+        //Note for above: PU => Pickup. Del => Delivery
+        //specifying toggleNav is available to use and bound to 'this'
+        // this.toggleNav = this.toggleNav.bind(this);
+        // this.toggleModal = this.toggleModal.bind(this);
+        // this.handleLogin = this.handleLogin.bind(this);
+        console.log(this.props);
+    }
   render() {
     return (
       <>
@@ -43,77 +65,77 @@ class CardsFooterPmt extends React.Component {
 
               <Col className="mb-5 mb-lg-0" md="12">
                 <Card className="card-lift shadow border-0">
-                <Form styles="margin: 50px">
+                <Form style={{margin: "5%"}}>
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Form.Group as={Row} controlId="formHorizontalCC">
                       <Form.Label column sm={2}>
                         Credit Card #
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Steve Jobs" />
+                        <Form.Control type="number" placeholder="#" onChange={(e) => this.setState({cc_num: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Form.Group as={Row} controlId="formHorizontalExp">
                     <Form.Label column sm={2}>
                       Expiration Date
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="email" placeholder="Email" />
+                      <Form.Control type="number" placeholder="01/23" onChange={(e) => this.setState({exp_date: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
-                  <Form.Group as={Row} controlId="formHorizontalPassword">
+                  <Form.Group as={Row} controlId="formHorizontalSCode">
                     <Form.Label column sm={2}>
                       Security Code
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="Phone Number" />
+                      <Form.Control type="number" placeholder="420" onChange={(e) => this.setState({sec_code: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Form.Group as={Row} controlId="formHorizontalBillAdd">
                       <Form.Label column sm={2}>
                         Billing Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="What are we picking up?" />
+                        <Form.Control type="text" placeholder="420 Main St. #69" onChange={(e) => this.setState({bill_addy: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalPassword">
+                    <Form.Group as={Row} controlId="formHorizontalBillCity">
                     <Form.Label column sm={2}>
                       Billing City
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="100 lbs" />
+                      <Form.Control type="number" placeholder="Denver" onChange={(e) => this.setState({bill_city: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
-                  <Form.Group as={Row} controlId="formHorizontalEmail">
+                  <Form.Group as={Row} controlId="formHorizontalBillState">
                       <Form.Label column sm={2}>
                         Billing State
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="CO" onChange={(e) => this.setState({bill_state: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                    <Form.Group as={Row} controlId="formHorizontalBillZip">
                       <Form.Label column sm={2}>
                         Billing Zip Code
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="12345" onChange={(e) => this.setState({bill_zip: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
+                    <Form.Group as={Row} controlId="formHorizontalBillCunt">
                       <Form.Label column sm={2}>
                         Billing Country
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
+                        <Form.Control type="text" placeholder="United States" onChange={(e) => this.setState({bill_cunt: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -167,10 +189,10 @@ class CardsFooterPmt extends React.Component {
                     </Col>
                   </Form.Group> */}
 
-                  <Form.Group as={Row}>
+                  <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
                       <Link to="/confirmation" >
-                        <Button variant="primary" >
+                        <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}}>
                           Confirm Your Order
                         </Button>
                       </Link>

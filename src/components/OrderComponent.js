@@ -12,17 +12,18 @@ class Order extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        pickupcity: 'Boulder',
-        deliverycity: 'Denver'
+        pickupcity: this.props.passprops.pickupcity,
+        deliverycity: this.props.passprops.deliverycity
     };
     //specifying toggleNav is available to use and bound to 'this'
     // this.toggleNav = this.toggleNav.bind(this);
     // this.toggleModal = this.toggleModal.bind(this);
     // this.handleLogin = this.handleLogin.bind(this);
-    
+    //this.setState({pickupcity: this.props.passprops.pickupcity, deliverycity: this.props.passprops.deliverycity  });
 }
     componentDidMount() {
       console.log(this.props);
+      this.setState({pickupcity: this.props.passprops.pickupcity, deliverycity: this.props.passprops.deliverycity  });
       console.log(this.state);
     }
   render() {
@@ -41,7 +42,7 @@ class Order extends React.Component {
             </div>
           
           </div>
-          <CardsFooterNew />
+          <CardsFooterNew destinations={this.state}/>
         </div>
         
         </div>

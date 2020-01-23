@@ -73,16 +73,16 @@ class Main extends Component {
       <div>
         {/* <DemoNavbar /> */}
         <TransitionGroup>
-            <CSSTransition key={this.props.location.key} classNames="page" timeout={300}>
+            {/* <CSSTransition key={this.props.location.key} classNames="page" timeout={300}> */}
             <Switch>
-                <Route path='/order' component={() => <Order/>} />
-                <Route path='/payment' component={() => <Payment/>} />
+                <Route path='/order' component={() => <Order passprops={this.props.location.state}/>} />
+                <Route path='/payment' component={() => <Payment pass_params={this.props.location.state}/>}/>} />
                 <Route path='/confirmation' component={() => <Confirmation/>} />
-                <Route component={HomePage} />
+                <Route path='/' component={HomePage} />
                 {/* <Route path="/order" component={() => <Order/>} /> */}
                 <Redirect to="/" component={HomePage} />
               </Switch>
-            </CSSTransition>
+            {/* </CSSTransition> */}
         </TransitionGroup>
       </div>
     );

@@ -46,11 +46,17 @@ class CardsFooterSuccess extends React.Component {
                 <div>
                     <Jumbotron>
                         <h1 className="display-3">Your order was successfully placed!</h1>
-                        <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                        <p className="lead">Thank you for choosing Onward as your delivery service, we look forward to your business!</p>
                         <hr className="my-2" />
-                        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                        <p>Order #: 236225</p>
+                        <p>Pickup Address: 420 High St, Denver CO 69420</p>
+                        <p>Pickup Date: 6/9/2020, 4PM</p>
+                        <p>Delivery Address: 69 Blaze St, Denver CO 69420</p>
+                        <p>Delivery Date: 4/20/2020, 4PM</p>
+                        <p>Charged: $420.69</p>
+                        
                         <p className="lead">
-                        <Button color="primary">Learn More</Button>
+                        <Button color="primary">Email Confirmation</Button>
                         </p>
                     </Jumbotron>
                 </div>

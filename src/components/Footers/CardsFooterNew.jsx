@@ -34,6 +34,29 @@ import {
 } from "reactstrap";
 
 class CardsFooterNew extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        name: '',
+        email: '',
+        phone: '',
+        item: '',
+        weight: '',
+        description: '',
+        pu_addy: '',
+        pu_notes: '',
+        del_addy: '',
+        del_notes: '',
+        del_city: this.props.destinations.deliverycity,
+        pu_city: this.props.destinations.pickupcity
+    };
+    //Note for above: PU => Pickup. Del => Delivery
+    //specifying toggleNav is available to use and bound to 'this'
+    // this.toggleNav = this.toggleNav.bind(this);
+    // this.toggleModal = this.toggleModal.bind(this);
+    // this.handleLogin = this.handleLogin.bind(this);
+    console.log(this.props);
+}
   render() {
     return (
       <>
@@ -43,14 +66,14 @@ class CardsFooterNew extends React.Component {
 
               <Col className="mb-5 mb-lg-0" md="12">
                 <Card className="card-lift shadow border-0">
-                <Form styles="margin: 50px">
+                <Form style={{margin: "5%"}}>
 
                   <Form.Group as={Row} controlId="formHorizontalName">
                       <Form.Label column sm={2}>
                         Name
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Steve Jobs" />
+                        <Form.Control type="text" placeholder="Steve Jobs" onChange={(e) => this.setState({name: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -59,7 +82,7 @@ class CardsFooterNew extends React.Component {
                       Email
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="email" placeholder="Email" />
+                      <Form.Control type="email" placeholder="Email" onChange={(e) => this.setState({email: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
@@ -68,7 +91,7 @@ class CardsFooterNew extends React.Component {
                       Phone
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="Phone Number" />
+                      <Form.Control type="number" placeholder="Phone Number" onChange={(e) => this.setState({phone: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
@@ -77,7 +100,7 @@ class CardsFooterNew extends React.Component {
                         Item
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="What are we picking up?" />
+                        <Form.Control type="text" placeholder="What are we picking up?" onChange={(e) => this.setState({item: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -86,7 +109,7 @@ class CardsFooterNew extends React.Component {
                       Weight
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="100 lbs" />
+                      <Form.Control type="number" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
@@ -95,7 +118,7 @@ class CardsFooterNew extends React.Component {
                         Description
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Ass Couch" />
+                        <Form.Control type="text" placeholder="Big Ass Couch" onChange={(e) => this.setState({description: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -104,7 +127,7 @@ class CardsFooterNew extends React.Component {
                         Pickup Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="42069 High St." />
+                        <Form.Control type="text" placeholder="42069 High St." onChange={(e) => this.setState({pu_addy: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -113,7 +136,7 @@ class CardsFooterNew extends React.Component {
                         Pickup Notes
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Couch is nice!" />
+                        <Form.Control type="text" placeholder="Couch is nice!" onChange={(e) => this.setState({pu_notes: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -122,7 +145,7 @@ class CardsFooterNew extends React.Component {
                         Delivery Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="123 Main St" />
+                        <Form.Control type="text" placeholder="123 Main St" onChange={(e) => this.setState({del_addy: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -131,7 +154,7 @@ class CardsFooterNew extends React.Component {
                         Delivery Notes
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Couch is big!" />
+                        <Form.Control type="text" placeholder="Couch is big!" onChange={(e) => this.setState({del_notes: e.target.value})}/>
                       </Col>
                     </Form.Group>
                   {/* <fieldset>
@@ -167,10 +190,12 @@ class CardsFooterNew extends React.Component {
                     </Col>
                   </Form.Group> */}
 
-                  <Form.Group as={Row}>
+                  <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                      <Link to="/payment" >
-                        <Button variant="primary" >
+                      <Link to={{ 
+                        pathname: '/payment', state: { pass_params: this.state  }                        
+                      }}>
+                        <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => console.log(this.state)}>
                           Continue to Payment
                         </Button>
                       </Link>

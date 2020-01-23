@@ -123,8 +123,8 @@ class Home extends Component {
 
                     <Col style={{ width: '100%', height: '200%', alignSelf: 'center'}}>
                     <Link to={{ 
-                        pathname: '/order',search: "?sort=name", 
-                        state: { message: 'hello, im a passed message!' }, customObject: 'hello world' 
+                        pathname: '/order',search: "?sort=name", state: { deliverycity: this.state.deliverycity, pickupcity: this.state.pickupcity  }
+                        
                       }}>
                     <Button variant="primary" >
                       Submit
