@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "148c7bbaf979cfb8b5fa8443fa5359ab",
+    "revision": "0ba357979a738c035cd178197892e956",
     "url": "/onward/index.html"
   },
   {
-    "revision": "3ceeed5e07f67c9f5b32",
+    "revision": "fc73ba402bbf8f88d543",
     "url": "/onward/static/css/2.510409cd.chunk.css"
   },
   {
-    "revision": "8332df5386e32824535b",
-    "url": "/onward/static/css/main.c42a0ea7.chunk.css"
+    "revision": "0627bec28d6f9da40e7f",
+    "url": "/onward/static/css/main.f33836bc.chunk.css"
   },
   {
-    "revision": "3ceeed5e07f67c9f5b32",
-    "url": "/onward/static/js/2.8b1df301.chunk.js"
+    "revision": "fc73ba402bbf8f88d543",
+    "url": "/onward/static/js/2.f4d26e81.chunk.js"
   },
   {
-    "revision": "8332df5386e32824535b",
-    "url": "/onward/static/js/main.04ee7b3c.chunk.js"
+    "revision": "0627bec28d6f9da40e7f",
+    "url": "/onward/static/js/main.4fca401b.chunk.js"
   },
   {
     "revision": "655447653118c605d277",
@@ -44,10 +44,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/onward/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "0ec264785c9b6efbed2651d84105f436",
-    "url": "/onward/static/media/landing.0ec26478.jpg"
-  },
-  {
     "revision": "0b8a30b10cbe7708d5f3a4b007c1d665",
     "url": "/onward/static/media/nucleo-icons.0b8a30b1.svg"
   },
@@ -66,10 +62,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f82ec6ba2dc4181db2af35c499462840",
     "url": "/onward/static/media/nucleo-icons.f82ec6ba.ttf"
-  },
-  {
-    "revision": "278a0d250cc46de3a4f65a0791479e71",
-    "url": "/onward/static/media/profile.278a0d25.jpg"
   },
   {
     "revision": "6ef0f646d4bae3edfdb156d71dd9ee83",
