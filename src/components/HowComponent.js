@@ -5,7 +5,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reac
 import { FadeTransform, } from 'react-animation-components'
 import Form from 'react-bootstrap/Form';
 import DemoNavbar from "./Navbars/DemoNavbar.jsx";
-import CardsFooter from "components/Footers/CardsFooter.jsx";
+import CardsFooterHow from "components/Footers/CardsFooterHow.jsx";
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import Order from './OrderComponent';
 import { browserHistory } from 'react-router';
@@ -82,8 +82,9 @@ class How extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md m-1">
-                <h1 className="homefont textmargin"><b>On Demand Home Delivery.</b></h1>
-                <h5 className="subfont">Partnering with established delivery companies in the Denver area, Onward Delivery has access to trucks that are delivering product in Boulder, Colorado Springs, and Fort Collins on a weekly basis.</h5>
+                <h1 className="homefont textmargin"><b>How it works</b></h1>
+                {/* <h5 className="subfont">Partnering with established delivery companies in the Denver area, Onward Delivery has access to trucks that are delivering product in Boulder, Colorado Springs, and Fort Collins on a weekly basis.</h5> */}
+                <h5 className="subfont">Onward partners with established delivery companies in the Colorado region, and has access to trucks that have additional space on their routes. We leverage their free space with your delivery needs to create a service that helps you get your product to where it needs to go at an affordable rate.</h5>
                 <div className="">
                 {/* <form className="form-inline formstyle" action="https://formspree.io/kevinwalsh23@gmail.com" method="POST">
                   <input type="email" name="_replyto" className="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="name@company.com"/>              
@@ -92,14 +93,14 @@ class How extends Component {
 
 
 
-                <Card >
+                {/* <Card >
                 <Form>
                   <Form.Group>
                   <Form.Row>
-                  {/* <Form.Group as={Col} controlId="formGridEmail">
+                  <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
-                  </Form.Group> */}
+                  </Form.Group>
 
                     <Col style={{ width: '100%', height: '100%' }}>
                     <Form.Label>Pickup City</Form.Label>
@@ -136,7 +137,7 @@ class How extends Component {
                   
                   </Form.Group>                  
                 </Form>
-                </Card>
+                </Card> */}
 
                 </div>      
               </div>              
@@ -144,7 +145,7 @@ class How extends Component {
           
           </div>
           
-          <CardsFooter />
+          <CardsFooterHow />
         </div>
         
         </div>

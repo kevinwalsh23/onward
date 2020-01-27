@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import DemoNavbar from "./Navbars/DemoNavbar.jsx";
-import CardsFooterPmt from "components/Footers/CardsFooterPmt.jsx";
+import CardsFooterTrack from "components/Footers/CardsFooterTrack.jsx";
 import Home from './HomeComponent';
 
 
@@ -41,13 +41,13 @@ class Track extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-md m-1">
-                <h1 className="homefont textmargin"><b>Complete Payment Info.</b></h1>
+                <h1 className="homefont textmargin"><b>Track Your Order</b></h1>
   
               </div>              
             </div>
           
           </div>
-          <CardsFooterPmt iteminfo={this.state.iteminfo}/>
+          <CardsFooterTrack iteminfo={this.state.iteminfo}/>
         </div>
         
         </div>

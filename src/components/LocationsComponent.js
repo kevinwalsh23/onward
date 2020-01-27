@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import DemoNavbar from "./Navbars/DemoNavbar.jsx";
-import CardsFooterSuccess from "components/Footers/CardsFooterSuccess.jsx";
+import CardsFooterLocation from "components/Footers/CardsFooterLocation.jsx";
 import Home from './HomeComponent';
 
 
@@ -25,7 +25,7 @@ class Locations extends React.Component {
             </div>
           
           </div>
-          <CardsFooterSuccess />
+          <CardsFooterLocation />
         </div>
         
         </div>

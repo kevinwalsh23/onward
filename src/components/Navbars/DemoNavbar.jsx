@@ -151,7 +151,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <Link nav to="/howitworks" >
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >How is Works</span>
+                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >How It Works</span>
                     </Link>
                     {/* <DropdownMenu>
                       <DropdownItem to="/landing-page" tag={Link}>
@@ -171,7 +171,7 @@ class DemoNavbar extends React.Component {
                   <UncontrolledDropdown nav>
                     <Link nav to="/track">
                       <i className="ni ni-collection d-lg-none mr-1" />
-                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >Track your Order</span>
+                      <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >Track Your Order</span>
                     </Link>
                     {/* <DropdownMenu>
                       <DropdownItem to="/landing-page" tag={Link}>
@@ -188,12 +188,12 @@ class DemoNavbar extends React.Component {
                       </DropdownItem>
                     </DropdownMenu> */}
                   </UncontrolledDropdown>
-                  <UncontrolledDropdown nav>
+                  {/* <UncontrolledDropdown nav>
                     <Link nav to="/about">
                       <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text" style={{color: "white", paddingRight: "10px"}} >About</span>
                     </Link>
-                    {/* <DropdownMenu>
+                    <DropdownMenu>
                       <DropdownItem to="/landing-page" tag={Link}>
                         Landing
                       </DropdownItem>
@@ -206,8 +206,8 @@ class DemoNavbar extends React.Component {
                       <DropdownItem to="/register-page" tag={Link}>
                         Register
                       </DropdownItem>
-                    </DropdownMenu> */}
-                  </UncontrolledDropdown>
+                    </DropdownMenu>
+                  </UncontrolledDropdown> */}
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
                   <NavItem>
