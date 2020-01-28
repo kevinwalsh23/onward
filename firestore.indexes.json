@@ -1,0 +1,11 @@
+{
+    "indexes": {
+    "kind": "Cat",
+    "ancestor": "no",
+    "properties": {
+        "name": "name",
+        "age": "age",
+        "direction": "desc"
+        }  
+    }
+}

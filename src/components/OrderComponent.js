@@ -23,7 +23,7 @@ class Order extends React.Component {
 }
     componentDidMount() {
       console.log(this.props);
-      this.setState({pickupcity: this.props.passprops.pickupcity, deliverycity: this.props.passprops.deliverycity  });
+      // this.setState({pickupcity: this.props.passprops.pickupcity, deliverycity: this.props.passprops.deliverycity  });
       console.log(this.state);
     }
   render() {
