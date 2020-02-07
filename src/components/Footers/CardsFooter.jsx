@@ -163,7 +163,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-neutral btn-icon-only btn-round"
                   color="twitter"
-                  // href="https://twitter.com/creativetim"
+                  href="https://twitter.com/DeliveryOnward"
                   id="tooltip475038074"
                   size="lg"
                   target="_blank"
@@ -176,7 +176,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="facebook"
-                  // href="https://www.facebook.com/creativetim"
+                  href="https://www.facebook.com/onwarddelivers"
                   id="tooltip837440414"
                   size="lg"
                   target="_blank"
@@ -189,7 +189,7 @@ class CardsFooter extends React.Component {
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="dribbble"
-                  // href="https://dribbble.com/creativetim"
+                  href="https://www.instagram.com/onward_delivery"
                   id="tooltip829810202"
                   size="lg"
                   target="_blank"

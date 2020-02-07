@@ -73,7 +73,7 @@ class CardsFooterNew extends React.Component {
                         Name
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Steve Jobs" onChange={(e) => this.setState({name: e.target.value})}/>
+                        <Form.Control type="text" placeholder="Elizabeth Holmes" onChange={(e) => this.setState({name: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -94,7 +94,14 @@ class CardsFooterNew extends React.Component {
                       <Form.Control type="number" placeholder="Phone Number" onChange={(e) => this.setState({phone: e.target.value})}/>
                     </Col>
                   </Form.Group>
-
+                  <Form.Group as={Row} controlId="formHorizontalItem">
+                      <Form.Label column sm={2}>
+                        Location Type
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="Residential/Business/Etc." onChange={(e) => this.setState({item: e.target.value})}/>
+                      </Col>
+                    </Form.Group>
                   <Form.Group as={Row} controlId="formHorizontalItem">
                       <Form.Label column sm={2}>
                         Item
@@ -109,7 +116,7 @@ class CardsFooterNew extends React.Component {
                       Weight
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/>
+                      <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
@@ -118,7 +125,7 @@ class CardsFooterNew extends React.Component {
                         Description
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Ass Couch" onChange={(e) => this.setState({description: e.target.value})}/>
+                        <Form.Control type="text" placeholder="Big Couch" onChange={(e) => this.setState({description: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -127,7 +134,7 @@ class CardsFooterNew extends React.Component {
                         Pickup Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="42069 High St." onChange={(e) => this.setState({pu_addy: e.target.value})}/>
+                        <Form.Control type="text" placeholder="999 Theranos St., Denver CO 80013" onChange={(e) => this.setState({pu_addy: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -136,7 +143,7 @@ class CardsFooterNew extends React.Component {
                         Pickup Notes
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Couch is nice!" onChange={(e) => this.setState({pu_notes: e.target.value})}/>
+                        <Form.Control type="text" placeholder="Very Delicate Furniture, be careful!" onChange={(e) => this.setState({pu_notes: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -145,7 +152,7 @@ class CardsFooterNew extends React.Component {
                         Delivery Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="123 Main St" onChange={(e) => this.setState({del_addy: e.target.value})}/>
+                        <Form.Control type="text" placeholder="1122 Enron Ave., Colorado Springs CO 80011" onChange={(e) => this.setState({del_addy: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -154,7 +161,7 @@ class CardsFooterNew extends React.Component {
                         Delivery Notes
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Couch is big!" onChange={(e) => this.setState({del_notes: e.target.value})}/>
+                        <Form.Control type="text" placeholder="The couch is quite large!" onChange={(e) => this.setState({del_notes: e.target.value})}/>
                       </Col>
                     </Form.Group>
                   {/* <fieldset>

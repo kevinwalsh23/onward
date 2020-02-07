@@ -2,10 +2,11 @@
   "name": "onward",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://kevinwalsh23.github.io/onward",
+  "homepage": "http://kevinwalsh23.github.io/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-social": "^5.1.1",
+    "cors": "^2.8.5",
     "gh-pages": "^2.0.1",
     "headroom": "^0.2.0",
     "headroom.js": "^0.11.0",

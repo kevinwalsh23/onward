@@ -1,0 +1,1 @@
+switch the package.json to "homepage": "http://kevinwalsh23.github.io/onward" to host on gh-pages

@@ -1,0 +1,88 @@
+[debug] [2020-02-07T21:07:01.365Z] ----------------------------------------------------------------------
+[debug] [2020-02-07T21:07:01.377Z] Command:       /usr/local/Cellar/node/12.8.1/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-02-07T21:07:01.377Z] CLI Version:   7.12.1
+[debug] [2020-02-07T21:07:01.377Z] Platform:      darwin
+[debug] [2020-02-07T21:07:01.377Z] Node Version:  v12.8.1
+[debug] [2020-02-07T21:07:01.441Z] Time:          Fri Feb 07 2020 16:07:01 GMT-0500 (Eastern Standard Time)
+[debug] [2020-02-07T21:07:01.441Z] ----------------------------------------------------------------------
+[debug] [2020-02-07T21:07:01.441Z] 
+[debug] [2020-02-07T21:07:01.460Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-07T21:07:01.460Z] > authorizing via signed-in user
+[debug] [2020-02-07T21:07:01.460Z] [iam] checking project onward-63d91 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2020-02-07T21:07:01.462Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-02-07T21:07:01.463Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-02-07T21:07:01.511Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-02-07T21:07:01.513Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-02-07T21:07:01.513Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-02-07T21:07:01.522Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-02-07T21:07:01.530Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/auth.js:23:32)
+    at Module._compile (internal/modules/cjs/loader.js:868:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)
+    at Module.load (internal/modules/cjs/loader.js:731:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:644:12)
+    at Module.require (internal/modules/cjs/loader.js:771:19)
+    at require (internal/modules/cjs/helpers.js:68:18)
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/commands/login.js:8:12)
+    at Module._compile (internal/modules/cjs/loader.js:868:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)
+    at Module.load (internal/modules/cjs/loader.js:731:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:644:12)
+    at Module.require (internal/modules/cjs/loader.js:771:19)
+    at require (internal/modules/cjs/helpers.js:68:18)
+    at loadCommand (/usr/local/lib/node_modules/firebase-tools/lib/commands/index.js:5:19)
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/commands/index.js:73:20)
+[error] 
+[error] Error: Failed to get Firebase project onward-63d91. Please make sure the project exists and your account has permission to access it.
+[debug] [2020-02-07T21:07:26.047Z] ----------------------------------------------------------------------
+[debug] [2020-02-07T21:07:26.049Z] Command:       /usr/local/Cellar/node/12.8.1/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-02-07T21:07:26.049Z] CLI Version:   7.12.1
+[debug] [2020-02-07T21:07:26.049Z] Platform:      darwin
+[debug] [2020-02-07T21:07:26.049Z] Node Version:  v12.8.1
+[debug] [2020-02-07T21:07:26.070Z] Time:          Fri Feb 07 2020 16:07:26 GMT-0500 (Eastern Standard Time)
+[debug] [2020-02-07T21:07:26.070Z] ----------------------------------------------------------------------
+[debug] [2020-02-07T21:07:26.070Z] 
+[debug] [2020-02-07T21:07:26.084Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-07T21:07:26.084Z] > authorizing via signed-in user
+[debug] [2020-02-07T21:07:26.084Z] [iam] checking project onward-63d91 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2020-02-07T21:07:26.086Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-02-07T21:07:26.086Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-02-07T21:07:26.107Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-02-07T21:07:26.107Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-02-07T21:07:26.107Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-02-07T21:07:26.109Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2020-02-07T21:07:26.113Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/auth.js:23:32)
+    at Module._compile (internal/modules/cjs/loader.js:868:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)
+    at Module.load (internal/modules/cjs/loader.js:731:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:644:12)
+    at Module.require (internal/modules/cjs/loader.js:771:19)
+    at require (internal/modules/cjs/helpers.js:68:18)
+    at Object.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/commands/login.js:8:12)
+    at Module._compile (internal/modules/cjs/loader.js:868:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:879:10)
+    at Module.load (internal/modules/cjs/loader.js:731:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:644:12)
+    at Module.require (internal/modules/cjs/loader.js:771:19)
+    at require (internal/modules/cjs/helpers.js:68:18)
+    at loadCommand (/usr/local/lib/node_modules/firebase-tools/lib/commands/index.js:5:19)
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/commands/index.js:73:20)
+[error] 
+[error] Error: Failed to get Firebase project onward-63d91. Please make sure the project exists and your account has permission to access it.

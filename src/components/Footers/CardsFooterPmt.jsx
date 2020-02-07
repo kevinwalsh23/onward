@@ -37,7 +37,24 @@ class CardsFooterPmt extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            iteminfo: this.props.iteminfo,
+            customerinfo: {
+                name: this.props.iteminfo.pass_params.name,
+                email: this.props.iteminfo.pass_params.email,
+                phone: this.props.iteminfo.pass_params.phone
+            },
+            iteminfo: {
+                item: this.props.iteminfo.pass_params.item,
+                weight: this.props.iteminfo.pass_params.weight,
+                description: this.props.iteminfo.pass_params.description,
+                pu_addy: this.props.iteminfo.pass_params.pu_addy,
+                pu_notes: this.props.iteminfo.pass_params.pu_notes,
+                del_addy: this.props.iteminfo.pass_params.del_addy,
+                del_notes: this.props.iteminfo.pass_params.del_notes
+            },
+            route_meta: {
+                del_city: this.props.iteminfo.pass_params.del_city,
+                pu_city: this.props.iteminfo.pass_params.pu_city,
+            },
             cc_num: '',
             exp_date: '',
             sec_code: '',
@@ -54,7 +71,32 @@ class CardsFooterPmt extends React.Component {
         // this.toggleNav = this.toggleNav.bind(this);
         // this.toggleModal = this.toggleModal.bind(this);
         // this.handleLogin = this.handleLogin.bind(this);
-        console.log(this.props);
+        console.log(this.state);
+    }
+    SaveCustomerInfo = async () => {
+        fetch('https://us-central1-onward-63d91.cloudfunctions.net/addOrder', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                customerinfo: this.state.customerinfo,
+                iteminfo: this.state.iteminfo,
+                route_meta: this.state.route_meta,
+                payment_info: {
+                    cc_num: this.state.cc_num,
+                    exp_date: this.state.exp_date,
+                    sec_code: this.state.sec_code,
+                    bill_addy: this.state.bill_addy,
+                    bill_city: this.state.bill_city,
+                    bill_state: this.state.bill_state,
+                    bill_zip: this.state.bill_zip,
+                    bill_cunt: this.state.bill_cunt                  
+                }
+            })
+          })
+
     }
   render() {
     return (
@@ -81,7 +123,7 @@ class CardsFooterPmt extends React.Component {
                       Expiration Date
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="01/23" onChange={(e) => this.setState({exp_date: e.target.value})}/>
+                      <Form.Control type="text" placeholder="01/23" onChange={(e) => this.setState({exp_date: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
@@ -90,7 +132,7 @@ class CardsFooterPmt extends React.Component {
                       Security Code
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="420" onChange={(e) => this.setState({sec_code: e.target.value})}/>
+                      <Form.Control type="number" placeholder="456" onChange={(e) => this.setState({sec_code: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
@@ -99,7 +141,7 @@ class CardsFooterPmt extends React.Component {
                         Billing Address
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="420 Main St. #69" onChange={(e) => this.setState({bill_addy: e.target.value})}/>
+                        <Form.Control type="text" placeholder="789 Main St. #10" onChange={(e) => this.setState({bill_addy: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -108,7 +150,7 @@ class CardsFooterPmt extends React.Component {
                       Billing City
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="number" placeholder="Denver" onChange={(e) => this.setState({bill_city: e.target.value})}/>
+                      <Form.Control type="text" placeholder="Denver" onChange={(e) => this.setState({bill_city: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
@@ -126,7 +168,7 @@ class CardsFooterPmt extends React.Component {
                         Billing Zip Code
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="12345" onChange={(e) => this.setState({bill_zip: e.target.value})}/>
+                        <Form.Control type="text" placeholder="80014" onChange={(e) => this.setState({bill_zip: e.target.value})}/>
                       </Col>
                     </Form.Group>
 
@@ -192,7 +234,7 @@ class CardsFooterPmt extends React.Component {
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
                       <Link to="/confirmation" >
-                        <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}}>
+                        <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => this.SaveCustomerInfo()}>
                           Confirm Your Order
                         </Button>
                       </Link>
