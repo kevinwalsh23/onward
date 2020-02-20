@@ -40,9 +40,36 @@ class CardsFooterNew extends React.Component {
         name: '',
         email: '',
         phone: '',
-        item: '',
-        weight: '',
-        description: '',
+        item_count: 1,
+        pu_location_type: '',
+        pickup_other: '',
+        drop_location_type: '',
+        drop_other: '',
+        one_weight: '',
+        one_height: '',
+        one_length: '',
+        one_width: '',
+        one_desc: '',
+        two_weight: '',
+        two_height: '',
+        two_length: '',
+        two_width: '',
+        two_desc: '',
+        three_weight: '',
+        three_height: '',
+        three_length: '',
+        three_width: '',
+        three_desc: '',
+        four_weight: '',
+        four_height: '',
+        four_length: '',
+        four_width: '',
+        four_desc: '',
+        five_weight: '',
+        five_height: '',
+        five_length: '',
+        five_width: '',
+        five_desc: '',
         pu_addy: '',
         pu_notes: '',
         del_addy: '',
@@ -96,38 +123,531 @@ class CardsFooterNew extends React.Component {
                   </Form.Group>
                   <Form.Group as={Row} controlId="formHorizontalItem">
                       <Form.Label column sm={2}>
-                        Location Type
+                        Pickup Info
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Residential/Business/Etc." onChange={(e) => this.setState({item: e.target.value})}/>
+                      <Form.Control size="md" as="select" name="dest" defaultValue="Residence" id='asdf' onChange={(e) => this.setState({pu_location_type: e.target.value})}>
+                        <option key='1' value='Residence'>Residence</option>
+                        <option key='2' value='Business - no dock'>Business - no dock</option>
+                        <option key='3' value='Business -dock'>Business -dock</option>
+                        <option key='4' value='Convention Center Pickup'>Convention Center Pickup</option>
+                        <option key='5' value='Hospital Pickup'>Hospital Pickup</option>
+                        <option key='6' value='Mall Pickup'>Mall Pickup</option>
+                        <option key='7' value='Hotel Pickup'>Hotel Pickup</option>
+                        <option key='8' value='School/University'>School/University</option>
+                        <option key='9' value='Military Base Pickup'>Military Base Pickup</option>
+                        <option key='10' value='Donation Delivery'>Donation Delivery</option>
+                        <option key='11' value='Junk Removal'>Junk Removal</option>
+                        <option key='12' value='Other'>Other</option>
+                    </Form.Control>
+                        {/* <Form.Control type="text" placeholder="Residential/Business/Etc." onChange={(e) => this.setState({item: e.target.value})}/> */}
                       </Col>
                     </Form.Group>
-                  <Form.Group as={Row} controlId="formHorizontalItem">
+                    { this.state.pu_location_type == 'Other' ? (
+                    <Form.Group as={Row} controlId="formHorizontalItem">
                       <Form.Label column sm={2}>
-                        Item
+                        Describe Other:
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="What are we picking up?" onChange={(e) => this.setState({item: e.target.value})}/>
+                        <Form.Control type="text" placeholder="Tell us more!" onChange={(e) => this.setState({pickup_other: e.target.value})}/>
+                      </Col>
+                    </Form.Group> ) : null
+                  }                       
+                    {/* <Form.Group as={Row} controlId="formHorizontalItem">
+                      <Form.Label column sm={2}>
+                        Describe Other:
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="Tell us more!" onChange={(e) => this.setState({pickup_other: e.target.value})}/>
+                      </Col>
+                    </Form.Group> */}
+                  <Form.Group as={Row} controlId="formHorizontalItem">
+                      <Form.Label column sm={2}>
+                        Dropoff Info
+                      </Form.Label>
+                      <Col sm={10}>
+                      <Form.Control size="md" as="select" name="dest" defaultValue="Residence" id='asdf' onChange={(e) => this.setState({drop_location_type: e.target.value})}>
+                        <option key='111' value='Residence'>Residence</option>
+                        <option key='211' value='Business - no dock'>Business - no dock</option>
+                        <option key='311' value='Business -dock'>Business -dock</option>
+                        <option key='411' value='Convention Center Pickup'>Convention Center Pickup</option>
+                        <option key='511' value='Hospital Pickup'>Hospital Pickup</option>
+                        <option key='611' value='Mall Pickup'>Mall Pickup</option>
+                        <option key='711' value='Hotel Pickup'>Hotel Pickup</option>
+                        <option key='811' value='School/University'>School/University</option>
+                        <option key='911' value='Military Base Pickup'>Military Base Pickup</option>
+                        <option key='101' value='Donation Delivery'>Donation Delivery</option>
+                        <option key='111' value='Junk Removal'>Junk Removal</option>
+                        <option key='121' value='Other'>Other</option>
+                    </Form.Control>
+                        {/* <Form.Control type="text" placeholder="Residential/Business/Etc." onChange={(e) => this.setState({item: e.target.value})}/> */}
+                      </Col>
+                    </Form.Group>
+                  { this.state.drop_location_type == 'Other' ? (
+                  <Form.Group as={Row} controlId="formHorizontalItem">
+                      <Form.Label column sm={2}>
+                        Describe Other:
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="Tell us more!" onChange={(e) => this.setState({drop_other: e.target.value})}/>
+                      </Col>
+                    </Form.Group> ) : null
+                  }      
+                  {/* <Form.Group as={Row} controlId="formHorizontalItem">
+                      <Form.Label column sm={2}>
+                        Describe Other:
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="Tell us more!" onChange={(e) => this.setState({drop_other: e.target.value})}/>
+                      </Col>
+                    </Form.Group> */}
+                  <Form.Group as={Row} controlId="formHorizontalItem">
+                      <Form.Label column sm={2}>
+                        Item Count
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="What are we picking up?" onChange={(e) => this.setState({item: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" defaultValue="Residence" id='asdf' onChange={(e) => this.setState({item_count: e.target.value})}>
+                          <option key='1121' value='1'>1</option>
+                          <option key='2121' value='2'>2</option>
+                          <option key='3211' value='3'>3</option>
+                          <option key='4121' value='4'>4</option>
+                          <option key='5121' value='5'>5</option>                          
+                        </Form.Control>
                       </Col>
                     </Form.Group>
 
-                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                  <Form.Group as={Row} controlId="formHorizontalWeight">
                     <Form.Label column sm={2}>
-                      Weight
+                      Item 1 Weight
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/>
+                      {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_weight: e.target.value})}>
+                          <option key='11321' value='1-50lbs'>1-50lbs</option>
+                          <option key='21321' value='50-100 lbs'>50-100 lbs</option>
+                          <option key='32131' value='100-150 lbs'>100-150 lbs</option>
+                          <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                                                   
+                        </Form.Control>
+                    </Col>
+                  </Form.Group>
+
+                  <Form.Group as={Row} controlId="formHorizontalWeight">
+                    <Form.Label column sm={2}>
+                      Item 1 Length
+                    </Form.Label>
+                    <Col sm={10}>
+                      {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_length: e.target.value})}>
+                          <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                          <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                          <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                          <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                          <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                          <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                        </Form.Control>
+                    </Col>
+                  </Form.Group>
+
+                  <Form.Group as={Row} controlId="formHorizontalWeight">
+                    <Form.Label column sm={2}>
+                      Item 1 Width
+                    </Form.Label>
+                    <Col sm={10}>
+                      {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_width: e.target.value})}>
+                          <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                          <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                          <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                          <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                          <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                          <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                        </Form.Control>
+                    </Col>
+                  </Form.Group>
+
+                  <Form.Group as={Row} controlId="formHorizontalWeight">
+                    <Form.Label column sm={2}>
+                      Item 1 Height
+                    </Form.Label>
+                    <Col sm={10}>
+                      {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_height: e.target.value})}>
+                          <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                          <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                          <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                                                   
+                        </Form.Control>
                     </Col>
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalDesc">
                       <Form.Label column sm={2}>
-                        Description
+                        Item 1 Info
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" onChange={(e) => this.setState({description: e.target.value})}/>
+                        <Form.Control type="text" placeholder="Big Couch" onChange={(e) => this.setState({one_desc: e.target.value})}/>
                       </Col>
                     </Form.Group>
+
+                    { this.state.item_count > 1 ? (
+                      <div>
+                      <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 2 Weight
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_weight: e.target.value})}>
+                            <option key='11321' value='1-50lbs'>1-50lbs</option>
+                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 2 Length
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_length: e.target.value})}>
+                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 2 Width
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_width: e.target.value})}>
+                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 2 Height
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_height: e.target.value})}>
+                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalDesc">
+                        <Form.Label column sm={2}>
+                          Item 2 Info
+                        </Form.Label>
+                        <Col sm={10}>
+                          <Form.Control type="text" placeholder="Big Couch" onChange={(e) => this.setState({two_desc: e.target.value})}/>
+                        </Col>
+                      </Form.Group>
+                      </div>
+                    ) : null
+                  }     
+
+
+                    { this.state.item_count > 2 ? (
+                      <div>
+                      <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 3 Weight
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_weight: e.target.value})}>
+                            <option key='11321' value='1-50lbs'>1-50lbs</option>
+                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 3 Length
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_length: e.target.value})}>
+                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 3 Width
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_width: e.target.value})}>
+                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 3 Height
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_height: e.target.value})}>
+                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalDesc">
+                        <Form.Label column sm={2}>
+                          Item 3 Info
+                        </Form.Label>
+                        <Col sm={10}>
+                          <Form.Control type="text" placeholder="Big Couch" onChange={(e) => this.setState({three_desc: e.target.value})}/>
+                        </Col>
+                      </Form.Group>
+                      </div>
+                    ) : null
+                  }     
+                    { this.state.item_count > 3 ? (
+                      <div>
+                      <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 4 Weight
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_weight: e.target.value})}>
+                            <option key='11321' value='1-50lbs'>1-50lbs</option>
+                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 4 Length
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_length: e.target.value})}>
+                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 4 Width
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_width: e.target.value})}>
+                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 4 Height
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_height: e.target.value})}>
+                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalDesc">
+                        <Form.Label column sm={2}>
+                          Item 4 Info
+                        </Form.Label>
+                        <Col sm={10}>
+                          <Form.Control type="text" placeholder="Big Couch" onChange={(e) => this.setState({four_desc: e.target.value})}/>
+                        </Col>
+                      </Form.Group>
+                      </div>
+                    ) : null
+                  }   
+                  { this.state.item_count > 4 ? (
+                      <div>
+                      <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 5 Weight
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_weight: e.target.value})}>
+                            <option key='11321' value='1-50lbs'>1-50lbs</option>
+                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 5 Length
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_length: e.target.value})}>
+                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 5 Width
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_width: e.target.value})}>
+                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalWeight">
+                      <Form.Label column sm={2}>
+                        Item 5 Height
+                      </Form.Label>
+                      <Col sm={10}>
+                        {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
+                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_height: e.target.value})}>
+                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                                                     
+                          </Form.Control>
+                      </Col>
+                    </Form.Group>
+  
+                    <Form.Group as={Row} controlId="formHorizontalDesc">
+                        <Form.Label column sm={2}>
+                          Item 5 Info
+                        </Form.Label>
+                        <Col sm={10}>
+                          <Form.Control type="text" placeholder="Big Couch" onChange={(e) => this.setState({five_desc: e.target.value})}/>
+                        </Col>
+                      </Form.Group>
+                      </div>
+                    ) : null
+                  }                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <Form.Group as={Row} controlId="formHorizontalPickup">
                       <Form.Label column sm={2}>
