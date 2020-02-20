@@ -36,7 +36,7 @@ class Dropoff extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-md m-1">
-                <h1 className="homefont textmargin"><b>Complete Pickup Info.</b></h1>
+                <h1 className="homefont textmargin"><b>Complete Dropoff Info.</b></h1>
   
               </div>              
             </div>
