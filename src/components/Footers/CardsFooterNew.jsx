@@ -649,7 +649,7 @@ class CardsFooterNew extends React.Component {
 
 
 
-                    <Form.Group as={Row} controlId="formHorizontalPickup">
+                    {/* <Form.Group as={Row} controlId="formHorizontalPickup">
                       <Form.Label column sm={2}>
                         Pickup Address
                       </Form.Label>
@@ -683,7 +683,7 @@ class CardsFooterNew extends React.Component {
                       <Col sm={10}>
                         <Form.Control type="text" placeholder="The couch is quite large!" onChange={(e) => this.setState({del_notes: e.target.value})}/>
                       </Col>
-                    </Form.Group>
+                    </Form.Group> */}
                   {/* <fieldset>
                     <Form.Group as={Row}>
                       <Form.Label as="legend" column sm={2}>
@@ -720,10 +720,10 @@ class CardsFooterNew extends React.Component {
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
                       <Link to={{ 
-                        pathname: '/payment', state: { pass_params: this.state  }                        
+                        pathname: '/pickup', state: { pass_params: this.state  }                        
                       }}>
                         <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => console.log(this.state)}>
-                          Continue to Payment
+                          Add Pickup Information
                         </Button>
                       </Link>
                       {/* <Button type="submit">Continue to Payment</Button> */}

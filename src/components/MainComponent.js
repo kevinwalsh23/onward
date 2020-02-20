@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Home from './HomeComponent';
 import Order from './OrderComponent';
+import Dropoff from './DropoffComponent';
+import Pickup from './PickupComponent';
 import Payment from './PaymentComponent';
 import Confirmation from './ConfirmationComponent';
 
@@ -82,6 +84,8 @@ class Main extends Component {
             {/* <CSSTransition key={this.props.location.key} classNames="page" timeout={300}> */}
             <Switch>
                 <Route path='/order' component={() => <Order passprops={this.props.location.state}/>} />
+                <Route path='/dropoff' component={() => <Dropoff passprops={this.props}/>} />
+                <Route path='/pickup' component={() => <Pickup passprops={this.props}/>} />
                 <Route path='/payment' component={() => <Payment pass_params={this.props.location.state}/>}/>} />
                 <Route path='/confirmation' component={() => <Confirmation/>} />
                 <Route path='/locations' component={() => <Location/>} />
