@@ -82,7 +82,7 @@ class CardsFooterNew extends React.Component {
     // this.toggleNav = this.toggleNav.bind(this);
     // this.toggleModal = this.toggleModal.bind(this);
     // this.handleLogin = this.handleLogin.bind(this);
-    console.log(this.props);
+    // console.log(this.state);
 }
   render() {
     return (
@@ -126,7 +126,8 @@ class CardsFooterNew extends React.Component {
                         Pickup Info
                       </Form.Label>
                       <Col sm={10}>
-                      <Form.Control size="md" as="select" name="dest" defaultValue="Residence" id='asdf' onChange={(e) => this.setState({pu_location_type: e.target.value})}>
+                      <Form.Control size="md" as="select" name="dest" defaultValue="" onChange={(e) => this.setState({pu_location_type: e.target.value})}>
+                        <option key='0' value=''>Select One</option>
                         <option key='1' value='Residence'>Residence</option>
                         <option key='2' value='Business - no dock'>Business - no dock</option>
                         <option key='3' value='Business -dock'>Business -dock</option>
@@ -166,19 +167,20 @@ class CardsFooterNew extends React.Component {
                         Dropoff Info
                       </Form.Label>
                       <Col sm={10}>
-                      <Form.Control size="md" as="select" name="dest" defaultValue="Residence" id='asdf' onChange={(e) => this.setState({drop_location_type: e.target.value})}>
-                        <option key='111' value='Residence'>Residence</option>
-                        <option key='211' value='Business - no dock'>Business - no dock</option>
-                        <option key='311' value='Business -dock'>Business -dock</option>
-                        <option key='411' value='Convention Center Pickup'>Convention Center Pickup</option>
-                        <option key='511' value='Hospital Pickup'>Hospital Pickup</option>
-                        <option key='611' value='Mall Pickup'>Mall Pickup</option>
-                        <option key='711' value='Hotel Pickup'>Hotel Pickup</option>
-                        <option key='811' value='School/University'>School/University</option>
-                        <option key='911' value='Military Base Pickup'>Military Base Pickup</option>
-                        <option key='101' value='Donation Delivery'>Donation Delivery</option>
-                        <option key='111' value='Junk Removal'>Junk Removal</option>
-                        <option key='121' value='Other'>Other</option>
+                      <Form.Control size="md" as="select" name="dest" defaultValue="" onChange={(e) => this.setState({drop_location_type: e.target.value})}>
+                        <option key='01' value=''>Select One</option>
+                        <option key='13' value='Residence'>Residence</option>
+                        <option key='14' value='Business - no dock'>Business - no dock</option>
+                        <option key='15' value='Business -dock'>Business -dock</option>
+                        <option key='16' value='Convention Center Pickup'>Convention Center Pickup</option>
+                        <option key='17' value='Hospital Pickup'>Hospital Pickup</option>
+                        <option key='18' value='Mall Pickup'>Mall Pickup</option>
+                        <option key='19' value='Hotel Pickup'>Hotel Pickup</option>
+                        <option key='20' value='School/University'>School/University</option>
+                        <option key='21' value='Military Base Pickup'>Military Base Pickup</option>
+                        <option key='22' value='Donation Delivery'>Donation Delivery</option>
+                        <option key='23' value='Junk Removal'>Junk Removal</option>
+                        <option key='24' value='Other'>Other</option>
                     </Form.Control>
                         {/* <Form.Control type="text" placeholder="Residential/Business/Etc." onChange={(e) => this.setState({item: e.target.value})}/> */}
                       </Col>
@@ -207,12 +209,13 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="What are we picking up?" onChange={(e) => this.setState({item: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" defaultValue="Residence" id='asdf' onChange={(e) => this.setState({item_count: e.target.value})}>
-                          <option key='1121' value='1'>1</option>
-                          <option key='2121' value='2'>2</option>
-                          <option key='3211' value='3'>3</option>
-                          <option key='4121' value='4'>4</option>
-                          <option key='5121' value='5'>5</option>                          
+                        <Form.Control size="md" as="select" name="dest" defaultValue="" onChange={(e) => this.setState({item_count: e.target.value})}>
+                          <option key='02' value=''>Select One</option>
+                          <option key='25' value='1'>1</option>
+                          <option key='26' value='2'>2</option>
+                          <option key='27' value='3'>3</option>
+                          <option key='28' value='4'>4</option>
+                          <option key='29' value='5'>5</option>                          
                         </Form.Control>
                       </Col>
                     </Form.Group>
@@ -223,11 +226,12 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_weight: e.target.value})}>
-                          <option key='11321' value='1-50lbs'>1-50lbs</option>
-                          <option key='21321' value='50-100 lbs'>50-100 lbs</option>
-                          <option key='32131' value='100-150 lbs'>100-150 lbs</option>
-                          <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_weight: e.target.value})}>
+                          <option key='03' value=''>Select One</option>
+                          <option key='30' value='1-50lbs'>1-50lbs</option>
+                          <option key='31' value='50-100 lbs'>50-100 lbs</option>
+                          <option key='32' value='100-150 lbs'>100-150 lbs</option>
+                          <option key='33' value='100-150 lbs'>100-150 lbs</option>
                                                    
                         </Form.Control>
                     </Col>
@@ -239,13 +243,14 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_length: e.target.value})}>
-                          <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                          <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                          <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                          <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                          <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                          <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_length: e.target.value})}>
+                        <option key='04' value=''>Select One</option>
+                          <option key='34' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                          <option key='35' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                          <option key='36' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                          <option key='37' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                          <option key='38' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                          <option key='39' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
                         </Form.Control>
                     </Col>
                   </Form.Group>
@@ -256,13 +261,14 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_width: e.target.value})}>
-                          <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                          <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                          <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                          <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                          <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                          <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_width: e.target.value})}>
+                        <option key='05' value=''>Select One</option>
+                          <option key='40' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                          <option key='41' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                          <option key='42' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                          <option key='43' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                          <option key='44' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                          <option key='45' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
                         </Form.Control>
                     </Col>
                   </Form.Group>
@@ -273,10 +279,11 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({one_height: e.target.value})}>
-                          <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                          <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                          <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_height: e.target.value})}>
+                          <option key='06' value=''>Select One</option>
+                          <option key='46' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                          <option key='47' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                          <option key='48' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
                                                    
                         </Form.Control>
                     </Col>
@@ -299,11 +306,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_weight: e.target.value})}>
-                            <option key='11321' value='1-50lbs'>1-50lbs</option>
-                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
-                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
-                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_weight: e.target.value})}>
+                          <option key='07' value=''>Select One</option>
+                            <option key='49' value='1-50lbs'>1-50lbs</option>
+                            <option key='50' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='51' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='52' value='100-150 lbs'>100-150 lbs</option>
                                                      
                           </Form.Control>
                       </Col>
@@ -315,13 +323,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_length: e.target.value})}>
-                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_length: e.target.value})}>
+                          <option key='08' value=''>Select One</option>
+                            <option key='53' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='54' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='55' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='56' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='57' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='58' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -332,13 +341,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_width: e.target.value})}>
-                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_width: e.target.value})}>
+                            <option key='09' value=''>Select One</option>
+                            <option key='59' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='60' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='61' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='62' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='63' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='64' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -349,10 +359,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({two_height: e.target.value})}>
-                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_height: e.target.value})}>
+                            <option key='001' value=''>Select One</option>
+                            <option key='65' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='66' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='67' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -379,11 +390,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_weight: e.target.value})}>
-                            <option key='11321' value='1-50lbs'>1-50lbs</option>
-                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
-                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
-                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_weight: e.target.value})}>
+                            <option key='002' value=''>Select One</option>
+                            <option key='68' value='1-50lbs'>1-50lbs</option>
+                            <option key='69' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='70' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='71' value='100-150 lbs'>100-150 lbs</option>
                                                      
                           </Form.Control>
                       </Col>
@@ -395,13 +407,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_length: e.target.value})}>
-                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_length: e.target.value})}>
+                            <option key='003' value=''>Select One</option>
+                            <option key='72' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='73' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='74' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='75' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='76' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='77' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -412,13 +425,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_width: e.target.value})}>
-                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_width: e.target.value})}>
+                            <option key='004' value=''>Select One</option>
+                            <option key='78' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='79' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='80' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='81' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='82' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='83' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -429,10 +443,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({three_height: e.target.value})}>
-                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_height: e.target.value})}>
+                            <option key='005' value=''>Select One</option>
+                            <option key='84' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='85' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='86' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -457,11 +472,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_weight: e.target.value})}>
-                            <option key='11321' value='1-50lbs'>1-50lbs</option>
-                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
-                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
-                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_weight: e.target.value})}>
+                            <option key='006' value=''>Select One</option>
+                            <option key='87' value='1-50lbs'>1-50lbs</option>
+                            <option key='88' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='89' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='90' value='100-150 lbs'>100-150 lbs</option>
                                                      
                           </Form.Control>
                       </Col>
@@ -473,13 +489,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_length: e.target.value})}>
-                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_length: e.target.value})}>
+                            <option key='007' value=''>Select One</option>
+                            <option key='91' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='92' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='93' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='94' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='95' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='96' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -490,13 +507,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_width: e.target.value})}>
-                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_width: e.target.value})}>
+                            <option key='008' value=''>Select One</option>
+                            <option key='97' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='98' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='99' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='100' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='101' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='102' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -507,10 +525,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({four_height: e.target.value})}>
-                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_height: e.target.value})}>
+                            <option key='009' value=''>Select One</option>
+                            <option key='103' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='104' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='105' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -535,11 +554,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_weight: e.target.value})}>
-                            <option key='11321' value='1-50lbs'>1-50lbs</option>
-                            <option key='21321' value='50-100 lbs'>50-100 lbs</option>
-                            <option key='32131' value='100-150 lbs'>100-150 lbs</option>
-                            <option key='41231' value='100-150 lbs'>100-150 lbs</option>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_weight: e.target.value})}>
+                            <option key='0010' value=''>Select One</option>
+                            <option key='106' value='1-50lbs'>1-50lbs</option>
+                            <option key='107' value='50-100 lbs'>50-100 lbs</option>
+                            <option key='108' value='100-150 lbs'>100-150 lbs</option>
+                            <option key='109' value='100-150 lbs'>100-150 lbs</option>
                                                      
                           </Form.Control>
                       </Col>
@@ -551,13 +571,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_length: e.target.value})}>
-                            <option key='1131321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2133211' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1133211' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3231311' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_length: e.target.value})}>
+                            <option key='0011' value=''>Select One</option>
+                            <option key='110' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='111' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='112' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='113' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='114' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='115' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -568,13 +589,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_width: e.target.value})}>
-                            <option key='11113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='2113321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='3213131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
-                            <option key='1113321' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
-                            <option key='2113321' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
-                            <option key='3213131' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_width: e.target.value})}>
+                            <option key='0012' value=''>Select One</option>
+                            <option key='116' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='117' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='118' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option> 
+                            <option key='119' value='109-144" (9-12 ft)'>109-144" (9-12 ft)</option>
+                            <option key='120' value='145-180" (12-15 ft)'>145-180" (12-15 ft)</option>
+                            <option key='121' value='> 180" (> 15 ft)'>> 180" (> 15 ft)</option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -585,10 +607,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({five_height: e.target.value})}>
-                            <option key='113321' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
-                            <option key='213321' value='50-100 lbs'>37-72" (3-6 ft)</option>
-                            <option key='323131' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_height: e.target.value})}>
+                            <option key='0013' value=''>Select One</option>
+                            <option key='122' value='0-36" (0-3 ft)'>0-36" (0-3 ft)</option>
+                            <option key='123' value='50-100 lbs'>37-72" (3-6 ft)</option>
+                            <option key='124' value='73-108" (6-9 ft)'>73-108" (6-9 ft)</option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -605,117 +628,6 @@ class CardsFooterNew extends React.Component {
                       </div>
                     ) : null
                   }                       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    {/* <Form.Group as={Row} controlId="formHorizontalPickup">
-                      <Form.Label column sm={2}>
-                        Pickup Address
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="999 Theranos St., Denver CO 80013" onChange={(e) => this.setState({pu_addy: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group as={Row} controlId="formHorizontalPUNotes">
-                      <Form.Label column sm={2}>
-                        Pickup Notes
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="Very Delicate Furniture, be careful!" onChange={(e) => this.setState({pu_notes: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group as={Row} controlId="formHorizontalDest">
-                      <Form.Label column sm={2}>
-                        Delivery Address
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="1122 Enron Ave., Colorado Springs CO 80011" onChange={(e) => this.setState({del_addy: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group as={Row} controlId="formHorizontalDNotes">
-                      <Form.Label column sm={2}>
-                        Delivery Notes
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="The couch is quite large!" onChange={(e) => this.setState({del_notes: e.target.value})}/>
-                      </Col>
-                    </Form.Group> */}
-                  {/* <fieldset>
-                    <Form.Group as={Row}>
-                      <Form.Label as="legend" column sm={2}>
-                        Radios
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Check
-                          type="radio"
-                          label="first radio"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios1"
-                        />
-                        <Form.Check
-                          type="radio"
-                          label="second radio"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios2"
-                        />
-                        <Form.Check
-                          type="radio"
-                          label="third radio"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios3"
-                        />
-                      </Col>
-                    </Form.Group>
-                  </fieldset> */}
-                  {/* <Form.Group as={Row} controlId="formHorizontalCheck">
-                    <Col sm={{ span: 10, offset: 2 }}>
-                      <Form.Check label="Remember me" />
-                    </Col>
-                  </Form.Group> */}
 
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>

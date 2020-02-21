@@ -38,22 +38,84 @@ class CardsFooterPmt extends React.Component {
         super(props);
         this.state = {
             customerinfo: {
-                name: this.props.iteminfo.pass_params.name,
-                email: this.props.iteminfo.pass_params.email,
-                phone: this.props.iteminfo.pass_params.phone
+                name: this.props.orderinfo.item_info.name,
+                email: this.props.orderinfo.item_info.email,
+                phone: this.props.orderinfo.item_info.phone
             },
             iteminfo: {
-                item: this.props.iteminfo.pass_params.item,
-                weight: this.props.iteminfo.pass_params.weight,
-                description: this.props.iteminfo.pass_params.description,
-                pu_addy: this.props.iteminfo.pass_params.pu_addy,
-                pu_notes: this.props.iteminfo.pass_params.pu_notes,
-                del_addy: this.props.iteminfo.pass_params.del_addy,
-                del_notes: this.props.iteminfo.pass_params.del_notes
+                item_count: this.props.orderinfo.item_info.item_count,
+                pu_notes: this.props.orderinfo.item_info.pu_notes,
+                del_notes: this.props.orderinfo.item_info.del_notes,
+                item_one: {
+                  weight: this.props.orderinfo.item_info.one_weight,
+                  height: this.props.orderinfo.item_info.one_height,
+                  length: this.props.orderinfo.item_info.one_length,
+                  width: this.props.orderinfo.item_info.one_width,
+                  description: this.props.orderinfo.item_info.one_desc,
+
+                },
+                item_two: {
+                  weight: this.props.orderinfo.item_info.two_weight,
+                  height: this.props.orderinfo.item_info.two_height,
+                  length: this.props.orderinfo.item_info.two_length,
+                  width: this.props.orderinfo.item_info.two_width,
+                  description: this.props.orderinfo.item_info.two_desc,
+                },
+                item_three: {
+                  weight: this.props.orderinfo.item_info.three_weight,
+                  height: this.props.orderinfo.item_info.three_height,
+                  length: this.props.orderinfo.item_info.three_length,
+                  width: this.props.orderinfo.item_info.three_width,
+                  description: this.props.orderinfo.item_info.three_desc,
+                },
+                item_four: {
+                  weight: this.props.orderinfo.item_info.four_weight,
+                  height: this.props.orderinfo.item_info.four_height,
+                  length: this.props.orderinfo.item_info.four_length,
+                  width: this.props.orderinfo.item_info.four_width,
+                  description: this.props.orderinfo.item_info.four_desc,
+                },
+                item_five: {
+                  weight: this.props.orderinfo.item_info.five_weight,
+                  height: this.props.orderinfo.item_info.five_height,
+                  length: this.props.orderinfo.item_info.five_length,
+                  width: this.props.orderinfo.item_info.five_width,
+                  description: this.props.orderinfo.item_info.five_desc,
+                }
+                // weight: this.props.orderinfo.item_info.weight,
+                // description: this.props.orderinfo.item_info.description,
+                // pu_addy: this.props.orderinfo.item_info.pu_addy,
+                // pu_notes: this.props.orderinfo.item_info.pu_notes,
+                // del_addy: this.props.orderinfo.item_info.del_addy,
+                // del_notes: this.props.orderinfo.item_info.del_notes
             },
             route_meta: {
-                del_city: this.props.iteminfo.pass_params.del_city,
-                pu_city: this.props.iteminfo.pass_params.pu_city,
+                del_city: this.props.orderinfo.del_city,
+                pu_city: this.props.orderinfo.pu_city,
+            },
+            pickup_info: {
+              pu_address: this.props.orderinfo.pickup_info.pu_addy,
+              pu_city: this.props.orderinfo.pickup_info.pu_city,
+              pu_state: this.props.orderinfo.pickup_info.pu_state,
+              pu_zip: this.props.orderinfo.pickup_info.pu_zip,
+              pu_notes: this.props.orderinfo.pickup_info.pu_notes,
+              pu_floor: this.props.orderinfo.pickup_info.floor,
+              pu_elevator: this.props.orderinfo.pickup_info.elevator,
+              pu_complications: this.props.orderinfo.pickup_info.complications,
+              pu_add_info: this.props.orderinfo.pickup_info.add_info,
+              pu_other_prob: this.props.orderinfo.pickup_info.other_prob
+            },
+            delivery_info: {
+              del_address: this.props.orderinfo.del_info.del_addy,
+              del_city: this.props.orderinfo.del_info.del_city,
+              del_state: this.props.orderinfo.del_info.del_state,
+              del_zip: this.props.orderinfo.del_info.del_zip,
+              del_notes: this.props.orderinfo.del_info.del_notes,
+              del_floor: this.props.orderinfo.del_info.floor,
+              del_elevator: this.props.orderinfo.del_info.elevator,
+              del_complications: this.props.orderinfo.del_info.complications,
+              del_add_info: this.props.orderinfo.del_info.add_info,
+              del_other_prob: this.props.orderinfo.del_info.other_prob
             },
             cc_num: '',
             exp_date: '',
@@ -71,7 +133,8 @@ class CardsFooterPmt extends React.Component {
         // this.toggleNav = this.toggleNav.bind(this);
         // this.toggleModal = this.toggleModal.bind(this);
         // this.handleLogin = this.handleLogin.bind(this);
-        console.log(this.state);
+        // console.log(this.props.orderinfo);
+        // console.log(this.state);
     }
     SaveCustomerInfo = async () => {
         fetch('https://us-central1-onward-63d91.cloudfunctions.net/addOrder', {
@@ -84,6 +147,8 @@ class CardsFooterPmt extends React.Component {
                 customerinfo: this.state.customerinfo,
                 iteminfo: this.state.iteminfo,
                 route_meta: this.state.route_meta,
+                pickup_info: this.state.pickup_info,
+                dropoff_info: this.state.dropoff_info,
                 payment_info: {
                     cc_num: this.state.cc_num,
                     exp_date: this.state.exp_date,
@@ -233,11 +298,11 @@ class CardsFooterPmt extends React.Component {
 
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                      <Link to="/confirmation" >
+                      {/* <Link to="/confirmation" > */}
                         <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => this.SaveCustomerInfo()}>
                           Confirm Your Order
                         </Button>
-                      </Link>
+                      {/* </Link> */}
                       {/* <Button type="submit">Continue to Payment</Button> */}
                     </Col>
                   </Form.Group>

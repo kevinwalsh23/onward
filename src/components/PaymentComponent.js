@@ -12,7 +12,11 @@ class Payment extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            iteminfo: this.props.pass_params,
+            del_info: this.props.pass_params.pass_params,
+            item_info: this.props.pass_params.pass_params.item_info,
+            pickup_info: this.props.pass_params.pass_params.pickup_info,
+            del_city: this.props.pass_params.pass_params.del_city,
+            pu_city: this.props.pass_params.pass_params.pu_city,
             cc_num: '',
             exp_date: '',
             sec_code: '',
@@ -29,8 +33,14 @@ class Payment extends React.Component {
         // this.toggleNav = this.toggleNav.bind(this);
         // this.toggleModal = this.toggleModal.bind(this);
         // this.handleLogin = this.handleLogin.bind(this);
-        //console.log(this.state);
+        // console.log(this.props);
     }
+    componentDidMount() {
+      //   console.log(this.props.passprops.location.state.pass_params);
+        // this.setState({pickupcity: this.props.passprops.pickupcity, deliverycity: this.props.passprops.deliverycity  });
+      //   console.log(this.state);
+      // console.log(this.props.pass_params.pass_params);
+      }
   render() {
     return (
       <div>
@@ -47,7 +57,7 @@ class Payment extends React.Component {
             </div>
           
           </div>
-          <CardsFooterPmt iteminfo={this.state.iteminfo}/>
+          <CardsFooterPmt orderinfo={this.state}/>
         </div>
         
         </div>

@@ -12,8 +12,9 @@ class Pickup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        pickupcity: this.props.passprops.pickupcity,
-        deliverycity: this.props.passprops.deliverycity
+        item_info: this.props.passprops.location.state.pass_params,
+        pickupcity: this.props.passprops.location.state.pass_params.pu_city,
+        deliverycity: this.props.passprops.location.state.pass_params.del_city
     };
     //specifying toggleNav is available to use and bound to 'this'
     // this.toggleNav = this.toggleNav.bind(this);
@@ -22,9 +23,9 @@ class Pickup extends React.Component {
     //this.setState({pickupcity: this.props.passprops.pickupcity, deliverycity: this.props.passprops.deliverycity  });
 }
     componentDidMount() {
-      console.log(this.props);
+    //   console.log(this.props.passprops.location.state.pass_params);
       // this.setState({pickupcity: this.props.passprops.pickupcity, deliverycity: this.props.passprops.deliverycity  });
-      console.log(this.state);
+    //   console.log(this.state);
     }
   render() {
     return (

@@ -44,20 +44,22 @@ class CardsFooterPickup extends React.Component {
         pu_notes: '',
         del_addy: '',
         del_notes: '',
-        floor: '',
-        elevator: '',
+        floor: '1',
+        elevator: 'no',
         complications: '',
         add_info: '',
         other_prob: '',
-        del_city: this.props.destinations.deliverycity,
-        pu_city: this.props.destinations.pickupcity
+        item_info: this.props.destinations.item_info,
+        deliv_city: this.props.destinations.deliverycity,
+        pickup_city: this.props.destinations.pickupcity,
+        
     };
     //Note for above: PU => Pickup. Del => Delivery
     //specifying toggleNav is available to use and bound to 'this'
     // this.toggleNav = this.toggleNav.bind(this);
     // this.toggleModal = this.toggleModal.bind(this);
     // this.handleLogin = this.handleLogin.bind(this);
-    console.log(this.props);
+    console.log(this.state);
 }
   render() {
     return (
@@ -121,12 +123,12 @@ class CardsFooterPickup extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({floor: e.target.value})}>
-                            <option key='1121' value='1'>1</option>
-                            <option key='2121' value='2'>2</option>
-                            <option key='3211' value='3'>3</option>
-                            <option key='4121' value='4'>4</option>
-                            <option key='5121' value='5+'>5+</option> 
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({floor: e.target.value})}>
+                            <option key='1' value='1'>1</option>
+                            <option key='2' value='2'>2</option>
+                            <option key='3' value='3'>3</option>
+                            <option key='4' value='4'>4</option>
+                            <option key='5' value='5+'>5+</option> 
                                                      
                           </Form.Control>
                       </Col>
@@ -137,9 +139,10 @@ class CardsFooterPickup extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({elevator: e.target.value})}>
-                            <option key='1121' value='yes'>Yes</option>
-                            <option key='2121' value='no'>No</option>                            
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({elevator: e.target.value})}>
+                            <option key='7' value='no'>No</option>
+                            <option key='6' value='yes'>Yes</option>
+                                                        
                                                      
                           </Form.Control>
                       </Col>
@@ -150,13 +153,14 @@ class CardsFooterPickup extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({complications: e.target.value})}>
-                            <option key='11271' value='Unpaved streets or driveway'>Unpaved streets or driveway</option>
-                            <option key='21271' value='Vehicle height or weight restrictions'>Vehicle height or weight restrictions</option>
-                            <option key='32171' value='Parking/Unloading restrictions'>Parking/Unloading restrictions</option>
-                            <option key='41721' value='Low hanging tree branches on your street'>Low hanging tree branches on your street</option>
-                            <option key='51721' value='Pickup location is not clear of debris'>Pickup location is not clear of debris</option>
-                            <option key='51721' value='Other'>Other</option>                                                     
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({complications: e.target.value})}>
+                            <option key='14' value='none'>-</option>
+                            <option key='8' value='Unpaved streets or driveway'>Unpaved streets or driveway</option>
+                            <option key='9' value='Vehicle height or weight restrictions'>Vehicle height or weight restrictions</option>
+                            <option key='10' value='Parking/Unloading restrictions'>Parking/Unloading restrictions</option>
+                            <option key='11' value='Low hanging tree branches on your street'>Low hanging tree branches on your street</option>
+                            <option key='12' value='Pickup location is not clear of debris'>Pickup location is not clear of debris</option>
+                            <option key='13' value='Other'>Other</option>                                                     
                           </Form.Control>
                       </Col>
                     </Form.Group>

@@ -44,20 +44,22 @@ class CardsFooterDropoff extends React.Component {
         del_state: '',
         del_zip: '',
         del_notes: '',
-        floor: '',
-        elevator: '',
+        floor: '1',
+        elevator: 'no',
         complications: '',
         add_info: '',
         other_prob: '',
         del_city: this.props.destinations.deliverycity,
-        pu_city: this.props.destinations.pickupcity
+        pu_city: this.props.destinations.pickupcity,
+        item_info: this.props.destinations.item_info,
+        pickup_info: this.props.destinations.pickup_info
     };
     //Note for above: PU => Pickup. Del => Delivery
     //specifying toggleNav is available to use and bound to 'this'
     // this.toggleNav = this.toggleNav.bind(this);
     // this.toggleModal = this.toggleModal.bind(this);
     // this.handleLogin = this.handleLogin.bind(this);
-    console.log(this.props);
+    console.log(this.state);
 }
   render() {
     return (
@@ -120,12 +122,12 @@ class CardsFooterDropoff extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({floor: e.target.value})}>
-                            <option key='1121' value='1'>1</option>
-                            <option key='2121' value='2'>2</option>
-                            <option key='3211' value='3'>3</option>
-                            <option key='4121' value='4'>4</option>
-                            <option key='5121' value='5+'>5+</option> 
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({floor: e.target.value})}>
+                            <option key='1' value='1'>1</option>
+                            <option key='2' value='2'>2</option>
+                            <option key='3' value='3'>3</option>
+                            <option key='4' value='4'>4</option>
+                            <option key='5' value='5+'>5+</option> 
                                                      
                           </Form.Control>
                       </Col>
@@ -136,26 +138,28 @@ class CardsFooterDropoff extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({elevator: e.target.value})}>
-                            <option key='1121' value='yes'>Yes</option>
-                            <option key='2121' value='no'>No</option>                            
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({elevator: e.target.value})}>
+                            <option key='6' value='no'>No</option> 
+                            <option key='7' value='yes'>Yes</option>
+                                                       
                                                      
                           </Form.Control>
                       </Col>
                     </Form.Group>  
                     <Form.Group as={Row} controlId="formHorizontalWeight">
                       <Form.Label column sm={2}>
-                        Select Complications
+                        Complications
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" id='asdf' onChange={(e) => this.setState({complications: e.target.value})}>
-                            <option key='11271' value='Unpaved streets or driveway'>Unpaved streets or driveway</option>
-                            <option key='21271' value='Vehicle height or weight restrictions'>Vehicle height or weight restrictions</option>
-                            <option key='32171' value='Parking/Unloading restrictions'>Parking/Unloading restrictions</option>
-                            <option key='41721' value='Low hanging tree branches on your street'>Low hanging tree branches on your street</option>
-                            <option key='51721' value='Delivery location is not clear of debris'>Delivery location is not clear of debris</option>
-                            <option key='51721' value='Other'>Other</option>                                                     
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({complications: e.target.value})}>
+                            <option key='14' value='none'>-</option>
+                            <option key='8' value='Unpaved streets or driveway'>Unpaved streets or driveway</option>
+                            <option key='9' value='Vehicle height or weight restrictions'>Vehicle height or weight restrictions</option>
+                            <option key='10' value='Parking/Unloading restrictions'>Parking/Unloading restrictions</option>
+                            <option key='11' value='Low hanging tree branches on your street'>Low hanging tree branches on your street</option>
+                            <option key='12' value='Delivery location is not clear of debris'>Delivery location is not clear of debris</option>
+                            <option key='13' value='Other'>Other</option>                                                     
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -188,70 +192,7 @@ class CardsFooterDropoff extends React.Component {
             </Row>
           </Container>
           <Container>
-            {/* <Row className="row-grid align-items-center my-md">
-              <Col lg="6">
-                <h3 className="text-primary font-weight-light mb-2">
-                  Thank you for supporting us!
-                </h3>
-                <h4 className="mb-0 font-weight-light">
-                  Let's get in touch on any of these platforms.
-                </h4>
-              </Col>
-              <Col className="text-lg-center btn-wrapper" lg="6">
-                <Button
-                  className="btn-neutral btn-icon-only btn-round"
-                  color="twitter"
-                  href="https://twitter.com/creativetim"
-                  id="tooltip475038074"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-twitter" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip475038074">
-                  Follow us
-                </UncontrolledTooltip>
-                <Button
-                  className="btn-neutral btn-icon-only btn-round ml-1"
-                  color="facebook"
-                  href="https://www.facebook.com/creativetim"
-                  id="tooltip837440414"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-facebook-square" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip837440414">
-                  Like us
-                </UncontrolledTooltip>
-                <Button
-                  className="btn-neutral btn-icon-only btn-round ml-1"
-                  color="dribbble"
-                  href="https://dribbble.com/creativetim"
-                  id="tooltip829810202"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-dribbble" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip829810202">
-                  Follow us
-                </UncontrolledTooltip>
-                <Button
-                  className="btn-neutral btn-icon-only btn-round ml-1"
-                  color="github"
-                  href="https://github.com/creativetimofficial"
-                  id="tooltip495507257"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-github" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip495507257">
-                  Star on Github
-                </UncontrolledTooltip>
-              </Col>
-            </Row> */}
+            
             <hr />
             <Row className="align-items-center justify-content-md-between">
               <Col md="6">
