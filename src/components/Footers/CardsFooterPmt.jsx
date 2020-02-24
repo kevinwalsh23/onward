@@ -18,7 +18,13 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+import CheckoutForm from './CheckoutForm';
+import SplitForm from './SplitForm';
 import Form from 'react-bootstrap/Form'
+const stripePromise = loadStripe("pk_test_NY2SXjWLgZRoFG0P88DKnqoS00x1AVuI6t");
+import "./styles.css";
 // reactstrap components
 import {
   Button,
@@ -167,151 +173,19 @@ class CardsFooterPmt extends React.Component {
     return (
       <>
         <footer className="footer has-cards">
-          <Container>
-            <Row>
-
-              <Col className="mb-5 mb-lg-0" md="12">
-                <Card className="card-lift shadow border-0">
-                <Form style={{margin: "5%"}}>
-
-                  <Form.Group as={Row} controlId="formHorizontalCC">
-                      <Form.Label column sm={2}>
-                        Credit Card #
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="number" placeholder="#" onChange={(e) => this.setState({cc_num: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                  <Form.Group as={Row} controlId="formHorizontalExp">
-                    <Form.Label column sm={2}>
-                      Expiration Date
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control type="text" placeholder="01/23" onChange={(e) => this.setState({exp_date: e.target.value})}/>
-                    </Col>
-                  </Form.Group>
-
-                  <Form.Group as={Row} controlId="formHorizontalSCode">
-                    <Form.Label column sm={2}>
-                      Security Code
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control type="number" placeholder="456" onChange={(e) => this.setState({sec_code: e.target.value})}/>
-                    </Col>
-                  </Form.Group>
-
-                  <Form.Group as={Row} controlId="formHorizontalBillAdd">
-                      <Form.Label column sm={2}>
-                        Billing Address
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="789 Main St. #10" onChange={(e) => this.setState({bill_addy: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group as={Row} controlId="formHorizontalBillCity">
-                    <Form.Label column sm={2}>
-                      Billing City
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control type="text" placeholder="Denver" onChange={(e) => this.setState({bill_city: e.target.value})}/>
-                    </Col>
-                  </Form.Group>
-
-                  <Form.Group as={Row} controlId="formHorizontalBillState">
-                      <Form.Label column sm={2}>
-                        Billing State
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="CO" onChange={(e) => this.setState({bill_state: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group as={Row} controlId="formHorizontalBillZip">
-                      <Form.Label column sm={2}>
-                        Billing Zip Code
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="80014" onChange={(e) => this.setState({bill_zip: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group as={Row} controlId="formHorizontalBillCunt">
-                      <Form.Label column sm={2}>
-                        Billing Country
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="United States" onChange={(e) => this.setState({bill_cunt: e.target.value})}/>
-                      </Col>
-                    </Form.Group>
-
-                    {/* <Form.Group as={Row} controlId="formHorizontalEmail">
-                      <Form.Label column sm={2}>
-                        Delivery Address
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
-                      </Col>
-                    </Form.Group>
-
-                    <Form.Group as={Row} controlId="formHorizontalEmail">
-                      <Form.Label column sm={2}>
-                        Delivery Notes
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control type="text" placeholder="Big Couch" />
-                      </Col>
-                    </Form.Group> */}
-                  {/* <fieldset>
-                    <Form.Group as={Row}>
-                      <Form.Label as="legend" column sm={2}>
-                        Radios
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Check
-                          type="radio"
-                          label="first radio"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios1"
-                        />
-                        <Form.Check
-                          type="radio"
-                          label="second radio"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios2"
-                        />
-                        <Form.Check
-                          type="radio"
-                          label="third radio"
-                          name="formHorizontalRadios"
-                          id="formHorizontalRadios3"
-                        />
-                      </Col>
-                    </Form.Group>
-                  </fieldset> */}
-                  {/* <Form.Group as={Row} controlId="formHorizontalCheck">
-                    <Col sm={{ span: 10, offset: 2 }}>
-                      <Form.Check label="Remember me" />
-                    </Col>
-                  </Form.Group> */}
-
-                  <Form.Group as={Row} style={{marginTop: "5%"}}>
-                    <Col sm={{ span: 10, offset: 2 }}>
-                      {/* <Link to="/confirmation" > */}
-                        <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => this.SaveCustomerInfo()}>
-                          Confirm Your Order
-                        </Button>
-                      {/* </Link> */}
-                      {/* <Button type="submit">Continue to Payment</Button> */}
-                    </Col>
-                  </Form.Group>
-                </Form>
+          <Container styles="padding: 500px !important">          
+            <Row styles="padding: 500px !important">
+              <Col className="mb-5 mb-lg-0" md="12" styles="padding: 500px !important">
+                <Card className="card-lift shadow border-0" style={{padding: "70px", paddingBottom: "100px"}}>
+                <Elements stripe={stripePromise}>
+                      <CheckoutForm />
+                    </Elements>                                                                
                 </Card>
               </Col>
             </Row>
           </Container>
           <Container>
+            
             {/* <Row className="row-grid align-items-center my-md">
               <Col lg="6">
                 <h3 className="text-primary font-weight-light mb-2">

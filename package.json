@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "http://kevinwalsh23.github.io/",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.0.2",
+    "@stripe/stripe-js": "^1.0.1",
     "bootstrap": "^4.3.1",
     "bootstrap-social": "^5.1.1",
     "cors": "^2.8.5",
@@ -25,7 +27,8 @@
     "reactstrap": "^8.4.0",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "stripe": "^8.20.0"
   },
   "scripts": {
     "start": "react-scripts start",

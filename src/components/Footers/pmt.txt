@@ -1,0 +1,85 @@
+<Form style={{margin: "5%"}}>
+
+                  <Form.Group as={Row} controlId="formHorizontalCC">
+                      <Form.Label column sm={2}>
+                        Credit Card #
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="number" placeholder="#" onChange={(e) => this.setState({cc_num: e.target.value})}/>
+                      </Col>
+                    </Form.Group>
+
+                  <Form.Group as={Row} controlId="formHorizontalExp">
+                    <Form.Label column sm={2}>
+                      Expiration Date
+                    </Form.Label>
+                    <Col sm={10}>
+                      <Form.Control type="text" placeholder="01/23" onChange={(e) => this.setState({exp_date: e.target.value})}/>
+                    </Col>
+                  </Form.Group>
+
+                  <Form.Group as={Row} controlId="formHorizontalSCode">
+                    <Form.Label column sm={2}>
+                      Security Code
+                    </Form.Label>
+                    <Col sm={10}>
+                      <Form.Control type="number" placeholder="456" onChange={(e) => this.setState({sec_code: e.target.value})}/>
+                    </Col>
+                  </Form.Group>
+
+                  <Form.Group as={Row} controlId="formHorizontalBillAdd">
+                      <Form.Label column sm={2}>
+                        Billing Address
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="789 Main St. #10" onChange={(e) => this.setState({bill_addy: e.target.value})}/>
+                      </Col>
+                    </Form.Group>
+
+                    <Form.Group as={Row} controlId="formHorizontalBillCity">
+                    <Form.Label column sm={2}>
+                      Billing City
+                    </Form.Label>
+                    <Col sm={10}>
+                      <Form.Control type="text" placeholder="Denver" onChange={(e) => this.setState({bill_city: e.target.value})}/>
+                    </Col>
+                  </Form.Group>
+
+                  <Form.Group as={Row} controlId="formHorizontalBillState">
+                      <Form.Label column sm={2}>
+                        Billing State
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="CO" onChange={(e) => this.setState({bill_state: e.target.value})}/>
+                      </Col>
+                    </Form.Group>
+
+                    <Form.Group as={Row} controlId="formHorizontalBillZip">
+                      <Form.Label column sm={2}>
+                        Billing Zip Code
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="80014" onChange={(e) => this.setState({bill_zip: e.target.value})}/>
+                      </Col>
+                    </Form.Group>
+
+                    <Form.Group as={Row} controlId="formHorizontalBillCunt">
+                      <Form.Label column sm={2}>
+                        Billing Country
+                      </Form.Label>
+                      <Col sm={10}>
+                        <Form.Control type="text" placeholder="United States" onChange={(e) => this.setState({bill_cunt: e.target.value})}/>
+                      </Col>
+                    </Form.Group>                    
+
+                  <Form.Group as={Row} style={{marginTop: "5%"}}>
+                    <Col sm={{ span: 10, offset: 2 }}>
+                      {/* <Link to="/confirmation" > */}
+                        <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => this.SaveCustomerInfo()}>
+                          Confirm Your Order
+                        </Button>
+                      {/* </Link> */}
+                      {/* <Button type="submit">Continue to Payment</Button> */}
+                    </Col>
+                  </Form.Group>                  
+                </Form>
