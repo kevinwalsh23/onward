@@ -19,6 +19,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form'
+import * as pricing from './pricing.json';
 // reactstrap components
 import {
   Button,
@@ -44,7 +45,7 @@ class CardsFooterPickup extends React.Component {
         pu_notes: '',
         del_addy: '',
         del_notes: '',
-        floor: '1',
+        floor: '1',        
         elevator: 'no',
         complications: '',
         add_info: '',
@@ -52,6 +53,8 @@ class CardsFooterPickup extends React.Component {
         item_info: this.props.destinations.item_info,
         deliv_city: this.props.destinations.deliverycity,
         pickup_city: this.props.destinations.pickupcity,
+        floor_price: 0,
+        price: this.props.destinations.item_info.price
         
     };
     //Note for above: PU => Pickup. Del => Delivery
@@ -59,8 +62,12 @@ class CardsFooterPickup extends React.Component {
     // this.toggleNav = this.toggleNav.bind(this);
     // this.toggleModal = this.toggleModal.bind(this);
     // this.handleLogin = this.handleLogin.bind(this);
-    console.log(this.state);
+    console.log(this.props);
 }
+componentDidUpdate() {
+    console.log(this.state.price);
+    console.log(this.state.floor_price);    
+  }
   render() {
     return (
       <>
@@ -123,12 +130,12 @@ class CardsFooterPickup extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({floor: e.target.value})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({floor: e.target.value, floor_price: pricing.Pickup_Floor[e.target.value], price: this.props.destinations.item_info.price + pricing.Pickup_Floor[e.target.value]})}>
                             <option key='1' value='1'>1</option>
-                            <option key='2' value='2'>2</option>
-                            <option key='3' value='3'>3</option>
-                            <option key='4' value='4'>4</option>
-                            <option key='5' value='5+'>5+</option> 
+                            <option key='2' value='2'>2 ($2)</option>
+                            <option key='3' value='3'>3 ($5)</option>
+                            <option key='4' value='4'>4 ($7)</option>
+                            <option key='5' value='5'>5+ ($10)</option>
                                                      
                           </Form.Control>
                       </Col>
@@ -173,7 +180,14 @@ class CardsFooterPickup extends React.Component {
                         <Form.Control type="text" placeholder="Tell us more!" onChange={(e) => this.setState({other_prob: e.target.value})}/>
                       </Col>
                     </Form.Group> ) : null
-                  }                   
+                  }                
+
+                  <Form.Group as={Row} style={{marginTop: "5%"}}>
+                    <Col sm={{ span: 10, offset: 2 }}>
+                      Total Price: ${this.state.price}.00
+                      {/* <Button type="submit">Continue to Payment</Button> */}
+                    </Col>
+                  </Form.Group>
 
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>

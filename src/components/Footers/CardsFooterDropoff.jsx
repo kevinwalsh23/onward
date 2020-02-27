@@ -52,15 +52,19 @@ class CardsFooterDropoff extends React.Component {
         del_city: this.props.destinations.deliverycity,
         pu_city: this.props.destinations.pickupcity,
         item_info: this.props.destinations.item_info,
-        pickup_info: this.props.destinations.pickup_info
+        pickup_info: this.props.destinations.pickup_info,
+        price: this.props.destinations.pickup_info.price,
     };
     //Note for above: PU => Pickup. Del => Delivery
     //specifying toggleNav is available to use and bound to 'this'
     // this.toggleNav = this.toggleNav.bind(this);
     // this.toggleModal = this.toggleModal.bind(this);
     // this.handleLogin = this.handleLogin.bind(this);
-    console.log(this.state);
+    console.log(this.props);
 }
+    componentDidUpdate() {        
+        
+    }
   render() {
     return (
       <>
@@ -172,8 +176,15 @@ class CardsFooterDropoff extends React.Component {
                         <Form.Control type="text" placeholder="Tell us more!" onChange={(e) => this.setState({other_prob: e.target.value})}/>
                       </Col>
                     </Form.Group> ) : null
-                  }                   
-                  
+                  }
+                                     
+                  <Form.Group as={Row} style={{marginTop: "5%"}}>
+                    <Col sm={{ span: 10, offset: 2 }}>
+                      Total Price: ${this.state.price}.00
+                      {/* <Button type="submit">Continue to Payment</Button> */}
+                    </Col>
+                  </Form.Group>
+
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
                       <Link to={{ 

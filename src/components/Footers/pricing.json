@@ -1,0 +1,77 @@
+{
+    "Base": {
+        "Fort Collins": 100,
+        "Boulder": 100,
+        "Colorado Springs": 100
+    },
+    "Pickup_Type": {
+        "-": 0,
+        "Residence": 20,
+        "Business - no dock": 18,
+        "Business -dock": 16,
+        "Convention Center Pickup": 36,
+        "Hospital Pickup": 24,
+        "Mall Pickup": 28,
+        "Hotel Pickup": 22,
+        "School/University": 24,
+        "Military Base Pickup": 40,
+        "Donation Delivery (Salvation Army and Goodwill)": 16,
+        "Junk Removal": 14 
+    },
+    "Delivery_Type": {
+        "-": 0,
+        "Residence": 20,
+        "Business - no dock": 18,
+        "Business -dock": 16,
+        "Convention Center Pickup": 36,
+        "Hospital Pickup": 24,
+        "Mall Pickup": 28,
+        "Hotel Pickup": 22,
+        "School/University": 24,
+        "Military Base Pickup": 40,
+        "Donation Delivery (Salvation Army and Goodwill)": 16,
+        "Junk Removal": 14 
+    },
+    "Item_Cost": {
+        "Weight": {
+            "-": 0,
+            "1-50 lbs": 4,
+            "50-100 lbs": 6,
+            "100-150 lbs": 10,
+            "150+ lbs": 16
+        },
+        "Length": {
+            "-": 0,
+            "0-36' (0-3 ft)": 2,
+            "37-72' (3-6 ft)": 4,
+            "73-108' (6-9 ft)": 6,
+            "109-144' (9-12 ft)": 8,
+            "145-180' (12-15 ft)": 12,
+            "> 180' (> 15 ft)": 20
+        },
+        "Width": {
+            "-": 0,
+            "0-36' (0-3 ft)": 4,
+            "37-72' (3-6 ft)": 8,
+            "73-108' (6-9 ft)": 14,
+            "109-144' (9-12 ft)": 16,
+            "145-180' (12-15 ft)": 20,
+            "> 180' (> 15 ft)": 28
+        },
+        "Height": {
+            "-": 0,
+            "0-36' (0-3 ft)": 2,
+            "37-72' (3-6 ft)": 4,
+            "73-108' (6-9 ft)": 10        
+        }
+    },
+    "Pickup_Floor": {
+        "-": 0,
+        "1": 0,
+        "2": 2,
+        "3": 5,
+        "4": 7,
+        "5": 10        
+    }
+    
+}

@@ -17,14 +17,14 @@ class Payment extends React.Component {
             pickup_info: this.props.pass_params.pass_params.pickup_info,
             del_city: this.props.pass_params.pass_params.del_city,
             pu_city: this.props.pass_params.pass_params.pu_city,
-            cc_num: '',
-            exp_date: '',
-            sec_code: '',
-            bill_addy: '',
-            bill_city: '',
-            bill_state: '',
-            bill_zip: '',
-            bill_cunt: ''            
+            // cc_num: '',
+            // exp_date: '',
+            // sec_code: '',
+            // bill_addy: '',
+            // bill_city: '',
+            // bill_state: '',
+            // bill_zip: '',
+            // bill_cunt: ''            
             // del_city: this.props.destinations.deliverycity,
             // pu_city: this.props.destinations.pickupcity
         };
@@ -33,7 +33,7 @@ class Payment extends React.Component {
         // this.toggleNav = this.toggleNav.bind(this);
         // this.toggleModal = this.toggleModal.bind(this);
         // this.handleLogin = this.handleLogin.bind(this);
-        // console.log(this.props);
+        console.log(this.props);
     }
     componentDidMount() {
       //   console.log(this.props.passprops.location.state.pass_params);

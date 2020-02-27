@@ -21,6 +21,7 @@ import { Link } from "react-router-dom";
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import CheckoutForm from './CheckoutForm';
+import InjectedCheckoutForm from './CheckoutForm';
 import SplitForm from './SplitForm';
 import Form from 'react-bootstrap/Form'
 const stripePromise = loadStripe("pk_test_NY2SXjWLgZRoFG0P88DKnqoS00x1AVuI6t");
@@ -123,14 +124,14 @@ class CardsFooterPmt extends React.Component {
               del_add_info: this.props.orderinfo.del_info.add_info,
               del_other_prob: this.props.orderinfo.del_info.other_prob
             },
-            cc_num: '',
-            exp_date: '',
-            sec_code: '',
-            bill_addy: '',
-            bill_city: '',
-            bill_state: '',
-            bill_zip: '',
-            bill_cunt: ''     
+            // cc_num: '',
+            // exp_date: '',
+            // sec_code: '',
+            // bill_addy: '',
+            // bill_city: '',
+            // bill_state: '',
+            // bill_zip: '',
+            // bill_cunt: ''     
             // del_city: this.props.destinations.deliverycity,
             // pu_city: this.props.destinations.pickupcity
         };
@@ -141,6 +142,10 @@ class CardsFooterPmt extends React.Component {
         // this.handleLogin = this.handleLogin.bind(this);
         // console.log(this.props.orderinfo);
         // console.log(this.state);
+        console.log(this.props);
+        
+        
+               
     }
     SaveCustomerInfo = async () => {
         fetch('https://us-central1-onward-63d91.cloudfunctions.net/addOrder', {
@@ -170,6 +175,7 @@ class CardsFooterPmt extends React.Component {
 
     }
   render() {
+    
     return (
       <>
         <footer className="footer has-cards">
@@ -177,8 +183,8 @@ class CardsFooterPmt extends React.Component {
             <Row styles="padding: 500px !important">
               <Col className="mb-5 mb-lg-0" md="12" styles="padding: 500px !important">
                 <Card className="card-lift shadow border-0" style={{padding: "70px", paddingBottom: "100px"}}>
-                <Elements stripe={stripePromise}>
-                      <CheckoutForm />
+                <Elements stripe={stripePromise} orderinfo={this.props.orderinfo}>
+                      <CheckoutForm orderinfo={this.props.orderinfo}/>
                     </Elements>                                                                
                 </Card>
               </Col>
