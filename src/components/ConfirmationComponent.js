@@ -9,6 +9,16 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import { TransitionGroup, CSSTransition} from 'react-transition-group';
 class Confirmation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      orderinfo: this.props.orderinfo.orderinfo
+    }
+  }    
+  componentDidMount() {
+    console.log(this.props);
+    // console.log('hello')
+  }
   render() {
     return (
       <div>
@@ -25,7 +35,7 @@ class Confirmation extends React.Component {
             </div>
           
           </div>
-          <CardsFooterSuccess />
+          <CardsFooterSuccess orderinfo={this.state.orderinfo}/>          
         </div>
         
         </div>

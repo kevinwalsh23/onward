@@ -80,7 +80,7 @@ class CardsFooterNew extends React.Component {
         pu_city: this.props.destinations.pickupcity,
         pu_price: 0,
         del_price: 0,
-        price: 100,
+        price: pricing.Base[this.props.destinations.pickupcity],
         one_weight_price: 0,
         one_height_price: 0,
         one_length_price: 0,
@@ -115,7 +115,7 @@ class CardsFooterNew extends React.Component {
       // console.log(pricing.Pickup_Type[this.state.pickup_type])
       this.setState({price: pricepoint})
       // pickupcost = object.pickup_type.this.state.pickup_type
-      // this.state.price = 100 + pickup_type + delivery_type + item_cost
+      // this.state.price = pricing.Base[this.props.destinations.pickupcity] + pickup_type + delivery_type + item_cost
     }
 }
     componentDidUpdate() {
@@ -134,7 +134,11 @@ class CardsFooterNew extends React.Component {
       // console.log(pricing.Pickup_Type[this.state.pickup_type])
       this.setState({price: pricepoint})
       // pickupcost = object.pickup_type.this.state.pickup_type
-      // this.state.price = 100 + pickup_type + delivery_type + item_cost
+      // this.state.price = pricing.Base[this.props.destinations.pickupcity] + pickup_type + delivery_type + item_cost
+    }
+    componentDidMount() {
+      console.log(this.state.price)
+
     }
   render() {
     
@@ -155,7 +159,7 @@ class CardsFooterNew extends React.Component {
                         Name
                       </Form.Label>
                       <Col sm={10}>
-                        <Form.Control style={{width: "70%"}} type="text" placeholder="Elizabeth Holmes" onChange={(e) => this.setState({name: e.target.value})}/>                        
+                        <Form.Control required style={{width: "70%"}} type="text" placeholder="Paul Graham" onChange={(e) => this.setState({name: e.target.value})}/>                        
                       </Col>
                       
                       <Col sm={10}>
@@ -179,7 +183,7 @@ class CardsFooterNew extends React.Component {
                       Phone
                     </Form.Label>
                     <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="number" placeholder="Phone Number" onChange={(e) => this.setState({phone: e.target.value})}/>
+                      <Form.Control style={{width: "70%"}} type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Phone Number" onChange={(e) => this.setState({phone: e.target.value})}/>
                     </Col>
                   </Form.Group>
                   <Form.Group as={Row} controlId="formHorizontalItem">
@@ -187,19 +191,20 @@ class CardsFooterNew extends React.Component {
                         Pickup Info
                       </Form.Label>
                       <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} size="md" as="select" name="dest" defaultValue="" onChange={(e) => this.setState({pu_location_type: e.target.value, pu_price: pricing.Pickup_Type[e.target.value], price: 100 + pricing.Pickup_Type[e.target.value] + this.state.del_price + this.state.one_weight_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                      <Form.Control style={{width: "70%"}} size="md" as="select" name="dest" defaultValue="" onChange={(e) => this.setState({pu_location_type: e.target.value, pu_price: pricing.Pickup_Type[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Pickup_Type[e.target.value] + this.state.del_price + this.state.one_weight_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                         <option key='0' value='-'>Select One</option>
-                        <option key='1' value='Residence'>Residence ($20)</option>
-                        <option key='2' value='Business - no dock'>Business - no dock ($18)</option>
-                        <option key='3' value='Business -dock'>Business -dock ($16)</option>
-                        <option key='4' value='Convention Center Pickup'>Convention Center Pickup ($36)</option>
-                        <option key='5' value='Hospital Pickup'>Hospital Pickup ($24)</option>
-                        <option key='6' value='Mall Pickup'>Mall Pickup ($28)</option>
-                        <option key='7' value='Hotel Pickup'>Hotel Pickup ($22)</option>
-                        <option key='8' value='School/University'>School/University ($24)</option>
-                        <option key='9' value='Military Base Pickup'>Military Base Pickup ($40)</option>
-                        <option key='10' value='Donation Delivery'>Donation Delivery ($16)</option>
-                        <option key='11' value='Junk Removal'>Junk Removal ($14)</option>
+                        <option key='1' value='Residence'>Residence </option>
+                        <option key='53241' value='Storage Unit'>Storage Unit </option>
+                        <option key='2' value='Business - no dock'>Business - no dock </option>
+                        <option key='3' value='Business -dock'>Business -dock </option>
+                        <option key='4' value='Convention Center Pickup'>Convention Center Pickup </option>
+                        <option key='5' value='Hospital Pickup'>Hospital Pickup </option>
+                        <option key='6' value='Mall Pickup'>Mall Pickup </option>
+                        <option key='7' value='Hotel Pickup'>Hotel Pickup </option>
+                        <option key='8' value='School/University'>School/University </option>
+                        <option key='9' value='Military Base Pickup'>Military Base Pickup </option>
+                        <option key='10' value='Donation Delivery'>Donation Delivery </option>
+                        <option key='11' value='Junk Removal'>Junk Removal </option>
                         <option key='12' value='Other'>Other</option>
                     </Form.Control>
                         {/* <Form.Control type="text" placeholder="Residential/Business/Etc." onChange={(e) => this.setState({item: e.target.value})}/> */}
@@ -228,19 +233,20 @@ class CardsFooterNew extends React.Component {
                         Dropoff Info
                       </Form.Label>
                       <Col sm={10}>
-                      <Form.Control size="md" as="select" name="dest" defaultValue="" onChange={(e) => this.setState({drop_location_type: e.target.value, del_price: pricing.Delivery_Type[e.target.value], price: 100 + pricing.Delivery_Type[e.target.value] + this.state.pu_price + this.state.one_weight_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                      <Form.Control size="md" as="select" name="dest" defaultValue="" onChange={(e) => this.setState({drop_location_type: e.target.value, del_price: pricing.Delivery_Type[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Delivery_Type[e.target.value] + this.state.pu_price + this.state.one_weight_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                         <option key='01' value='-'>Select One</option>
-                        <option key='13' value='Residence'>Residence ($20)</option>
-                        <option key='14' value='Business - no dock'>Business - no dock ($18)</option>
-                        <option key='15' value='Business -dock'>Business -dock ($16)</option>
-                        <option key='16' value='Convention Center Pickup'>Convention Center Pickup ($36)</option>
-                        <option key='17' value='Hospital Pickup'>Hospital Pickup ($24)</option>
-                        <option key='18' value='Mall Pickup'>Mall Pickup ($28)</option>
-                        <option key='19' value='Hotel Pickup'>Hotel Pickup ($22)</option>
-                        <option key='20' value='School/University'>School/University ($24)</option>
-                        <option key='21' value='Military Base Pickup'>Military Base Pickup ($40)</option>
-                        <option key='22' value='Donation Delivery'>Donation Delivery ($16)</option>
-                        <option key='23' value='Junk Removal'>Junk Removal ($14)</option>
+                        <option key='13' value='Residence'>Residence </option>
+                        <option key='53241' value='Storage Unit'>Storage Unit </option>
+                        <option key='14' value='Business - no dock'>Business - no dock </option>
+                        <option key='15' value='Business -dock'>Business -dock </option>
+                        <option key='16' value='Convention Center Pickup'>Convention Center Pickup </option>
+                        <option key='17' value='Hospital Pickup'>Hospital Pickup </option>
+                        <option key='18' value='Mall Pickup'>Mall Pickup </option>
+                        <option key='19' value='Hotel Pickup'>Hotel Pickup </option>
+                        <option key='20' value='School/University'>School/University </option>
+                        <option key='21' value='Military Base Pickup'>Military Base Pickup </option>
+                        <option key='22' value='Donation Delivery'>Donation Delivery </option>
+                        <option key='23' value='Junk Removal'>Junk Removal </option>
                         <option key='24' value='Other'>Other</option>
                     </Form.Control>
                         {/* <Form.Control type="text" placeholder="Residential/Business/Etc." onChange={(e) => this.setState({item: e.target.value})}/> */}
@@ -287,12 +293,12 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_weight: e.target.value, one_weight_price: pricing.Item_Cost.Weight[e.target.value], price: 100 + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_weight: e.target.value, one_weight_price: pricing.Item_Cost.Weight[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                           <option key='03' value='-'>Select One</option>
-                          <option key='30' value='1-50 lbs'>1-50 lbs ($4)</option>
-                          <option key='31' value='50-100 lbs'>50-100 lbs ($6)</option>
-                          <option key='32' value='100-150 lbs'>100-150 lbs ($10)</option>
-                          <option key='33' value='150+ lbs'>150+ lbs ($16)</option>
+                          <option key='30' value='1-50 lbs'>1-50 lbs </option>
+                          <option key='31' value='50-100 lbs'>50-100 lbs </option>
+                          <option key='32' value='100-150 lbs'>100-150 lbs </option>
+                          <option key='33' value='150+ lbs'>150+ lbs </option>
                                                    
                         </Form.Control>
                     </Col>
@@ -304,14 +310,14 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_length: e.target.value, one_length_price: pricing.Item_Cost.Length[e.target.value], price: 100 + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_length: e.target.value, one_length_price: pricing.Item_Cost.Length[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                         <option key='04' value='-'>Select One</option>
-                          <option key='34' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                          <option key='35' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                          <option key='36' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($6)</option> 
-                          <option key='37' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($8)</option>
-                          <option key='38' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($12)</option>
-                          <option key='39' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($20)</option>                        
+                          <option key='34' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                          <option key='35' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                          <option key='36' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                          <option key='37' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                          <option key='38' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                          <option key='39' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                        
                         </Form.Control>
                     </Col>
                   </Form.Group>
@@ -322,14 +328,14 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_width: e.target.value, one_width_price: pricing.Item_Cost.Width[e.target.value], price: 100 + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_width: e.target.value, one_width_price: pricing.Item_Cost.Width[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                         <option key='05' value='-'>Select One</option>
-                          <option key='40' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($4)</option>
-                          <option key='41' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($8)</option>
-                          <option key='42' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($14)</option> 
-                          <option key='43' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($16)</option>
-                          <option key='44' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($20)</option>
-                          <option key='45' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($28)</option>                       
+                          <option key='40' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                          <option key='41' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                          <option key='42' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                          <option key='43' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                          <option key='44' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                          <option key='45' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                       
                         </Form.Control>
                     </Col>
                   </Form.Group>
@@ -340,11 +346,11 @@ class CardsFooterNew extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_height: e.target.value, one_height_price: pricing.Item_Cost.Height[e.target.value], price: 100 + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                      <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({one_height: e.target.value, one_height_price: pricing.Item_Cost.Height[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                           <option key='06' value='-'>Select One</option>
-                          <option key='46' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                          <option key='47' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                          <option key='48' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($10)</option>                          
+                          <option key='46' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                          <option key='47' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                          <option key='48' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option>                          
                                                    
                         </Form.Control>
                     </Col>
@@ -367,12 +373,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_weight: e.target.value, two_weight_price: pricing.Item_Cost.Weight[e.target.value], price: 100 + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_weight: e.target.value, two_weight_price: pricing.Item_Cost.Weight[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                           <option key='07' value='-'>Select One</option>
-                            <option key='49' value='1-50 lbs'>1-50 lbs ($4)</option>
-                            <option key='50' value='50-100 lbs'>50-100 lbs ($6)</option>
-                            <option key='51' value='100-150 lbs'>100-150 lbs ($10)</option>
-                            <option key='52' value='150+ lbs'>150+ lbs ($16)</option>
+                            <option key='49' value='1-50 lbs'>1-50 lbs </option>
+                            <option key='50' value='50-100 lbs'>50-100 lbs </option>
+                            <option key='51' value='100-150 lbs'>100-150 lbs </option>
+                            <option key='52' value='150+ lbs'>150+ lbs </option>
                                                      
                           </Form.Control>
                       </Col>
@@ -384,14 +390,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_length: e.target.value, two_length_price: pricing.Item_Cost.Length[e.target.value], price: 100 + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_length: e.target.value, two_length_price: pricing.Item_Cost.Length[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                           <option key='08' value='-'>Select One</option>
-                            <option key='53' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='54' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='55' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($6)</option> 
-                            <option key='56' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($8)</option>
-                            <option key='57' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($12)</option>
-                            <option key='58' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($20)</option>                        
+                            <option key='53' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='54' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='55' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='56' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='57' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='58' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -402,14 +408,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_width: e.target.value, two_width_price: pricing.Item_Cost.Width[e.target.value], price: 100 + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_width: e.target.value, two_width_price: pricing.Item_Cost.Width[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='09' value='-'>Select One</option>
-                            <option key='59' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($4)</option>
-                            <option key='60' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($8)</option>
-                            <option key='61' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($14)</option> 
-                            <option key='62' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($16)</option>
-                            <option key='63' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($20)</option>
-                            <option key='64' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($28)</option>                       
+                            <option key='59' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='60' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='61' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='62' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='63' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='64' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -420,11 +426,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_height: e.target.value, two_height_price: pricing.Item_Cost.Height[e.target.value], price: 100 + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({two_height: e.target.value, two_height_price: pricing.Item_Cost.Height[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='001' value='-'>Select One</option>
-                            <option key='65' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='66' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='67' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($10)</option>                          
+                            <option key='65' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='66' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='67' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -451,12 +457,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_weight: e.target.value, three_weight_price: pricing.Item_Cost.Weight[e.target.value], price: 100 + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.two_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_weight: e.target.value, three_weight_price: pricing.Item_Cost.Weight[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.two_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='002' value='-'>Select One</option>
-                            <option key='68' value='1-50 lbs'>1-50 lbs ($4)</option>
-                            <option key='69' value='50-100 lbs'>50-100 lbs ($6)</option>
-                            <option key='70' value='100-150 lbs'>100-150 lbs ($10)</option>
-                            <option key='71' value='150+ lbs'>150+ lbs ($16)</option>
+                            <option key='68' value='1-50 lbs'>1-50 lbs </option>
+                            <option key='69' value='50-100 lbs'>50-100 lbs </option>
+                            <option key='70' value='100-150 lbs'>100-150 lbs </option>
+                            <option key='71' value='150+ lbs'>150+ lbs </option>
                                                      
                           </Form.Control>
                       </Col>
@@ -468,14 +474,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_length: e.target.value, three_length_price: pricing.Item_Cost.Length[e.target.value], price: 100 + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.two_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_length: e.target.value, three_length_price: pricing.Item_Cost.Length[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.two_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='003' value='-'>Select One</option>
-                            <option key='72' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='73' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='74' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($6)</option> 
-                            <option key='75' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($8)</option>
-                            <option key='76' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($12)</option>
-                            <option key='77' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($20)</option>                        
+                            <option key='72' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='73' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='74' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='75' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='76' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='77' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -486,14 +492,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_width: e.target.value, three_width_price: pricing.Item_Cost.Width[e.target.value], price: 100 + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.two_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_width: e.target.value, three_width_price: pricing.Item_Cost.Width[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.two_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='004' value='-'>Select One</option>
-                            <option key='78' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($4)</option>
-                            <option key='79' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($8)</option>
-                            <option key='80' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($14)</option> 
-                            <option key='81' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($16)</option>
-                            <option key='82' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($20)</option>
-                            <option key='83' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($28)</option>                       
+                            <option key='78' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='79' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='80' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='81' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='82' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='83' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -504,11 +510,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_height: e.target.value, three_height_price: pricing.Item_Cost.Height[e.target.value], price: 100 + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.two_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({three_height: e.target.value, three_height_price: pricing.Item_Cost.Height[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.two_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='005' value='-'>Select One</option>
-                            <option key='84' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='85' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='86' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($10)</option>                          
+                            <option key='84' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='85' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='86' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -533,12 +539,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_weight: e.target.value, four_weight_price: pricing.Item_Cost.Weight[e.target.value], price: 100 + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.two_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.three_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_weight: e.target.value, four_weight_price: pricing.Item_Cost.Weight[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.two_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.three_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='006' value='-'>Select One</option>
-                            <option key='87' value='1-50 lbs'>1-50 lbs ($4)</option>
-                            <option key='88' value='50-100 lbs'>50-100 lbs ($6)</option>
-                            <option key='89' value='100-150 lbs'>100-150 lbs ($10)</option>
-                            <option key='90' value='150+ lbs'>150+ lbs ($16)</option>
+                            <option key='87' value='1-50 lbs'>1-50 lbs </option>
+                            <option key='88' value='50-100 lbs'>50-100 lbs </option>
+                            <option key='89' value='100-150 lbs'>100-150 lbs </option>
+                            <option key='90' value='150+ lbs'>150+ lbs </option>
                                                      
                           </Form.Control>
                       </Col>
@@ -550,14 +556,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_length: e.target.value, four_length_price: pricing.Item_Cost.Length[e.target.value], price: 100 + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.two_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.three_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_length: e.target.value, four_length_price: pricing.Item_Cost.Length[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.two_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.three_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='007' value='-'>Select One</option>
-                            <option key='91' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='92' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='93' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($6)</option> 
-                            <option key='94' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($8)</option>
-                            <option key='95' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($12)</option>
-                            <option key='96' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($20)</option>                        
+                            <option key='91' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='92' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='93' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='94' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='95' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='96' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -568,14 +574,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_width: e.target.value, four_width_price: pricing.Item_Cost.Width[e.target.value], price: 100 + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.two_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.three_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_width: e.target.value, four_width_price: pricing.Item_Cost.Width[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.two_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.three_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='008' value='-'>Select One</option>
-                            <option key='97' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($4)</option>
-                            <option key='98' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($8)</option>
-                            <option key='99' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($14)</option> 
-                            <option key='100' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($16)</option>
-                            <option key='101' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($20)</option>
-                            <option key='102' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($28)</option>                       
+                            <option key='97' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='98' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='99' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='100' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='101' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='102' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -586,11 +592,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_height: e.target.value, four_height_price: pricing.Item_Cost.Height[e.target.value], price: 100 + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.two_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.three_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({four_height: e.target.value, four_height_price: pricing.Item_Cost.Height[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.two_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.three_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='009' value='-'>Select One</option>
-                            <option key='103' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='104' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='105' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($10)</option>                          
+                            <option key='103' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='104' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='105' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -615,12 +621,12 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_weight: e.target.value, five_weight_price: pricing.Item_Cost.Weight[e.target.value], price: 100 + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.two_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.three_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.four_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_weight: e.target.value, five_weight_price: pricing.Item_Cost.Weight[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Weight[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_length_price + this.state.one_width_price + this.state.one_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.two_width_price + this.state.two_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.three_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.four_width_price + this.state.four_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='0010' value='-'>Select One</option>
-                            <option key='106' value='1-50 lbs'>1-50 lbs ($4)</option>
-                            <option key='107' value='50-100 lbs'>50-100 lbs ($6)</option>
-                            <option key='108' value='100-150 lbs'>100-150 lbs ($10)</option>
-                            <option key='109' value='150+ lbs'>150+ lbs ($16)</option>
+                            <option key='106' value='1-50 lbs'>1-50 lbs </option>
+                            <option key='107' value='50-100 lbs'>50-100 lbs </option>
+                            <option key='108' value='100-150 lbs'>100-150 lbs </option>
+                            <option key='109' value='150+ lbs'>150+ lbs </option>
                                                      
                           </Form.Control>
                       </Col>
@@ -632,14 +638,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_length: e.target.value, five_length_price: pricing.Item_Cost.Length[e.target.value], price: 100 + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.two_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.three_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.four_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_length: e.target.value, five_length_price: pricing.Item_Cost.Length[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Length[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_width_price + this.state.two_weight_price + this.state.two_height_price + this.state.one_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.two_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.three_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.four_length_price + this.state.five_width_price})}>
                             <option key='0011' value='-'>Select One</option>
-                            <option key='110' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='111' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='112' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($6)</option> 
-                            <option key='113' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($8)</option>
-                            <option key='114' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($12)</option>
-                            <option key='115' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($20)</option>                        
+                            <option key='110' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='111' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='112' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='113' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='114' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='115' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                        
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -650,14 +656,14 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_width: e.target.value, five_width_price: pricing.Item_Cost.Width[e.target.value], price: 100 + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.two_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.three_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.four_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_width: e.target.value, five_width_price: pricing.Item_Cost.Width[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Width[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_height_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.two_height_price + this.state.two_length_price + this.state.one_width_price + this.state.three_weight_price + this.state.three_height_price +  this.state.three_length_price + this.state.two_width_price + this.state.four_weight_price + this.state.four_height_price + this.state.four_length_price + this.state.three_width_price + this.state.five_weight_price + this.state.five_height_price + this.state.five_length_price + this.state.four_width_price})}>
                             <option key='0012' value='-'>Select One</option>
-                            <option key='116' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($4)</option>
-                            <option key='117' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($8)</option>
-                            <option key='118' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($14)</option> 
-                            <option key='119' value="109-144' (9-12 ft)">109-144" (9-12 ft) ($16)</option>
-                            <option key='120' value="145-180' (12-15 ft)">145-180" (12-15 ft) ($20)</option>
-                            <option key='121' value="> 180' (> 15 ft)">> 180" (> 15 ft) ($28)</option>                       
+                            <option key='116' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='117' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='118' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option> 
+                            <option key='119' value="109-144' (9-12 ft)">109-144" (9-12 ft) </option>
+                            <option key='120' value="145-180' (12-15 ft)">145-180" (12-15 ft) </option>
+                            <option key='121' value="> 180' (> 15 ft)">> 180" (> 15 ft) </option>                       
                           </Form.Control>
                       </Col>
                     </Form.Group>
@@ -668,11 +674,11 @@ class CardsFooterNew extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_height: e.target.value, five_height_price: pricing.Item_Cost.Height[e.target.value], price: 100 + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.two_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.three_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.four_height_price + this.state.five_length_price + this.state.five_width_price})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({five_height: e.target.value, five_height_price: pricing.Item_Cost.Height[e.target.value], price: pricing.Base[this.props.destinations.pickupcity] + pricing.Item_Cost.Height[e.target.value] + this.state.pu_price + this.state.del_price + this.state.one_width_price + this.state.one_weight_price + this.state.one_length_price + this.state.two_weight_price + this.state.one_height_price + this.state.two_length_price + this.state.two_width_price + this.state.three_weight_price + this.state.two_height_price +  this.state.three_length_price + this.state.three_width_price + this.state.four_weight_price + this.state.three_height_price + this.state.four_length_price + this.state.four_width_price + this.state.five_weight_price + this.state.four_height_price + this.state.five_length_price + this.state.five_width_price})}>
                             <option key='0013' value='-'>Select One</option>
-                            <option key='122' value="0-36' (0-3 ft)">0-36" (0-3 ft) ($2)</option>
-                            <option key='123' value="37-72' (3-6 ft)">37-72" (3-6 ft) ($4)</option>
-                            <option key='124' value="73-108' (6-9 ft)">73-108" (6-9 ft) ($10)</option>                          
+                            <option key='122' value="0-36' (0-3 ft)">0-36" (0-3 ft) </option>
+                            <option key='123' value="37-72' (3-6 ft)">37-72" (3-6 ft) </option>
+                            <option key='124' value="73-108' (6-9 ft)">73-108" (6-9 ft) </option>                          
                                                      
                           </Form.Control>
                       </Col>
@@ -690,10 +696,14 @@ class CardsFooterNew extends React.Component {
                     ) : null
                   }                       
 
+                  {/* <Form.Group as={Row} style={{marginTop: "5%"}}>
+                    <Col sm={{ span: 10, offset: 2 }}>
+                      Total Price: ${this.state.price}.00                      
+                    </Col>
+                  </Form.Group> */}
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                      Total Price: ${this.state.price}.00
-                      {/* <Button type="submit">Continue to Payment</Button> */}
+                    *If any of the information included above does not match what is reviewed by the driver onsite, you will be held responsible for the additional costs.*                      
                     </Col>
                   </Form.Group>
 

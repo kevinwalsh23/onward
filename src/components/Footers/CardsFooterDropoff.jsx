@@ -20,6 +20,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form'
 // reactstrap components
+import * as pricing from './pricing.json';
 import {
   Button,
   Card,
@@ -49,6 +50,7 @@ class CardsFooterDropoff extends React.Component {
         complications: '',
         add_info: '',
         other_prob: '',
+        floor_price: 0,
         del_city: this.props.destinations.deliverycity,
         pu_city: this.props.destinations.pickupcity,
         item_info: this.props.destinations.item_info,
@@ -64,6 +66,44 @@ class CardsFooterDropoff extends React.Component {
 }
     componentDidUpdate() {        
         
+    }
+    update_floor_price = async(value) => {
+        console.log(value);
+        await this.setState({floor_price: pricing.Pickup_Floor[value]});
+        if (this.state.elevator == 'yes') {   
+            console.log(this.state.price)         
+            await this.setState({price: this.props.destinations.pickup_info.price, floor: value});
+            // console.log(new_charge)
+            console.log(this.state.price)
+        }
+        else {
+            let new_charge = this.props.destinations.pickup_info.price + pricing.Pickup_Floor[value];
+            console.log(new_charge + 'hello')
+            console.log(this.state.price)
+            await this.setState({price: new_charge, floor: value});
+            console.log(this.state.price)
+        }
+        console.log(this.state);
+
+    }
+
+    update_elevator = async(value) => {
+        this.setState({elevator: value});
+        if (value == 'yes') {
+            // let new_charge = this.state.price - this.state.floor_price;
+            console.log(this.state.price)
+            await this.setState({price: this.props.destinations.pickup_info.price, elevator: value});
+            console.log(this.state.price)
+        }
+        else {
+            console.log(this.state.price)
+            let new_charge = this.props.destinations.pickup_info.price + this.state.floor_price;            
+            await this.setState({price: new_charge, elevator: value});
+            console.log(this.state.price)
+
+        }
+        // console.log(this.state.price);
+
     }
   render() {
     return (
@@ -126,12 +166,12 @@ class CardsFooterDropoff extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({floor: e.target.value})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.update_floor_price(e.target.value)}>
                             <option key='1' value='1'>1</option>
                             <option key='2' value='2'>2</option>
                             <option key='3' value='3'>3</option>
                             <option key='4' value='4'>4</option>
-                            <option key='5' value='5+'>5+</option> 
+                            <option key='5' value='5'>5+</option> 
                                                      
                           </Form.Control>
                       </Col>
@@ -142,7 +182,7 @@ class CardsFooterDropoff extends React.Component {
                       </Form.Label>
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
-                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({elevator: e.target.value})}>
+                        <Form.Control size="md" as="select" name="dest" onChange={(e) => this.update_elevator(e.target.value)}>
                             <option key='6' value='no'>No</option> 
                             <option key='7' value='yes'>Yes</option>
                                                        
@@ -157,7 +197,7 @@ class CardsFooterDropoff extends React.Component {
                       <Col sm={10}>
                         {/* <Form.Control type="text" placeholder="100 lbs" onChange={(e) => this.setState({weight: e.target.value})}/> */}
                         <Form.Control size="md" as="select" name="dest" onChange={(e) => this.setState({complications: e.target.value})}>
-                            <option key='14' value='none'>-</option>
+                            <option key='14' value='none'>None</option>
                             <option key='8' value='Unpaved streets or driveway'>Unpaved streets or driveway</option>
                             <option key='9' value='Vehicle height or weight restrictions'>Vehicle height or weight restrictions</option>
                             <option key='10' value='Parking/Unloading restrictions'>Parking/Unloading restrictions</option>
@@ -177,11 +217,15 @@ class CardsFooterDropoff extends React.Component {
                       </Col>
                     </Form.Group> ) : null
                   }
-                                     
+
+                  {/* <Form.Group as={Row} style={{marginTop: "5%"}}>
+                    <Col sm={{ span: 10, offset: 2 }}>
+                      Total Price: ${this.state.price}.00                      
+                    </Col>
+                  </Form.Group> */}
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                      Total Price: ${this.state.price}.00
-                      {/* <Button type="submit">Continue to Payment</Button> */}
+                    *If any of the information included above does not match what is reviewed by the driver onsite, you will be held responsible for the additional costs.*                      
                     </Col>
                   </Form.Group>
 

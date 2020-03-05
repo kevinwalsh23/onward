@@ -102,22 +102,22 @@ class Home extends Component {
                   </Form.Group> */}
 
                     <Col style={{ width: '100%', height: '100%' }}>
-                    <Form.Label>Pickup City</Form.Label>
+                    <Form.Label>Nearest Pickup City</Form.Label>
                       <Form.Control size="lg" as="select" onChange={(e) => this.setState({pickupcity: e.target.value})}>
-                        <option key='1' value='Boulder'>Boulder</option>
-                        <option key='2' value='Colorado Springs'>Colorado Springs</option>
-                        <option key='3' value='Denver'>Denver</option>
-                        <option key='4' value='Fort Collins'>Fort Collins</option>                        
+                        <option key='1' value='Boulder'>Boulder/Broomfield/Longmont</option>
+                        <option key='2' value='Colorado Springs'>Colorado Springs/Castle Rock/Monument/Castle Pines</option>
+                        <option key='3' value='Denver'>Denver Metro</option>
+                        <option key='4' value='Fort Collins'>Fort Collins/Loveland/Greeley</option>                        
                       </Form.Control>
                     </Col>
 
                     <Col style={{ width: '100%', height: '100%'}}>
-                    <Form.Label>Destination City</Form.Label>
+                    <Form.Label>Nearest Delivery City</Form.Label>
                     <Form.Control size="lg" as="select" name="dest" defaultValue="Denver" id='asdf' onChange={(e) => this.setState({deliverycity: e.target.value})}>
-                        <option key='5' value='Boulder'>Boulder</option>
-                        <option key='6' value='Colorado Springs'>Colorado Springs</option>
-                        <option key='7' value='Denver'>Denver</option>
-                        <option key='8' value='Fort Collins'>Fort Collins</option>
+                        <option key='5' value='Boulder'>Boulder/Broomfield/Longmont</option>
+                        <option key='6' value='Colorado Springs'>Colorado Springs/Castle Rock/Monument/Castle Pines</option>
+                        <option key='7' value='Denver'>Denver Metro</option>
+                        <option key='8' value='Fort Collins'>Fort Collins/Loveland/Greeley</option>
                     </Form.Control>
                     </Col>
 

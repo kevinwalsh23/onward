@@ -10,6 +10,7 @@ class CheckoutForm extends React.Component {
         this.state = {
             success: false,
             orderinfo: this.props.orderinfo,
+            order_id: '',
             customerinfo: {
                 name: this.props.orderinfo.item_info.name,
                 email: this.props.orderinfo.item_info.email,
@@ -89,11 +90,11 @@ class CheckoutForm extends React.Component {
     }
     
 SaveCustomerInfo = async () => {
-        fetch('https://us-central1-onward-63d91.cloudfunctions.net/addOrder', {
+        await fetch('https://us-central1-onward-63d91.cloudfunctions.net/addOrder', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/json'              
             },
             body: JSON.stringify({
                 timestamp: Date.now(),
@@ -104,20 +105,30 @@ SaveCustomerInfo = async () => {
                 delivery_info: this.state.delivery_info,
                 price: this.state.price
             })
+          }).then((response) => {
+            return response.json();
+          })
+          .then((myJson) => {
+            // this.setState({order_id: myJson[0].id.substr(1)});
+            console.log(this.state);
+            let _id = myJson[0].id.substr(1);
+            console.log(_id);
+            this.setState({order_id: _id});
+            console.log(this.state);
+            // let x = myJson.clientSecret;
+            return _id;
           })
 
     }   
 SendInternalConfirmation = async () => {
-        fetch('http://localhost:5000/onward-63d91/us-central1/internalConfirmation', {
+        fetch('https://us-central1-onward-63d91.cloudfunctions.net/internalConfirmation', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              'cors': 'no-cors'
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                email: 'kevinwalsh23@gmail.com',
+                email: 'orderconfirmation@onwarddelivery.com',
                 displayName: 'Beast',
                 orderinfo: {
                     customerinfo: this.state.customerinfo,
@@ -135,12 +146,12 @@ SendInternalConfirmation = async () => {
   handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
     console.log(this.state.orderinfo.item_info.price);
-    let the_price = this.state.orderinfo.item_info.price;
+    let the_price = this.state.orderinfo.item_info.price * 100;
     
     // which would refresh the page.
     let x;
     event.preventDefault();
-    fetch('http://localhost:5000/onward-63d91/us-central1/stripePayment', {
+    fetch('https://us-central1-onward-63d91.cloudfunctions.net/stripePayment', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -172,7 +183,7 @@ SendInternalConfirmation = async () => {
             payment_method: {
               card: elements.getElement(CardElement),
               billing_details: {
-                name: 'Jenny Rosen',
+                name: this.state.customerinfo.name,
               },
             }
           });
@@ -184,10 +195,16 @@ SendInternalConfirmation = async () => {
         if (result.paymentIntent.status === 'succeeded') {
             // Show a success message to your customer
             console.log('success');
-            this.SaveCustomerInfo();
-            // this.SendInternalConfirmation();
+            let thing = await this.SaveCustomerInfo();
+            console.log(thing);
+            this.SendInternalConfirmation().then(this.setState({success: true}));
+            //console.log(thing);
+            // this.SendInternalConfirmation().then(this.setState({success: true}));
             console.log('success');
+            console.log(this.state);
+            console.log('success123123');
             // this.setState({success: true});
+
             return(
                 <div>SUCCESS</div>
             )
@@ -215,13 +232,17 @@ SendInternalConfirmation = async () => {
   render() {
     if (this.state.success) {
         return(
-            <Redirect to="/confirmation"/>
+            <Redirect to={{
+                pathname: '/confirmation',
+                state: { orderinfo: this.state }
+            }}/>
         )
     }
     else {
         return (
             <form onSubmit={this.handleSubmit}>
               <CardSection /><br/>
+              <div style={{marginBottom: '2%'}}>Total Price: ${this.state.price}.00 </div>
               <button disabled={!this.props.stripe}>Confirm order</button>
             </form>
           );

@@ -1,0 +1,260 @@
+[debug] [2020-03-04T07:22:47.372Z] ----------------------------------------------------------------------
+[debug] [2020-03-04T07:22:47.374Z] Command:       /usr/local/Cellar/node/12.8.1/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2020-03-04T07:22:47.374Z] CLI Version:   7.12.1
+[debug] [2020-03-04T07:22:47.374Z] Platform:      darwin
+[debug] [2020-03-04T07:22:47.374Z] Node Version:  v12.8.1
+[debug] [2020-03-04T07:22:47.375Z] Time:          Wed Mar 04 2020 02:22:47 GMT-0500 (Eastern Standard Time)
+[debug] [2020-03-04T07:22:47.375Z] ----------------------------------------------------------------------
+[debug] [2020-03-04T07:22:47.375Z] 
+[debug] [2020-03-04T07:22:47.392Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-04T07:22:47.392Z] > authorizing via signed-in user
+[debug] [2020-03-04T07:22:47.392Z] [iam] checking project onward-63d91 for permissions ["firebase.projects.get"]
+[debug] [2020-03-04T07:22:47.394Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-03-04T07:22:47.394Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-03-04T07:22:50.544Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-04T07:22:50.560Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/onward-63d91:testIamPermissions  
+
+[debug] [2020-03-04T07:22:50.826Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-04T07:22:50.828Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/onward-63d91  
+ 
+[debug] [2020-03-04T07:22:51.397Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "/Users/kevinwalsh/onward/functions" for Cloud Functions...
+[debug] [2020-03-04T07:22:51.736Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-04T07:22:51.736Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-03-04T07:22:51.736Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-04T07:22:51.737Z] [worker-~diagnostic~-34b3a80e-3a9a-4322-9773-64542c1f9027]: Assigning socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63492.sock
+[debug] [2020-03-04T07:22:51.737Z] [worker-~diagnostic~-34b3a80e-3a9a-4322-9773-64542c1f9027]: BUSY
+[debug] [2020-03-04T07:22:52.033Z] [runtime-status] [63492] Functions runtime initialized. {"cwd":"/Users/kevinwalsh/onward/functions","node_version":"12.8.1"}
+[debug] [2020-03-04T07:22:52.034Z] [runtime-status] [63492] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-04T07:22:52.057Z] [runtime-status] [63492] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-04T07:22:52.062Z] [runtime-status] [63492] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-04T07:22:52.063Z] [runtime-status] [63492] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[info] >  {}
+[info] ✔  functions[internalConfirmation]: http function initialized (http://localhost:5000/onward-63d91/us-central1/internalConfirmation).
+[info] ✔  functions[helloWorld]: http function initialized (http://localhost:5000/onward-63d91/us-central1/helloWorld).
+[info] ✔  functions[stripePayment]: http function initialized (http://localhost:5000/onward-63d91/us-central1/stripePayment).
+[info] ✔  functions[addOrder]: http function initialized (http://localhost:5000/onward-63d91/us-central1/addOrder).
+[info] ✔  functions[getOrder]: http function initialized (http://localhost:5000/onward-63d91/us-central1/getOrder).
+[debug] [2020-03-04T07:22:52.690Z] [worker-~diagnostic~-34b3a80e-3a9a-4322-9773-64542c1f9027]: IDLE
+[info] >  [2020-03-04T07:22:52.721Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:22:52.815Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:22:53.153Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:22:54.461Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:22:55.916Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:22:56.481Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:22:59.374Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:23:00.923Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:23:01.675Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:23:03.101Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-04T07:23:03.101Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-04T07:23:03.101Z] Accepted request GET /onward-63d91/us-central1/getOrder --> getOrder
+[debug] [2020-03-04T07:23:03.108Z] [worker-pool] addWorker(getOrder)
+[debug] [2020-03-04T07:23:03.108Z] [worker-pool] Adding worker with key getOrder, total=1
+[debug] [2020-03-04T07:23:03.108Z] [worker-pool] submitWork(triggerId=getOrder)
+[debug] [2020-03-04T07:23:03.108Z] [worker-getOrder-0696d5ac-f77d-4a1b-85f2-28c7a9b33dbd]: Assigning socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63499.sock
+[debug] [2020-03-04T07:23:03.108Z] [worker-getOrder-0696d5ac-f77d-4a1b-85f2-28c7a9b33dbd]: BUSY
+[debug] [2020-03-04T07:23:03.784Z] [runtime-status] [63499] Functions runtime initialized. {"cwd":"/Users/kevinwalsh/onward/functions","node_version":"12.8.1"}
+[debug] [2020-03-04T07:23:03.786Z] [runtime-status] [63499] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-04T07:23:03.786Z] [runtime-status] [63499] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-04T07:23:03.786Z] [runtime-status] [63499] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-04T07:23:03.787Z] [runtime-status] [63499] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[info] >  {}
+[debug] [2020-03-04T07:23:04.063Z] [runtime-status] [63499] Trigger "getOrder" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "getOrder"
+[debug] [2020-03-04T07:23:04.063Z] [runtime-status] [63499] triggerDefinition {"httpsTrigger":{},"name":"getOrder","entryPoint":"getOrder"}
+[debug] [2020-03-04T07:23:04.063Z] [runtime-status] [63499] Running getOrder in mode HTTPS
+[debug] [2020-03-04T07:23:04.070Z] [runtime-status] [63499] Attempting to listen to socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63499.sock
+[debug] [2020-03-04T07:23:04.075Z] [functions] Runtime ready! Sending request!
+[debug] [2020-03-04T07:23:04.085Z] [runtime-status] [63499] Ephemeral server handling GET request
+[debug] [2020-03-04T07:23:04.085Z] [runtime-status] [63499] Ephemeral server survived.
+[warn] ⚠  functions: TypeError: database.doc is not a function
+    at /Users/kevinwalsh/onward/functions/index.js:223:18
+    at cors (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:188:7)
+    at /Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:224:17
+    at originCallback (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:214:15)
+    at /Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:204:7)
+    at /Users/kevinwalsh/onward/functions/index.js:212:12
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:621:20
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:596:19
+[warn] ⚠  Your function was killed because it raised an unhandled error.
+[info] >  {}
+[debug] [2020-03-04T07:23:04.097Z] [worker-getOrder-0696d5ac-f77d-4a1b-85f2-28c7a9b33dbd]: exited
+[debug] [2020-03-04T07:23:04.097Z] [worker-getOrder-0696d5ac-f77d-4a1b-85f2-28c7a9b33dbd]: FINISHED
+[debug] [2020-03-04T07:23:04.097Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] >  [2020-03-04T07:23:06.204Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:23:14.505Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:23:26.407Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:23:41.209Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:23:50.276Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:09.896Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:15.905Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:16.357Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:24:23.599Z] File /Users/kevinwalsh/onward/functions/index.js changed, reloading triggers
+[debug] [2020-03-04T07:24:24.601Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-04T07:24:24.601Z] [worker-~diagnostic~-34b3a80e-3a9a-4322-9773-64542c1f9027]: FINISHING
+[debug] [2020-03-04T07:24:24.601Z] [worker-pool] Cleaned up workers for getOrder: 1 --> 0
+[debug] [2020-03-04T07:24:24.610Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-04T07:24:24.610Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-04T07:24:24.610Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-04T07:24:24.610Z] [worker-~diagnostic~-ec876571-2936-4893-bfed-55943def2f4a]: Assigning socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63515.sock
+[debug] [2020-03-04T07:24:24.610Z] [worker-~diagnostic~-ec876571-2936-4893-bfed-55943def2f4a]: BUSY
+[debug] [2020-03-04T07:24:24.611Z] [worker-~diagnostic~-34b3a80e-3a9a-4322-9773-64542c1f9027]: exited
+[debug] [2020-03-04T07:24:24.611Z] [worker-~diagnostic~-34b3a80e-3a9a-4322-9773-64542c1f9027]: FINISHED
+[debug] [2020-03-04T07:24:25.149Z] [runtime-status] [63515] Functions runtime initialized. {"cwd":"/Users/kevinwalsh/onward/functions","node_version":"12.8.1"}
+[debug] [2020-03-04T07:24:25.152Z] [runtime-status] [63515] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-04T07:24:25.165Z] [runtime-status] [63515] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-04T07:24:25.168Z] [runtime-status] [63515] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-04T07:24:25.170Z] [runtime-status] [63515] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[info] >  {}
+[debug] [2020-03-04T07:24:25.654Z] [worker-~diagnostic~-ec876571-2936-4893-bfed-55943def2f4a]: IDLE
+[info] >  [2020-03-04T07:24:25.672Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:25.716Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:26.394Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:26.624Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:26.841Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:27.824Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:24:27.968Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-04T07:24:27.968Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-04T07:24:27.968Z] Accepted request GET /onward-63d91/us-central1/getOrder --> getOrder
+[debug] [2020-03-04T07:24:27.968Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-04T07:24:27.973Z] [worker-pool] addWorker(getOrder)
+[debug] [2020-03-04T07:24:27.974Z] [worker-pool] Adding worker with key getOrder, total=1
+[debug] [2020-03-04T07:24:27.974Z] [worker-pool] submitWork(triggerId=getOrder)
+[debug] [2020-03-04T07:24:27.974Z] [worker-getOrder-f7a0927a-fdd9-40e1-9ab6-e39a5510f288]: Assigning socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63525.sock
+[debug] [2020-03-04T07:24:27.974Z] [worker-getOrder-f7a0927a-fdd9-40e1-9ab6-e39a5510f288]: BUSY
+[debug] [2020-03-04T07:24:28.281Z] [runtime-status] [63525] Functions runtime initialized. {"cwd":"/Users/kevinwalsh/onward/functions","node_version":"12.8.1"}
+[debug] [2020-03-04T07:24:28.282Z] [runtime-status] [63525] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-04T07:24:28.283Z] [runtime-status] [63525] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-04T07:24:28.284Z] [runtime-status] [63525] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-04T07:24:28.285Z] [runtime-status] [63525] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[info] >  {}
+[debug] [2020-03-04T07:24:28.401Z] [runtime-status] [63525] Trigger "getOrder" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "getOrder"
+[debug] [2020-03-04T07:24:28.401Z] [runtime-status] [63525] triggerDefinition {"httpsTrigger":{},"name":"getOrder","entryPoint":"getOrder"}
+[debug] [2020-03-04T07:24:28.401Z] [runtime-status] [63525] Running getOrder in mode HTTPS
+[debug] [2020-03-04T07:24:28.405Z] [runtime-status] [63525] Attempting to listen to socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63525.sock
+[debug] [2020-03-04T07:24:28.434Z] [functions] Runtime ready! Sending request!
+[info] >  [2020-03-04T07:24:28.417Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:24:28.441Z] [runtime-status] [63525] Ephemeral server handling GET request
+[info] >  {}
+[debug] [2020-03-04T07:24:28.442Z] [runtime-status] [63525] Ephemeral server survived.
+[warn] ⚠  functions: TypeError: database.doc is not a function
+    at /Users/kevinwalsh/onward/functions/index.js:223:18
+    at cors (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:188:7)
+    at /Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:224:17
+    at originCallback (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:214:15)
+    at /Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:204:7)
+    at /Users/kevinwalsh/onward/functions/index.js:212:12
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:621:20
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:596:19
+[warn] ⚠  Your function was killed because it raised an unhandled error.
+[debug] [2020-03-04T07:24:28.449Z] [worker-getOrder-f7a0927a-fdd9-40e1-9ab6-e39a5510f288]: exited
+[debug] [2020-03-04T07:24:28.449Z] [worker-getOrder-f7a0927a-fdd9-40e1-9ab6-e39a5510f288]: FINISHED
+[debug] [2020-03-04T07:24:28.449Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] >  [2020-03-04T07:24:30.463Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:30.932Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:32.076Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:33.310Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:40.069Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:24:51.586Z] File /Users/kevinwalsh/onward/functions/index.js changed, reloading triggers
+[info] >  [2020-03-04T07:24:51.927Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:24:52.589Z] [worker-pool] Shutting down IDLE worker (~diagnostic~)
+[debug] [2020-03-04T07:24:52.589Z] [worker-~diagnostic~-ec876571-2936-4893-bfed-55943def2f4a]: FINISHING
+[debug] [2020-03-04T07:24:52.589Z] [worker-pool] Cleaned up workers for getOrder: 1 --> 0
+[debug] [2020-03-04T07:24:52.599Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-03-04T07:24:52.600Z] [worker-pool] Adding worker with key ~diagnostic~, total=2
+[debug] [2020-03-04T07:24:52.600Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-03-04T07:24:52.600Z] [worker-~diagnostic~-e8b2c6ba-7b60-431e-b4d7-3cb1d935379c]: Assigning socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63528.sock
+[debug] [2020-03-04T07:24:52.600Z] [worker-~diagnostic~-e8b2c6ba-7b60-431e-b4d7-3cb1d935379c]: BUSY
+[debug] [2020-03-04T07:24:52.600Z] [worker-~diagnostic~-ec876571-2936-4893-bfed-55943def2f4a]: exited
+[debug] [2020-03-04T07:24:52.600Z] [worker-~diagnostic~-ec876571-2936-4893-bfed-55943def2f4a]: FINISHED
+[debug] [2020-03-04T07:24:52.958Z] [runtime-status] [63528] Functions runtime initialized. {"cwd":"/Users/kevinwalsh/onward/functions","node_version":"12.8.1"}
+[debug] [2020-03-04T07:24:52.960Z] [runtime-status] [63528] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-04T07:24:52.962Z] [runtime-status] [63528] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-04T07:24:52.963Z] [runtime-status] [63528] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-04T07:24:52.963Z] [runtime-status] [63528] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[info] >  {}
+[debug] [2020-03-04T07:24:53.149Z] [worker-~diagnostic~-e8b2c6ba-7b60-431e-b4d7-3cb1d935379c]: IDLE
+[info] >  [2020-03-04T07:24:53.165Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:53.580Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:54.812Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:55.157Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:56.161Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:56.645Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:24:59.377Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:03.435Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:07.640Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:09.928Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:25:11.680Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2020-03-04T07:25:11.680Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2020-03-04T07:25:11.680Z] Accepted request GET /onward-63d91/us-central1/getOrder --> getOrder
+[debug] [2020-03-04T07:25:11.686Z] [worker-pool] Cleaned up workers for ~diagnostic~: 2 --> 1
+[debug] [2020-03-04T07:25:11.722Z] [worker-pool] addWorker(getOrder)
+[debug] [2020-03-04T07:25:11.722Z] [worker-pool] Adding worker with key getOrder, total=1
+[debug] [2020-03-04T07:25:11.722Z] [worker-pool] submitWork(triggerId=getOrder)
+[debug] [2020-03-04T07:25:11.723Z] [worker-getOrder-09953be3-0a2b-481a-9941-8a103feccefd]: Assigning socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63539.sock
+[debug] [2020-03-04T07:25:11.723Z] [worker-getOrder-09953be3-0a2b-481a-9941-8a103feccefd]: BUSY
+[debug] [2020-03-04T07:25:13.358Z] [runtime-status] [63539] Functions runtime initialized. {"cwd":"/Users/kevinwalsh/onward/functions","node_version":"12.8.1"}
+[debug] [2020-03-04T07:25:13.360Z] [runtime-status] [63539] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-03-04T07:25:13.363Z] [runtime-status] [63539] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.9.2","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-03-04T07:25:13.364Z] [runtime-status] [63539] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-03-04T07:25:13.364Z] [runtime-status] [63539] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"/Users/kevinwalsh/onward/functions/node_modules/firebase-functions/lib/index.js"}
+[info] >  {}
+[debug] [2020-03-04T07:25:13.730Z] [runtime-status] [63539] Trigger "getOrder" has been found, beginning invocation!
+[info] i  functions: Beginning execution of "getOrder"
+[debug] [2020-03-04T07:25:13.730Z] [runtime-status] [63539] triggerDefinition {"httpsTrigger":{},"name":"getOrder","entryPoint":"getOrder"}
+[debug] [2020-03-04T07:25:13.730Z] [runtime-status] [63539] Running getOrder in mode HTTPS
+[debug] [2020-03-04T07:25:13.734Z] [runtime-status] [63539] Attempting to listen to socketPath: /var/folders/8h/k362zxfn7klcfbh0bxs595gc0000gn/T/fire_emu_63539.sock
+[debug] [2020-03-04T07:25:13.831Z] [functions] Runtime ready! Sending request!
+[info] >  [2020-03-04T07:25:13.839Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[debug] [2020-03-04T07:25:13.849Z] [runtime-status] [63539] Ephemeral server handling GET request
+[debug] [2020-03-04T07:25:13.849Z] [runtime-status] [63539] Ephemeral server survived.
+[warn] ⚠  functions: TypeError: database.doc is not a function
+    at /Users/kevinwalsh/onward/functions/index.js:224:32
+    at cors (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:188:7)
+    at /Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:224:17
+    at originCallback (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:214:15)
+    at /Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/Users/kevinwalsh/onward/functions/node_modules/cors/lib/index.js:204:7)
+    at /Users/kevinwalsh/onward/functions/index.js:212:12
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:621:20
+    at /usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:596:19
+[warn] ⚠  Your function was killed because it raised an unhandled error.
+[info] >  {}
+[debug] [2020-03-04T07:25:13.855Z] [worker-getOrder-09953be3-0a2b-481a-9941-8a103feccefd]: exited
+[debug] [2020-03-04T07:25:13.855Z] [worker-getOrder-09953be3-0a2b-481a-9941-8a103feccefd]: FINISHED
+[debug] [2020-03-04T07:25:13.856Z] [work-queue] {"queueLength":0,"workRunningCount":0}
+[info] >  [2020-03-04T07:25:17.208Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:28.937Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:29.973Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:32.302Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:49.878Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:25:55.438Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:26:26.887Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:26:35.561Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:27:17.002Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:28:06.633Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:28:18.631Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:30:41.900Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:33:56.411Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:35:01.466Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:36:14.050Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:39:56.062Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:44:48.761Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T07:49:25.963Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T22:51:16.305Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-04T23:01:43.366Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-05T00:02:57.827Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-05T00:03:27.950Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-05T01:24:57.840Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-05T01:41:15.933Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-05T02:28:49.681Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 
+[info] >  [2020-03-05T04:20:22.367Z]  @firebase/database: FIREBASE WARNING: {"code":"app/invalid-credential","message":"Credential implementation provided to initializeApp() via the \"credential\" property failed to fetch a valid Google OAuth2 access token with the following error: \"Error fetching access token: Error while making request: getaddrinfo ENOTFOUND metadata.google.internal. Error code: ENOTFOUND\"."} 

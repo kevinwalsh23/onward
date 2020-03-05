@@ -87,7 +87,7 @@ class Main extends Component {
                 <Route path='/dropoff' component={() => <Dropoff passprops={this.props}/>} />
                 <Route path='/pickup' component={() => <Pickup passprops={this.props}/>} />
                 <Route path='/payment' component={() => <Payment pass_params={this.props.location.state}/>}/>} />
-                <Route path='/confirmation' component={() => <Confirmation/>} />
+                <Route path='/confirmation' component={() => <Confirmation orderinfo={this.props.location.state}/>} />
                 <Route path='/locations' component={() => <Location/>} />
                 <Route path='/howitworks' component={() => <How/>} />
                 <Route path='/track' component={() => <Track/>} />

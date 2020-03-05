@@ -1,11 +1,13 @@
 {
     "Base": {
-        "Fort Collins": 100,
-        "Boulder": 100,
-        "Colorado Springs": 100
+        "Fort Collins": 75,
+        "Boulder": 50,
+        "Colorado Springs": 75,
+        "Denver": 50
     },
     "Pickup_Type": {
         "-": 0,
+        "Storage Unit": 20,
         "Residence": 20,
         "Business - no dock": 18,
         "Business -dock": 16,
@@ -20,6 +22,7 @@
     },
     "Delivery_Type": {
         "-": 0,
+        "Storage Unit": 20,
         "Residence": 20,
         "Business - no dock": 18,
         "Business -dock": 16,

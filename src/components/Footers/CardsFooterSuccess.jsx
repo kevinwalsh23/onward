@@ -35,6 +35,17 @@ import {
 } from "reactstrap";
 
 class CardsFooterSuccess extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      orderinfo: this.props.orderinfo
+    }
+  }    
+  componentDidMount() {
+    console.log(this.state);
+    // console.log('hello')
+  }
+  
   render() {
     return (
       <>
@@ -48,15 +59,15 @@ class CardsFooterSuccess extends React.Component {
                         <h1 className="display-3">Your order was successfully placed!</h1>
                         <p className="lead">Thank you for choosing Onward as your delivery service, we look forward to your business!</p>
                         <hr className="my-2" />
-                        <p>Order #: 236225</p>
-                        <p>Pickup Address: 420 High St, Denver CO 69420</p>
-                        <p>Pickup Date: 6/9/2020, 4PM</p>
-                        <p>Delivery Address: 69 Blaze St, Denver CO 69420</p>
-                        <p>Delivery Date: 4/20/2020, 4PM</p>
-                        <p>Charged: $420.69</p>
+                        <p>Order ID: {this.state.orderinfo.order_id}</p>
+                        <p>Pickup Address: {this.state.orderinfo.pickup_info.pu_address} {this.state.orderinfo.pickup_info.pu_floor}, {this.state.orderinfo.pickup_info.pu_state} {this.state.orderinfo.pickup_info.pu_city} {this.state.orderinfo.pickup_info.pu_zip} </p>
+                        <p>Pickup Date and Time: Will be confirmed via email shortly.</p>
+                        <p>Delivery Address: {this.state.orderinfo.delivery_info.del_address} {this.state.orderinfo.delivery_info.del_floor}, {this.state.orderinfo.delivery_info.del_city} {this.state.orderinfo.delivery_info.del_state} {this.state.orderinfo.delivery_info.del_zip} </p>
+                        <p>Delivery Date and Time: Will be confirmed via email shortly.</p>
+                        <p>Charged: ${this.state.orderinfo.price}</p>
                         
                         <p className="lead">
-                        <Button color="primary">Email Confirmation</Button>
+                        {/* <Button disabled color="primary">Email Confirmation</Button> */}
                         </p>
                     </Jumbotron>
                 </div>
