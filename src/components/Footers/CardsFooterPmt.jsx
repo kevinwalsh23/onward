@@ -24,7 +24,7 @@ import CheckoutForm from './CheckoutForm';
 import InjectedCheckoutForm from './CheckoutForm';
 import SplitForm from './SplitForm';
 import Form from 'react-bootstrap/Form'
-const stripePromise = loadStripe("pk_test_NY2SXjWLgZRoFG0P88DKnqoS00x1AVuI6t");
+const stripePromise = loadStripe("pk_test_HrMrx9FzlVtiZdchU0ptwIK100cCrxV6l1");
 import "./styles.css";
 // reactstrap components
 import {

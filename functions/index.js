@@ -1,9 +1,10 @@
 
 const cors = require('cors')({ origin: true });
 const admin = require('firebase-admin');
-const stripe = require('stripe')('sk_test_HsxkyXZ7QRUOZEqVUxGDr4gX00STdINE1Y');
+const stripe = require('stripe')('sk_test_Zs7jqtKpGyEZpK1rWEDjGURX00csRXZyBJ');
 const nodemailer = require('nodemailer');
 const functions = require('firebase-functions');
+var request = require('request');
 // import * as config from './pricing.json';
 console.log(functions.config());
 // const gmailEmail = functions.config().gmail.email;
@@ -210,55 +211,56 @@ exports.addOrder = functions.https.onRequest((req, res) => {
       })
 exports.getOrder = functions.https.onRequest((req, res) => {
     return cors(req, res, () => {
-        if (req.method !== 'GET') {
+        if (req.method !== 'POST') {
             return res.status(401).json({
                 message: 'Not Allowed'
             })
         }
-        console.log(req.body);
+        console.log(req.body.orderinfo.item_id);
+        let the_id = "-" + req.body.orderinfo.item_id;
 
         // const order_id = req.body.order_id;
-
-        // console.log(database.find().Count());
-        // database.doc('fK3ddutEpD2qQqRMXNW5').get();
-        let cityRef = database.doc('fK3ddutEpD2qQqRMXNW5');
-        let getDoc = cityRef.get()
-          .then(doc => {
-            if (!doc.exists) {
-              console.log('No such document!');
-              return null;
-            } else {
-              console.log('Document data:', doc.data());
-              return doc.data();
-            }
-          })
-          .catch(err => {
-            console.log('Error getting document', err);
-          });        
-
-        // let x = database.push({ item });
-        // console.log(x.path.pieces_[1]);
-        // let id = x.path.pieces_[1];
-        console.log(cityRef);
-        console.log(getDoc);
-                        
-        // console.warn(snapshot);
-        // items.push({id: id});
-        return res.status(200).json(cityRef);
-
         // return database.on('value', (snapshot) => {
-        //     snapshot.forEach((item) => {
-        //       items.push({
-        //         id: item.key,
-        //         items: item.val().item
-        //       });
-        //     });
-            
-        //     res.status(200).json(items)
-        //   }, (error) => {
-        //     res.status(error.code).json({
-        //       message: `Something went wrong. ${error.message}`
-        //     })
+        //   snapshot.forEach((item) => {
+        //     console.log(item);
         //   })
+        //   console.log(snapshot);
+        // });
+        // return null;
+        // console.log(thing);//
+        // return database.once('value').then((snapshot) => {
+        //   console.log(snapshot.val());
+        //   // var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+        //   return null;
+        //   // ...
+        // });
+        // var query = database.equalTo("123123");
+        //   query.once("value", (snapshot) => {
+        //     snapshot.forEach((bookSnapshot) => {
+        //       console.log(bookSnapshot.key+": "+bookSnapshot.val());
+        //       return null;
+        //     });
+        //   })
+        let items;
+        
+        request('https://onward-63d91.firebaseio.com/orders.json?auth=lQIB29728K2cSu30JacOMOZ7iMHzIuwrUraxqYyG', (error, response, body) => {
+          if (!error && response.statusCode === 200) {
+              //here put what you want to do with the request
+              // console.log(response.body);
+              // items.push(response.body);
+              items = JSON.parse(response.body);
+              theitem = items[the_id]
+              console.log(theitem);
+              // res.status(200).json(items)
+              return cors(req, res, () => {
+                res.send({
+                  items: theitem            
+                  });    
+                })
+          }
+          else {
+            return "error"
+          }
+      })        
         })
       })
