@@ -10,6 +10,9 @@ import Location from './LocationsComponent';
 import How from './HowComponent';
 import Track from './TrackComponent';
 import About from './AboutComponent';
+import Privacy from './PrivacyComponent';
+import Cancel from './CancelComponent';
+import Tos from './TosComponent';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -92,6 +95,9 @@ class Main extends Component {
                 <Route path='/howitworks' component={() => <How/>} />
                 <Route path='/track' component={() => <Track/>} />
                 <Route path='/aboutus' component={() => <About/>} />
+                <Route path='/privacy' component={() => <Privacy/>} />
+                <Route path='/cancellationpolicy' component={() => <Cancel/>} />
+                <Route path='/termsofservice' component={() => <Tos/>} />
                 <Route path='/' component={HomePage} />
                 {/* <Route path="/order" component={() => <Order/>} /> */}
                 <Redirect to="/" component={HomePage} />

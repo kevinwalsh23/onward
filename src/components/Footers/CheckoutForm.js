@@ -3,12 +3,25 @@ import {ElementsConsumer, CardElement} from '@stripe/react-stripe-js';
 import { Redirect } from "react-router-dom";
 import CardSection from './CardSection';
 import SplitForm from './SplitForm';
-
+import {
+    Button,
+    Card,
+    CardImg,
+    NavItem,
+    NavLink,
+    Nav,
+    Container,
+    Row,
+    Col,
+    UncontrolledTooltip
+  } from "reactstrap";
+import { Checkbox } from 'semantic-ui-react'  
 class CheckoutForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             success: false,
+            tos: false,
             orderinfo: this.props.orderinfo,
             order_id: '',
             customerinfo: {
@@ -228,7 +241,10 @@ SendInternalConfirmation = async () => {
     console.log(this.state);
     console.log('hello')
   }
-
+  handleInputChange = async () => {
+    //   this.setState({tos: !this.state.tos})
+      this.setState({tos: !this.state.tos})
+  }
   render() {
     if (this.state.success) {
         return(
@@ -243,7 +259,22 @@ SendInternalConfirmation = async () => {
             <form onSubmit={this.handleSubmit}>
               <CardSection /><br/>
               <div style={{marginBottom: '2%'}}>Total Price: ${this.state.price}.00 </div>
-              <button disabled={!this.props.stripe}>Confirm order</button>
+              <div style={{marginBottom: '2%'}}>
+              {/* <Row>
+                  <Col>
+                  <Row></Row> */}
+              <input type="checkbox" class="hidden" readonly="" tabindex="0" style={{display: 'inline-block', width: '2em', boxShadow: 'none'}} checked={this.state.tos} onChange={this.handleInputChange}/>
+                <label>I agree to the <a href='/termsofservice' target="_blank">Onward Delivery ToS.</a></label>
+  <br/>
+        {/* </Col>
+              </Row> */}
+              </div>
+              { this.state.tos === true ? (
+                  <button disabled={!this.props.stripe}>Confirm order</button>
+                   ) : <button disabled style={{backgroundColor: 'grey'}}>Confirm order</button>
+                  }                
+              
+              {/* <button disabled={!this.props.stripe}>Confirm order</button> */}
             </form>
           );
 

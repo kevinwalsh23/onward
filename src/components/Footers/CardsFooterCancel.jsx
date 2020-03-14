@@ -18,42 +18,76 @@
 /*eslint-disable*/
 import React from "react";
 import { Link } from "react-router-dom";
+import Form from 'react-bootstrap/Form'
 // reactstrap components
 import {
   Button,
-  Badge,
   Card,
   CardImg,
-  CardBody,
   NavItem,
   NavLink,
   Nav,
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  CardBody,
+  UncontrolledTooltip,
+  Jumbotron
 } from "reactstrap";
 
-class CardsFooterHow extends React.Component {
+class CardsFooterCancel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      orderinfo: this.props.orderinfo
+    }
+  }    
+  componentDidMount() {
+    console.log(this.state);
+    // console.log('hello')
+  }
+  
   render() {
     return (
       <>
         <footer className="footer has-cards">
           <Container>
-          <Row className="justify-content-center">
+            <Row>
+
+              <Col className="mb-5 mb-lg-0" md="12">
+                <div>
+                    <Jumbotron>
+                        <h5 className="display-3">Cancellation Policy</h5>
+                        {/* <p className="lead">Thank you for choosing Onward as your delivery service, we look forward to your business!</p> */}
+                        <hr className="my-2" />
+                        <p style={{fontSize: "12px"}}>
+                        If you cancel any Request (a) before the Carrier arrives at the pickup address, you will not be charged and the hold will be lifted on your credit card. If you cancel any Request (b) after the Carrier arrives at the pickup location, but prior to the Carrier performing any of the Services, your credit card will be charged 50% of the Delivery Charges. If cancellation occurs (c) after the Carrier has begun to perform the Services, your credit card will be charged 100% of the Delivery Charges. In the instance (d) where the Carrier attempts to fulfill the Request but cannot do so for reasons outside the Drivers and/or Helpers control (for example an unsafe jobsite with debris, a blocked walkway, aggressive dog(s), inaccessible/locked gates, etc.), your credit card will be charged 50% of the applicable Delivery Charges. If the (e) Pickup Customer's order is picked up and the Drop off Customer is not available to accept the freight, the credit card will be charged 100% of the applicable Delivery Charges.
+                            </p>                        
+                        
+                        <p className="lead">
+                        {/* <Button disabled color="primary">Email Confirmation</Button> */}
+                        </p>
+                    </Jumbotron>
+                </div>
+                <Card className="card-lift shadow border-0">
+                                    
+                </Card>
+              </Col>
+            </Row>
+            <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                          {/* <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-check-bold" />
-                          </div>
+                          </div> */}
                           <h6 className="text-primary text-uppercase">
-                            1. Enter Pickup Information
+                          Reservation Confirmed
                           </h6>
                           <p className="description mt-3">
-                            Provide us with information about where we will be picking the item up, when you would like us to come, what the item is, and where it is being delivered.
+                          Full refund if you cancel before the driver arrives at the Pickup Address.
                           </p>
                           {/* <div>
                             <Badge color="primary" pill className="mr-1">
@@ -80,14 +114,14 @@ class CardsFooterHow extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
+                          {/* <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
                             <i className="ni ni-istanbul" />
-                          </div>
+                          </div> */}
                           <h6 className="text-success text-uppercase">
-                            2. Submit Payment Information
+                          Cancel after the driver arrives at the pickup address
                           </h6>
                           <p className="description mt-3">
-                            We partner with Stripe to ensure secure payments. Simply enter your payment information on our site, and Stripe takes care of the rest.
+                          50% Refund, minus the service fee
                           </p>
                           {/* <div>
                             <Badge color="success" pill className="mr-1">
@@ -114,14 +148,14 @@ class CardsFooterHow extends React.Component {
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
+                          {/* <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
                             <i className="ni ni-planet" />
-                          </div>
+                          </div> */}
                           <h6 className="text-warning text-uppercase">
-                            3. Item Picked Up and Delivered
+                            Cancel after Pickup but before Delivery
                           </h6>
                           <p className="description mt-3">
-                            Onward will send a team to come pickup your item, and drop it off at the provided destination. We will provide confirmation through the entire process.
+                          0% Refund, minus the service fee
                           </p>
                           {/* <div>
                             <Badge color="warning" pill className="mr-1">
@@ -150,70 +184,7 @@ class CardsFooterHow extends React.Component {
               </Row>
           </Container>
           <Container>
-            <Row className="row-grid align-items-center my-md">
-              <Col lg="6">
-                <h3 className="text-primary font-weight-light mb-2">
-                  Thank you for supporting us!
-                </h3>
-                <h4 className="mb-0 font-weight-light">
-                  Let's get in touch on any of these platforms.
-                </h4>
-              </Col>
-              <Col className="text-lg-center btn-wrapper" lg="6">
-                <Button
-                  className="btn-neutral btn-icon-only btn-round"
-                  color="twitter"
-                  href="https://twitter.com/DeliveryOnward"
-                  id="tooltip475038074"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-twitter" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip475038074">
-                  Follow us
-                </UncontrolledTooltip>
-                <Button
-                  className="btn-neutral btn-icon-only btn-round ml-1"
-                  color="facebook"
-                  href="https://www.facebook.com/onwarddelivers"
-                  id="tooltip837440414"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-facebook-square" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip837440414">
-                  Like us
-                </UncontrolledTooltip>
-                <Button
-                  className="btn-neutral btn-icon-only btn-round ml-1"
-                  color="dribbble"
-                  href="https://www.instagram.com/onward_delivery"
-                  id="tooltip829810202"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-instagram" />
-                </Button>
-                <UncontrolledTooltip delay={0} target="tooltip829810202">
-                  Follow us
-                </UncontrolledTooltip>
-                {/* <Button
-                  className="btn-neutral btn-icon-only btn-round ml-1"
-                  color="github"
-                  href="https://github.com/creativetimofficial"
-                  id="tooltip495507257"
-                  size="lg"
-                  target="_blank"
-                >
-                  <i className="fa fa-github" />
-                </Button> */}
-                {/* <UncontrolledTooltip delay={0} target="tooltip495507257">
-                  Star on Github
-                </UncontrolledTooltip> */}
-              </Col>
-            </Row>
+            
             <hr />
             <Row className="align-items-center justify-content-md-between">
               <Col md="6">
@@ -232,7 +203,7 @@ class CardsFooterHow extends React.Component {
                 <Nav className="nav-footer justify-content-end">
                   <NavItem>
                     <NavLink
-                      // href="https://www.creative-tim.com?ref=adsr-footer"
+                    //   href="https://www.creative-tim.com?ref=adsr-footer"
                       target="_blank"
                     >
                       Onward Delivery
@@ -272,4 +243,4 @@ class CardsFooterHow extends React.Component {
   }
 }
 
-export default CardsFooterHow;
+export default CardsFooterCancel;

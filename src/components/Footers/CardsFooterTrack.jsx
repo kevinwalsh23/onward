@@ -204,18 +204,18 @@ class CardsFooterTrack extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                    //   href="https://www.creative-tim.com/presentation?ref=adsr-footer"
+                      href="/cancellationpolicy"
                       target="_blank"
                     >
-                      About Us
+                      Cancel Policy
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                    //   href="http://blog.creative-tim.com?ref=adsr-footer"
+                      href="/privacy"
                       target="_blank"
                     >
-                      Blog
+                      Privacy
                     </NavLink>
                   </NavItem>
                   <NavItem>

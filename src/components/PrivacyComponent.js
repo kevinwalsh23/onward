@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import DemoNavbar from "./Navbars/DemoNavbar.jsx";
-import CardsFooterSuccess from "components/Footers/CardsFooterSuccess.jsx";
+import CardsFooterPrivacy from "components/Footers/CardsFooterPrivacy.jsx";
 import Home from './HomeComponent';
 
 
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import { TransitionGroup, CSSTransition} from 'react-transition-group';
-class About extends React.Component {
+class Privacy extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    //   orderinfo: this.props.orderinfo.orderinfo
+    }
+  }    
+  componentDidMount() {
+    console.log(this.props);
+    // console.log('hello')
+  }
   render() {
     return (
       <div>
@@ -25,7 +35,7 @@ class About extends React.Component {
             </div>
           
           </div>
-          {/* <CardsFooterSuccess /> */}
+          <CardsFooterPrivacy/>          
         </div>
         
         </div>
@@ -33,4 +43,4 @@ class About extends React.Component {
     );
   }
 }
-export default About;
+export default Privacy;

@@ -274,18 +274,18 @@ class CardsFooterDropoff extends React.Component {
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href=""
+                      href="/cancellationpolicy"
                       target="_blank"
                     >
-                      About Us
+                      Cancel Policy
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href=""
+                      href="/privacy"
                       target="_blank"
                     >
-                      Blog
+                      Privacy
                     </NavLink>
                   </NavItem>
                   <NavItem>
