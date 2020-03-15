@@ -119,8 +119,8 @@ class CardsFooterNew extends React.Component {
     }
 }
     componentDidUpdate() {
-      console.log(this.state.pu_price);
-      console.log(this.state.price);
+      // console.log(this.state.pu_price);
+      // console.log(this.state.price);
       let x = 0
       let item_pricing = 100
       // console.log(this.state.pu_location_type)
@@ -137,7 +137,7 @@ class CardsFooterNew extends React.Component {
       // this.state.price = pricing.Base[this.props.destinations.pickupcity] + pickup_type + delivery_type + item_cost
     }
     componentDidMount() {
-      console.log(this.state.price)
+      // console.log(this.state.price)
 
     }
   render() {
@@ -709,13 +709,28 @@ class CardsFooterNew extends React.Component {
 
                   <Form.Group as={Row} style={{marginTop: "5%"}}>
                     <Col sm={{ span: 10, offset: 2 }}>
-                      <Link to={{ 
+                    { this.state.name === '' || this.state.email === '' ? (
+                      <div>
+                        <Button disabled variant="primary" style={{backgroundColor: "grey", color: "white"}} onClick={() => console.log(this.state)}>
+                          Add Pickup Information
+                        </Button>
+                        <br/>
+                        <text style={{margin: '5px', color: 'red'}}>Must include name and email address.</text>                                              </div>                      
+                     ) : <Link to={{ 
                         pathname: '/pickup', state: { pass_params: this.state  }                        
                       }}>
                         <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => console.log(this.state)}>
                           Add Pickup Information
                         </Button>
                       </Link>
+                  }  
+                      {/* <Link to={{ 
+                        pathname: '/pickup', state: { pass_params: this.state  }                        
+                      }}>
+                        <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => console.log(this.state)}>
+                          Add Pickup Information
+                        </Button>
+                      </Link> */}
                       {/* <Button type="submit">Continue to Payment</Button> */}
                     </Col>
                   </Form.Group>

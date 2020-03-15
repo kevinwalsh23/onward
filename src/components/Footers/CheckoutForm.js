@@ -123,11 +123,11 @@ SaveCustomerInfo = async () => {
           })
           .then((myJson) => {
             // this.setState({order_id: myJson[0].id.substr(1)});
-            console.log(this.state);
+            // console.log(this.state);
             let _id = myJson[0].id.substr(1);
-            console.log(_id);
+            // console.log(_id);
             this.setState({order_id: _id});
-            console.log(this.state);
+            // console.log(this.state);
             // let x = myJson.clientSecret;
             return _id;
           })
@@ -158,7 +158,7 @@ SendInternalConfirmation = async () => {
 
   handleSubmit = async (event) => {
     // We don't want to let default form submission happen here,
-    console.log(this.state.orderinfo.item_info.price);
+    // console.log(this.state.orderinfo.item_info.price);
     let the_price = this.state.orderinfo.item_info.price * 100;
     
     // which would refresh the page.
@@ -207,15 +207,15 @@ SendInternalConfirmation = async () => {
         // The payment has been processed!
         if (result.paymentIntent.status === 'succeeded') {
             // Show a success message to your customer
-            console.log('success');
+            // console.log('success');
             let thing = await this.SaveCustomerInfo();
-            console.log(thing);
+            // console.log(thing);
             this.SendInternalConfirmation().then(this.setState({success: true}));
             //console.log(thing);
             // this.SendInternalConfirmation().then(this.setState({success: true}));
-            console.log('success');
-            console.log(this.state);
-            console.log('success123123');
+            // console.log('success');
+            // console.log(this.state);
+            // console.log('success123123');
             // this.setState({success: true});
 
             return(
@@ -238,8 +238,8 @@ SendInternalConfirmation = async () => {
   };
   
   componentDidMount() {
-    console.log(this.state);
-    console.log('hello')
+    // console.log(this.state);
+    // console.log('hello')
   }
   handleInputChange = async () => {
     //   this.setState({tos: !this.state.tos})
@@ -284,7 +284,7 @@ SendInternalConfirmation = async () => {
 }
 
 export default function InjectedCheckoutForm(order_info) {
-    console.log(order_info);
+    // console.log(order_info);
     // console.log(({stripe, elements, orderinfo}))
   return (
     <ElementsConsumer orderinfo={order_info}>

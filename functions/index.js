@@ -1,17 +1,18 @@
 
 const cors = require('cors')({ origin: true });
 const admin = require('firebase-admin');
-const stripe = require('stripe')('sk_test_Zs7jqtKpGyEZpK1rWEDjGURX00csRXZyBJ');
+const stripe = require('stripe')('sk_test_Zs7jqtKpGyEZpK1rWEDjGURX00csRXZyBJ'); //test key
+// const stripe = require('stripe')(functions.config().stripe.seckey); //live key
+// const gmailPassword = functions.config().stripe.seckey; 
 const nodemailer = require('nodemailer');
 const functions = require('firebase-functions');
 var request = require('request');
 // import * as config from './pricing.json';
 console.log(functions.config());
 // const gmailEmail = functions.config().gmail.email;
-const gmailEmail = 'orderconfirmation@onwarddelivery.com';
-// const gmailEmail = 'kevin@recomphealth.com';
+const gmailEmail = 'orderconfirmation@onwarddelivery.com'; //test mode
 // const gmailPassword = functions.config().gmail.password;
-const gmailPassword = "Onward4040!";
+const gmailPassword = "Onward4040!"; //test mode
 // const gmailPassword = "vuemdyjixfmvtkww";g7y6-2thy.accessdomain.com
 // const mailTransport = nodemailer.createTransport({
 //   service: 'gmail',
