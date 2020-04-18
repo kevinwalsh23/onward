@@ -24,7 +24,7 @@ import CheckoutForm from './CheckoutForm';
 import InjectedCheckoutForm from './CheckoutForm';
 import SplitForm from './SplitForm';
 import Form from 'react-bootstrap/Form'
-const stripePromise = loadStripe("pk_test_HrMrx9FzlVtiZdchU0ptwIK100cCrxV6l1");
+const stripePromise = loadStripe("pk_live_GkLHbJguG8egPK2kovoxdBCa006YTIcMMU");
 // const stripePromise = loadStripe(functions.config().stripe.pubkey); //live key
 // const gmailPassword = functions.config().stripe.seckey; 
 import "./styles.css";
