@@ -37,9 +37,9 @@ class Covid extends React.Component {
             <div className="row">
               <div className="col-md m-1">
                 <h5 className="homefont textmargin"><b>ONWARD DELIVERY, LLC: COVID-19 RESPONSE</b></h5>
-                <p className="homefont">IS YOUR TEAM LOOKING FOR EXPERIENCED BOX TRUCK DELIVERY TEAMS TO HELP WITH YOUR OUTBOUND CAPACITY?</p>
-                <p className="homefont">If your team is in need of supplemental resources in the form of Trucks and Drivers, please let us know!  Onward is a Freight Brokerage based in Denver, CO. We have connections with Final Mile Delivery companies that specialize in White Glove Delivery. If your team is experiencing capacity peaks, we can help provide delivery resources to help your team through these unusual times.</p>
-                <p className="homefont">If you are interested or would like to discuss in more detail, please fill in the below form AND WE WILL REACH OUT TO YOU WITHIN 24 HOURS!!</p>
+                <p className="covidfont">Is your team looking for experienced box truck delivery teams to help with your outbound capacity?</p>
+                <p className="covidfontdeus">If your team is in need of supplemental resources in the form of Trucks and Drivers, please let us know!  Onward is a Freight Brokerage based in Denver, CO. We have connections with Final Mile Delivery companies that specialize in White Glove Delivery. If your team is experiencing capacity peaks, we can help provide delivery resources to help your team through these unusual times.</p>
+                <p className="covidfontdeus">If you are interested or would like to discuss in more detail, please fill in the below form and will will reach out to you within 24 hours!</p>
   
               </div>              
             </div>

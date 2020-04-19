@@ -8,12 +8,12 @@
   margin-top: 10% !important;      
 }
 .covidform {
-  width: "70%";
-  margin-left: "15%";
-  border: "none";
-  border-bottom: "solid";
-  border-bottom-width: "thin";
-  border-radius: "unset";
+  width: "70%" !important;
+  margin-left: "15%"!important;
+  border: "none"!important;
+  border-bottom: "solid"!important;
+  border-bottom-width: "thin"!important;
+  border-radius: "unset"!important;
 
 }
 .whyrecomp {
@@ -89,6 +89,29 @@
   font-size: 64 !important;
   size: 100;  
   font-weight: 900;
+  line-height: 1.1;
+  color: white;
+}
+.covidfont {
+  font-family: "Circular", "Open Sans", Arial, Helvetica, sans-serif;
+  margin-left: 10%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 10%;
+  font-size: 28px !important;
+  size: 120;  
+  font-weight: 900;
+  line-height: 1.1;
+  color: white;
+}
+.covidfontdeus {
+  font-family: "Circular", "Open Sans", Arial, Helvetica, sans-serif;
+  margin-left: 10%;
+  margin-top: 20px;
+  margin-right: 10%;
+  font-size: 64 !important;
+  size: 100;  
+  font-weight: 500;
   line-height: 1.1;
   color: white;
 }

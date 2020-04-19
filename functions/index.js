@@ -277,10 +277,12 @@ exports.Covid = functions.https.onRequest( async (req, res) => {
     console.log(req.body);
 
     //Variable names and values for email
+    const displayName = req.body.displayName; // The email of the user.
     const company = req.body.company; // The email of the user.
     const name = req.body.name;
     const phone = req.body.phone; // The display name of the user.
     const email = req.body.email; // The display name of the user.
+    const cust_email = req.body.cust_email; // The display name of the user.
     const address = req.body.address; // The display name of the user.
     const num_trucks = req.body.num_trucks; // The display name of the user.
     const date = req.body.date; // The display name of the user.
@@ -293,18 +295,17 @@ exports.Covid = functions.https.onRequest( async (req, res) => {
       to: email,
     };
     //Email Subject and Body
-    mailOptions.subject = `New ${APP_NAME} Order!`;
+    mailOptions.subject = `New ${APP_NAME} Chinese Wuhan Virus Request!`;
     mailOptions.text = `Hey ${displayName || ''}! \r\n\r\n 
-    New Request. \r\n\r\n 
-    Details: \r\n\r\n 
-    Company: \r\n\r\n ${company || ''}
-    Name: \r\n\r\n ${name || ''}
-    Phone: \r\n\r\n ${phone || ''}
-    Email: \r\n\r\n ${email || ''}
-    Address: \r\n\r\n ${address || ''}
-    Number of Trucks: \r\n\r\n ${num_trucks || ''}
-    Date: \r\n\r\n ${date || ''}
-    Comments: \r\n\r\n ${comments || ''}`;
+    New Request.\r\n\r\n     
+    Company: ${company || ''}
+    Name: ${name || ''}
+    Phone: ${phone || ''}
+    Email: ${cust_email || ''}
+    Address: ${address || ''}
+    Number of Trucks: ${num_trucks || ''}
+    Date: ${date || ''}
+    Comments: ${comments || ''}`;
 
     await mailTransport.sendMail(mailOptions); 
 

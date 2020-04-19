@@ -57,7 +57,7 @@ class CardsFooterCovid extends React.Component {
       // console.log(this.state.price)
 
     }
-    SendInternalConfirmation = async () => {
+    SendCovidEmail = async () => {
         fetch('https://us-central1-onward-63d91.cloudfunctions.net/Covid', {
             method: 'POST',
             headers: {
@@ -65,10 +65,10 @@ class CardsFooterCovid extends React.Component {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                email: 'kevinwalsh23@gmail.com',
+                email: 'orderconfirmation@onwarddelivery.com',
                 displayName: 'Beast',
                 name: this.state.name,
-                email: this.state.email,
+                cust_email: this.state.email,
                 phone: this.state.phone,
                 company: this.state.company,
                 address: this.state.address,
@@ -81,7 +81,7 @@ class CardsFooterCovid extends React.Component {
     } 
     handleSubmit = async (event) => {
         console.log(this.state);
-        this.SendInternalConfirmation().then(this.setState({success: true}));
+        this.SendCovidEmail().then(this.setState({success: true}));
     }
   render() {
     if (this.state.success) {
@@ -101,89 +101,72 @@ class CardsFooterCovid extends React.Component {
 
               <Col className="mb-5 mb-lg-0" md="12">
                 <Card className="card-lift shadow border-0">
-                <Form style={{margin: "5%"}}>
+                <Form style={{marginLeft: "15%", marginRight: "15%"}}>
 
-                  <Form.Group as={Row} controlId="formHorizontalName">
-                      <Form.Label column sm={2}>
-                        Company
-                      </Form.Label>
-                      <Col sm={10}>
-                        <Form.Control required style={{width: "70%"}} type="text" placeholder="Your Company" onChange={(e) => this.setState({company: e.target.value})}/>                        
+                  <Form.Group as={Row} controlId="formHorizontalName">                      
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "3%", span: 9}}>
+                        <Form.Control required style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="text" placeholder="Company" onChange={(e) => this.setState({company: e.target.value})}/>                        
                       </Col>                                                                  
                     </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalEmail">
-                    <Form.Label column sm={2}>
-                      Company Address
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="text" placeholder="Address" onChange={(e) => this.setState({address: e.target.value})}/>
+                    
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "0%", span: 9}}>
+                      <Form.Control style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="text" placeholder="Address" onChange={(e) => this.setState({address: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalPhone">
-                    <Form.Label column sm={2}>
-                      Name
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="text" placeholder="Your Name" onChange={(e) => this.setState({name: e.target.value})}/>
+                    
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "0%", span: 9}}>
+                      <Form.Control style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="text" placeholder="Name" onChange={(e) => this.setState({name: e.target.value})}/>
                     </Col>
                   </Form.Group> 
 
                   <Form.Group as={Row} controlId="formHorizontalPhone">
-                    <Form.Label column sm={2}>
-                      Email
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="email" placeholder="youremail@gmail.com" onChange={(e) => this.setState({email: e.target.value})}/>
+                    
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "0%", span: 9}}>
+                      <Form.Control style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="email" placeholder="Email Address" onChange={(e) => this.setState({email: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalPhone">
-                    <Form.Label column sm={2}>
-                      Phone
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="tel" placeholder="Your Number" onChange={(e) => this.setState({phone: e.target.value})}/>
+                    
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "0%", span: 9}}>
+                      <Form.Control style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="tel" placeholder="Phone Number" onChange={(e) => this.setState({phone: e.target.value})}/>
                     </Col>
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalPhone">
-                    <Form.Label column sm={2}>
-                      Number of Outbound Trucks Required
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="number" placeholder="Number of Outbound Trucks Required" onChange={(e) => this.setState({num_trucks: e.target.value})}/>
+                    
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "0%", span: 9}}>
+                      <Form.Control style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="number" placeholder="Number of Outbound Trucks Required" onChange={(e) => this.setState({num_trucks: e.target.value})}/>
                     </Col>
                   </Form.Group> 
 
                   <Form.Group as={Row} controlId="formHorizontalPhone">
-                    <Form.Label column sm={2}>
-                      Date
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="text" placeholder="Requested Date of Service" onChange={(e) => this.setState({phone: e.target.value})}/>
+                    
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "0%", span: 9}}>
+                      <Form.Control style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="date" placeholder="Requested Date of Service" onChange={(e) => this.setState({date: e.target.value})}/>
                     </Col>
                   </Form.Group> 
 
                   <Form.Group as={Row} controlId="formHorizontalPhone">
-                    <Form.Label column sm={2}>
-                      Comments/Additional Details
-                    </Form.Label>
-                    <Col sm={10}>
-                      <Form.Control style={{width: "70%"}} type="text" placeholder="Comments/Additional Details" onChange={(e) => this.setState({comments: e.target.value})}/>
+                    
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "0%", span: 9}}>
+                      <Form.Control style={{width: "100%", border: "none", borderBottom: "solid", borderBottomWidth: "thin", borderRadius: "unset"}} type="text" placeholder="Comments/Additional Details" onChange={(e) => this.setState({comments: e.target.value})}/>
                     </Col>
                   </Form.Group>                                      
 
-                  <Form.Group as={Row} style={{marginTop: "5%"}}>
-                    <Col sm={{ span: 10, offset: 2 }}>
+                  <Form.Group as={Row} style={{marginTop: "0%"}}>
+                    <Col style={{marginLeft: "12.5%", marginRight: "12.5%", marginTop: "5%", span: 9}}>
                     { this.state.name === '' || this.state.email === '' ? (
                       <div>
-                        <Button disabled variant="primary" style={{backgroundColor: "grey", color: "white"}} onClick={() => console.log(this.state)}>
-                          Add Pickup Information
+                        <Button disabled variant="primary" style={{backgroundColor: "grey", color: "white", marginBottom: "10px", width: "50%"}} onClick={() => console.log(this.state)}>
+                               SUBMIT     
                         </Button>
                         <br/>
-                        <text style={{margin: '5px', color: 'red'}}>Must include name and email address.</text>                                              </div>                      
+                        <text style={{margin: '10px', color: 'red'}}>Must include name and email address.</text>                                              </div>                      
                      ) : 
                         <Button variant="primary" style={{backgroundColor: "#4C8FFB", color: "white"}} onClick={() => this.handleSubmit()}>
                           Submit
