@@ -7,6 +7,15 @@
 .textmargin {
   margin-top: 10% !important;      
 }
+.covidform {
+  width: "70%";
+  margin-left: "15%";
+  border: "none";
+  border-bottom: "solid";
+  border-bottom-width: "thin";
+  border-radius: "unset";
+
+}
 .whyrecomp {
   background-color: #5a2fc2;
   color: white !important;

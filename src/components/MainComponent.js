@@ -13,6 +13,8 @@ import About from './AboutComponent';
 import Privacy from './PrivacyComponent';
 import Cancel from './CancelComponent';
 import Tos from './TosComponent';
+import Covid from './CovidComponent';
+import CovidConfirm from './CovidConfirmComponent';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -97,6 +99,8 @@ class Main extends Component {
                 <Route path='/aboutus' component={() => <About/>} />
                 <Route path='/privacy' component={() => <Privacy/>} />
                 <Route path='/cancellationpolicy' component={() => <Cancel/>} />
+                <Route path='/covid' component={() => <Covid/>} />
+                <Route path='/covidconfirm' component={() => <CovidConfirm info={this.props.location.state}/>} />
                 <Route path='/termsofservice' component={() => <Tos/>} />
                 <Route path='/' component={HomePage} />
                 {/* <Route path="/order" component={() => <Order/>} /> */}
